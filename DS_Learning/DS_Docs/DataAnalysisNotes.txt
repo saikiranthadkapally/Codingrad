@@ -1,0 +1,150 @@
+*************************NOTE********************************: We use "StackOverflow" for debugging and for Errors while looking couple of times into it and practicing 
+will improve our coding performance at initial Stage of Developer.
+
+Project Hirarchy
+    1. Dockerfiles
+        Container -- It's Container basically similar to "environment" But it ia an isolated Container which will have certain Hardware(We can set Hardware to 
+        Containers Where as our normal environment doesn't have separate Hardware provided to it).Container works as an another computer whereas environment
+        won't do that environment is for to do experiments locally in our System.We have also some other Containers like "dev","stage" etc.. Containers.
+    2. Packages
+        Common
+            Config
+            libs
+            credentials.py
+            etc..
+        Utils -- Mostly we use below 3 utils
+            read_utils.py
+            process_utils.py
+            analyze_utils.py
+            etc....       
+        assets -- It has folders "Input", "Output" to store input & output files
+           maintains files
+           for development 
+    3. Requirements.txt
+    4. setup.sh
+
+NOTE: WE shouldnot push our files to "GITHUB" Bcs github is a code management System Not a data management System(While we push our code into github we do gitignore)
+      If we move our files cost increases as we use it by paid and also if there is any important files it will be accessible by all.leads to Security vulnerable
+      and also the file "credentials.py" in common folder need not be pushed to github
+
+    3. Path
+        1. Relative Path
+        2. Absolute Path
+        3. setup.sh
+            PYTHONPATH --- relative Path
+            Appending our CWD
+            NOTE:We can also do in another method such as "sys.path.append("./)" this is used in windows But it is not suggestable to use
+
+
+Problem Statement: For a given CSV dataset (or) Excel dataset we need to do feature Engineering(Project)
+
+Problem Approach:
+        1. Input is CSV dataset
+            --- Large
+            --- Eaw dataset
+            --- Lot of Problem
+                -- zero values
+                -- same values
+                -- Data type issues
+                -- Null values
+                -- Lot of features 300-1000 in real-time
+                -- Duplicates
+
+        2. Output
+            --- Processed dataset
+            --- May be features can be reduced
+            --- Alerts ---- we alert properly Bcs data generation it costs more
+            --- how you fill null values/ zeros OR Data Sanitization
+            --- Reporting/Report
+
+Python Modules:
+    1. Pandas
+    2. Numpy
+    3. Matplotlib/seaborn
+    4. pyspark
+    5. ydata_Profiling
+
+Concepts:
+    1. Statistics
+    2. Probability Distribution
+    3. Pandas Concepts
+    4. Git
+    
+Framework:
+    1. Spark
+
+Languages:
+    1. Python
+
+
+
+
+NominalFeatures: It doesnot tell any information OR useful in our analysis and it doesn't maintain some order either ascending(low to high) or descending(high to low)
+    NOTE:Sometimes we take NominalFeatures also into consideration based on situation.Mostly we discard it
+    --- Examples -- ID, EMP_ID, NAMES, ADDRESS, PHONE_NUMBER, Martial_Status(Married,Unmarried,widow,others), Gender, Name
+
+OrdinalFeatures: It tells some information and it maintain's some order
+    --- Examples -- Status, Rating, Rank, Department
+
+BinaryFeatures: It tells some information,it has only 2 values and also acts like a boolean
+    --- Examples -- Gender,ISACTIVE
+
+*********************************************************SOME Important Self Prepared Notes**********************************************************************
+                               
+Q)what is main difference between data warehousing and database?
+
+Data warehousing and databases are both used for storing and managing data, but they have some important differences.
+A database is a collection of related data that is organized in a specific way, usually according to a pre-defined schema or structure. Databases are commonly used to 
+store and manage data for specific applications, such as an online shopping website, a hospital's patient management system, or a bank's transaction processing system. 
+For example, a database for an online shopping website may contain information about customers, products, orders, and payments, and the relationships between them.
+
+On the other hand, a data warehouse is a centralized repository of data from various sources, which is designed to support business intelligence and decision-making 
+activities. Data warehouses are used to store large amounts of historical data that can be analyzed and used to identify trends, patterns, and insights. For example, 
+a data warehouse for a retail company may contain data from point-of-sale systems, inventory management systems, and customer relationship management systems, which 
+can be analyzed to understand sales trends, inventory levels, and customer behavior.
+
+So, the main difference between a database and a data warehouse is that a database is designed to support the operational needs of a specific application, while a data 
+warehouse is designed to support analytical and reporting needs across an entire organization. In other words, a database is focused on managing and processing data for 
+specific transactions, while a data warehouse is focused on storing and analyzing data to support strategic decision-making.
+
+Q)what is main difference between data Engineering and data Analysis and data Scientists and ML Engineer and Database Administrator and Administrator relationship 
+between all these  with examples?
+
+Data Engineering:
+Data engineering is the process of designing, building, and maintaining the infrastructure required to store and process large amounts of data. Data engineers develop 
+and maintain databases, data pipelines, and data warehouses. They also ensure that the data is properly formatted, processed, and stored in a way that allows for easy 
+access and analysis by others.
+
+Example: A data engineer would be responsible for setting up a system to collect, process, and store data from a social media platform like Facebook or Twitter.
+
+Data Analysis:
+Data analysis is the process of extracting useful insights from data by applying statistical and analytical methods. Data analysts use tools like Excel, SQL, and 
+programming languages like Python or R to analyze data and create reports or visualizations to communicate their findings.
+
+Example: A data analyst at a retail company might analyze sales data to identify which products are selling well and which ones are not, and use this information to 
+inform future product development and marketing strategies.
+
+Data Science:
+Data science is a broader field that encompasses both data engineering and data analysis, as well as other related fields like machine learning and statistics. Data 
+scientists use their skills in programming, mathematics, and statistics to extract insights from data and develop predictive models.
+
+Example: A data scientist at a healthcare company might use machine learning algorithms to analyze patient data and predict which patients are at high risk of 
+developing certain diseases.
+
+Machine Learning Engineering:
+Machine learning engineering is a specialized field within data science that focuses on developing and deploying machine learning models at scale. Machine learning 
+engineers work closely with data scientists to develop algorithms and models, and then deploy those models in production systems.
+
+Example: A machine learning engineer at a financial company might develop a fraud detection model that can identify suspicious transactions in real-time.
+
+Database Administration:
+Database administration is the process of managing and maintaining databases. Database administrators ensure that the database is running smoothly, that data is 
+properly secured, and that backups are regularly taken to prevent data loss.
+
+Example: A database administrator at a hospital might be responsible for ensuring that patient records are properly stored and secured, and that the database is backed 
+up regularly to prevent data loss.
+
+In summary, data engineering is focused on building and maintaining the infrastructure to process and store data, data analysis is focused on extracting insights from 
+data, data science encompasses both data engineering and data analysis and involves developing predictive models, machine learning engineering focuses specifically on 
+developing and deploying machine learning models, and database administration involves managing and maintaining databases.
+*********************************************************************END**********************************************************************************************

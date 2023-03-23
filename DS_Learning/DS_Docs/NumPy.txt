@@ -1,0 +1,61 @@
+NumPy ---- Numerical Python -- NumPy operations are comparatively faster than the Normal Operations Bcs NumPy will execute using "CPU registers". In Python we have a 
+standard tool which is trustable that tool is called "pip". we install in our environment using "pip install -r requirements.txt" we don't install directly from website
+it may chance to get some viruses or demons it means automatical installed background services.
+
+NumPy ----These are complex mathematical problems So,Inorder to solve these the NumPy will provide some libraries.Inorder to solve the Differentiations it need to be run on 
+the GPUs aswell it need to be compatible on GPU also.Tensorflow will provide this compatibility on GPUs or other Hardwares.Meanwhile like Data pre-processing or other 
+processings then we will use mostly Matrices.We will do that all things which are related to Matrices.
+        Mathematical Linear Algebra & Caluclus
+            1. Matrices
+            2. Differentiation
+                1. Partial Derivatives
+                2. Series(It means like Fourier Series)
+            3.Integrations
+
+Everything in NumPy deals with arrays --- We call these as numpy ndimensional arrays -- If we want to write anything in NumPy that should written in only as an ndarray.
+
+NOTE:In NumPy we have n-dimensions like we have 512 dimensions also and we have 1024 dimensions also we have 4096 dimensions it is in power of 2.But we can have those many
+dimensions we can't visualize them but we need to understand them But We knows only  dimensions like Point dimension, Single dimension, 2-dimension, 3-Dimensions.In NumPy
+Everything deals with the NumPy arrays or ndarrays.
+
+NOTE:When we install "Python" interpreter on our laptop it will automatically install the stable version which is compatible to our "Operating System" dependent.So,
+When our python programming has some version like 3.10 or 3.8 etc..The libraries like NumPy, Matplotlib etc..will be installed which is compatible according to that 
+version of Python only automatically.We have to mention Python version and NumPy version whatever libraries we install we need to mention the versions in our Every
+Project "requirements.txt" file BCS our Projects in industries are sharable for other team members.Suppose if there is a high end laptop or latest laptop in other team
+members Suppose if they have latest or older version of python like 3.6 or 3.11 etc.. it will not be compatible in such versions.There will be backward compatibility
+but some of the functions may be changed the code which we written and to that version functionality may be different it won't execute properly.So,We want to mention
+everything with its versions in  "requirements.txt".
+
+NumPy Data Type --- ndarray -- Inorder to use hardware compatibility we must convert the data into numpy data type which is called "ndarray".
+
+Type Casting --- Importance of Type Casting and its Uses and what are the operations we used to perform after type casting.
+
+Defining Numpy arrays with our custom values
+      1. 0 Dimension     -- Scalar
+      2. Point Dimension ---- We can write in (1,1) or (1,)
+      3. 1 - Dimension ------ We can write as (5,1) -- It is representation in theoritical concept or (4,) or (7,) etc... -- It is output of Notebook or IDE Bcs "1" is common in 1-Dimensional array so it saves memory 
+      by not printing "1".
+      4. 2 - Dimension
+      5. 3 - Dimension
+      6. n - Dimension
+
+NOTE: -- In Python We don't have array concepts instead we use lists.But in NumPy we use Array concept that is "ndarray".
+      -- Array is a continuous memory allocation of same data type in NumPy.Even if we change a Single element into another data type then it effects remaining all
+         elements it means if we change a single element in array in NumPy then remaining all elements will change into that data type.
+   
+NOTE: Here we can convert the datatype values into more smaller values we can quantize the higher data values into lower values so, this makes our ML data or training data
+to be more faster by reducing number of operations.No.of.operations means number of bit operations it will perform if we quantize the datatype then our no.of.operations
+will also be quantized(reduce).Inorder to perform quantize operations for datatypes the datatype has to be "NumPy" datatype(ndarray) only. Then only we can perform quantize.
+
+    --- float -- 8Bytes --- 8 * 8 = 64 bits --- float64
+
+        ------------------------ float32
+        ------------------------ float16
+        ------------------------ fkoat 8
+
+    --- int ---- 4Bytes --- 4 * 8 = 32 bites --- int32
+    
+
+Scalar & Vector
+    --- Scalars -- the data types which will be in memory default and always there is now way to go to registers.
+    --- Vectors -- the data types which may benefit of cpu registers & graph execution -- Most of the Numpy arrays are called Vectors.A vector is a "ndarray".

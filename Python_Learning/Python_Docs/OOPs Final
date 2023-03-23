@@ -1,0 +1,113 @@
+OOPs Conecpts:
+
+*****NOTE*****:In this Data Science course we don't use packages mostly In Python.Where we won't use OOPs as a strategy for doing Machine Learning.We use mostly functional oriented 
+               programming we  mostly use  "functional strategy".So, we don't use OOPs mostly. OOPs will be used for developing systems/developing softwares I mean python can also be used
+               in that way but most of the people try to use "Java, .net etc.." for developing systems bcs these have higher power of OOPs concept.
+
+
+    1. Class
+    2. Object
+    3. Properties
+    4. Methods
+    5. Abstraction
+    6. Encasupation
+    7. Inheritance
+    8. Polymorphism
+          -- Method Overriding
+          -- Method Overloading
+
+
+Inheritance: 
+    1. Parent or Base
+    2. Child
+
+    Definition:Inheritance is the concept of inheriting the protected and public characteristics (Properties and Member Functions) from base (parent) class.
+
+    Types of Inheritance:
+        1. Single Inheritance
+        2. Multiple Inheritance
+        3. Multilevel Inheritance
+        4. Hybrid Inheritance
+        5. Hierarchial Inheritance
+
+**NOTE**:protected properties and protected memeber methods are accessible within the same package and to the classes of which the defined class was inherited.
+
+1. Single Inheritance: inheriting characteristics from Single parent
+
+2. Multiple Inheritance: inheriting characteristics from more than one parent
+
+3. Multilevel Inheritance: Is a Single Inheritance with levels -- Associative Property
+
+4. Hierarchial Inheritance: inheriting characteristics from Single parent to Multiple childs
+
+5. Hybrid Inheritance: Tree of classes
+
+
+Note:
+    1. Protected Properties(Protected class and instance properties) & Protected Member Functions(Protected instance member methods and Protected class member methods) will be accessed in
+       a defined(where we define protected properties and member functions) class and also in the classes of which defined class will be inherited.
+
+Importance of Inheritence:
+           --- Reusability
+           --- Heirachial Maintainance of code
+
+
+
+**Note**: Import -- We are importing functions or modules or classes all these are imported to another file if we needed.
+               
+          Inheritance -- Here are also  "importing" it is a good logic.We "importing" some details from some class to other class.
+
+  --- But when coming to the "package imports" we don't have access what to be imported and what not to be imported lets say
+      if we have a file like "utils.py"  we have some properties and some functions let's say we don't want to be imported 
+      these functions or properties by any others.Here in "package imports" we don't have any chance to control.Any one can be
+      imported from that file if required suppose if they keep like "import *" all those functions or properties whatever it is
+      all those which are in that file are imported.We don't have access to specify what are imported.But coming to the "class"
+      functions or variables we can access to specify what should be imported or what should not be imported using "access specifiers".
+      Suppose if we keep "doubleUnderscore" to functions or variables they cannot be imported to other classes.only protected classes
+      will be imported and public is everywhere it can be imported or accessible everywhere.Here we have a admin chance to keep a level
+      to our defined things like these people can access these people can't be accessed.But we can't do this in "Package importing" it 
+      be accessed by everyone if required.
+
+Super: "super()" is a keyword which will be able to make you access to the parent class properties and functions."super()" will be replace with 
+        the base class or parent class from its child class.Here super is automatically call parent class  inherently from child class even we 
+        not mention explicitly.
+ 
+**NOTE**:While it's true that the properties of the parent class are automatically inherited by the child class, calling super().__init__() in 
+the child class __init__() method is necessary to ensure that the parent class's __init__() method is also called during object creation.
+When you create an instance of the child class, the __init__() method of the child class is called first. If the child class does not 
+call super().__init__(), the parent class's __init__() method will not be called, and any instance properties that the parent class 
+initializes in its __init__() method will not be set.This means that if you try to access any instance properties of the parent class 
+that were not explicitly set in the child class, you will get an AttributeError because those properties were not initialized.By calling
+super().__init__() in the child class __init__() method, you ensure that the parent class's __init__() method is called and any necessary
+instance properties are initialized. This allows you to access all inherited properties of the parent class without getting any 
+AttributeError exceptions.
+
+**Note**: If you do not define an __init__() method in the child class, the parent class's __init__() method will be automatically inherited
+and called during object creation. In this case, you do not need to explicitly call super().__init__() in the child class, as it will be
+called automatically.
+
+
+Polymorphism: 
+           ---having many shapes to the same functionality 
+
+What is Polymorphism?
+--- polymorphism, which is another concept in object-oriented programming. Polymorphism allows objects of different classes to be treated as if they were objects of the same class, as long as they have the same methods and properties. This means that different objects can respond differently to the same method call, depending on their individual implementation of the method.
+For example, if you have a Shape class with a draw() method, and you create different subclasses like Circle, Square, and Triangle that implement their own version of the draw() method, then you can use polymorphism to call the draw() method on any object of those subclasses, and each object will draw itself in its own unique way
+
+NOTE:Method overriding and method overloading are both examples of polymorphism in object-oriented programming.
+
+1)Method Overriding -- Method overriding is a form of polymorphism where a subclass provides its own implementation of a method that is already defined in its superclass. This allows objects of the subclass to be treated as objects of the superclass, while still executing the subclass's implementation of the method.
+                                                                                             OR
+Method overriding is a concept in object-oriented programming where a subclass provides a different implementation of a method that is already defined in its superclass. When a method in the subclass has the same name, same parameters, and same return type as a method in the superclass, then the subclass method is said to override the superclass method.
+
+2)Method Overloading -- Method overloading, on the other hand, is a form of polymorphism where multiple methods in the same class have the same name but different parameter lists. This allows the methods to be called with different arguments, and the appropriate method will be executed based on the type and number of arguments passed in.
+NOTE:Python does not support function overloading. An error gets thrown if we implement the function overloading code the way we do in other languages. The reason is as Python does not have a data type for method parameters.BUT There are other ways by which we can implement function overloading in Python.We can achieve it by setting one or more parameters as None in the function declaration. We will also include the checking condition for None in the function body so that while calling if we don't provide the argument for a parameter that we have set as None, an error won't occur.
+
+Conclusion:In the python method and constructor, overloading is not possible.
+
+
+
+
+
+
+

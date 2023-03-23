@@ -1,0 +1,23 @@
+                                 Concepts covered
+                                ------------------
+Function Inputs:
+---------------------
+1.Positional Arguments
+2.Keyword Arguments
+3.Default Arguments
+4.Positional Only Arguments
+5.Keyword Only Arguments
+6.Variable Arguments(*args)
+7.Key_value Arguments(**kargs)
+8.Recursion
+
+In-Built Functions:
+----------------------
+1.Lambda
+2.Filter
+3.Accumulate
+4.Reduce
+5.Map
+6.Ternary operator -- It is not a function.
+
+

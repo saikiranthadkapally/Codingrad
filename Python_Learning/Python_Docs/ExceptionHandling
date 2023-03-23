@@ -1,0 +1,24 @@
+Exception Handling
+
+--- Handling Errors / Exceptions during the execution of your program
+
+--- NOTE: In Python there is no "catch" block instead it has concpet "except" 
+
+--- Try & Except & Finally
+
+--- Syntax:-
+           
+            try:
+               -- code that may raise an exception
+            except ExceptionType:
+               -- code to handle the exception
+
+
+--- We can also catch multiple exceptions by listing them in the "except" block, like this:
+            
+            try:
+               -- code that may raise an exception
+            except(ExceptionType1, ExceptionType2):
+               -- code to handle the exception
+
+

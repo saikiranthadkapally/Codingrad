@@ -1,0 +1,46 @@
+Concepts:- Discussed Till Now
+--------------------------------
+Hardware details & importance of hardware w.r.t Data science
+Numpy:
+    1. Parallel Execution
+    2. Arrays
+        1. scalar -- Normal numbers
+        2. vector
+        3. 0 dimensions -- or point dimension
+        4. 1 dimensions
+        5. 2 dimensions
+        6. 3 dimensions
+        7. n dimensions -- we have just seen "n" dimension. we also look it more in future.
+    3. Representation/Visualization of Arrays.
+    4. Array Slicing
+    5. Basic Numpy Function
+    6. Explicit Type Cast to ndarray
+
+*** Outcome from above Concepts will be:
+        -- We have to visualize atleast 3D arrays
+        -- We have to very aquitance with writing dimensions for given array
+        -- we should confirm that Numpy follows Vectorization & Broadcasting
+
+
+OpenCV:
+    1. We discussed "GPU" Execution -- Images require "GPU"
+    2. OpenCV Arrays -- it means OpenCV adopted Numpy arrays -- or Numpy Arrays
+    3. Colored Image 
+        1. channels -- R,G,B -- Every Pixel is combination of (R,G,B) values.
+    4. Preprocessing
+        1. Image Reading Format
+        2. Image Color Convertions & importance
+        3. Normalization -- Scaling --- [0-1]
+    5. Postprocessing
+        1. Color Extraction -- extcolors -- extcolors will show how many distinct or diiferent colors are there in our image -- We can also implement same function from scratch.
+        --- Assignment -- extracting distinct colors from an image.-- WE use "tuple set" inorder to get all distinct colors.For this if we add an extra decoration and by showing
+                          it neatly then it will become a library It is like what we prepared a module from scratch.Then we don't need to use the library "extcolors".
+        2. Contours for only one color --- Contours nothing but Array of points -- - Using these points we draw boarder.
+        3. How to draw border 
+    6. uint8 -- It's a datatype for Images,The importance of this is "Every element we have values inbetween (0-255).For these values we store in 8 bit only.We only store 
+                the max value upto "255" only, for every bit.Unecessarily if we give it to 32 bit type,it's waste of memory space and no use by giving an extra space to 
+                it.In NumPy we have a datatype which is supported that is "uint8".Mostly if we write any datatype for images that images will convert into "uint8" datatype 
+                only by default.For Example while we finding "Contours" last time we got "True & False" right! So, When we converted this "True & False" into "uint8" then
+                all True's will becomes "1" and all False will becomes "0's". These "1" and "0's" will store in 8-bit only not in 32-bits if  we store it in 32-bits we
+                even can't find "Contours" also.Therefore we converted thst image into "uint8" after that we found "Contours" then the Contours which we got we have drawn
+                these "Contours" on image.

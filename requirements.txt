@@ -1,0 +1,34 @@
+#***************************************************************************************NOTE************************************************************************************************
+
+#Q)What is "requirements.txt" file and it's importance in Projects?
+
+#The requirements.txt file is a commonly used file in Python projects that lists all the external packages or libraries required by the project to run properly. It's often used in #conjunction with package managers like pip to install all the required dependencies at once.
+
+#The requirements.txt file serves as a driving force for several important tasks in software development, such as:
+
+#Reproducibility: By including all the dependencies and their exact versions in the requirements.txt file, anyone who clones or downloads the project can recreate the same development #environment, ensuring reproducibility across different machines.
+
+#Collaboration: When working on a team, the requirements.txt file ensures that all team members are using the same version of each package, which reduces the chances of conflicts and makes #collaboration easier.
+
+#Deployment: When deploying a Python project, the requirements.txt file allows you to specify all the necessary dependencies and their versions, which makes it easy to install all the #dependencies in the production environment.
+
+#In summary, the requirements.txt file is a critical component of Python development that helps ensure reproducibility, collaboration, and successful deployment of Python projects.
+
+#The requirements.txt file is typically used in the context of Python projects to specify the required packages and their specific versions needed to run the project.
+
+#It is often used as a driving force for creating a virtual environment for the project. By using a virtual environment, the project dependencies can be isolated from the system-wide #installed packages and also from other projects, avoiding conflicts and ensuring that the project will run with the specified dependencies.
+
+#In summary, requirements.txt is used as a driving force for the creation of an isolated environment with the specific dependencies required by a Python project.
+
+#NOTE:We need to mention versions for each module/package "numpy==1.24.2" likewise for every package/module.Before we handover our project to other team members or anyone
+#PYTHON 3.10.7
+jupyter
+numpy
+pandas
+opencv-python
+matplotlib
+extcolors
+pyspark
+ydata-profiling    #Here "ydata-profiling" is a library
+pandas-profiling   #Here "pandas-profiling" is a library
+openpyxl           #It is a module inorder to deal with Excel related operations

@@ -1,0 +1,102 @@
+NOTE: We have so many "Image formats" by default we say "RGB" it is standard notation But in "cv2" it takes the format as "BGR" 
+Image ---
+    1. Color Images
+
+    Base colors -- RGB --- Any color is brought out from these 3 base colors which is combination of RGB only.
+
+
+    R -- [0-255] ---- 1 byte --> 8Bits --- each bite is either 1/0 -- permutations and combinations of these 8 bits are "2 ^ 8 = 256"
+    G -- [0-255] ---- 1 byte --> 8Bits --- each bite is either 1/0 -- permutations and combinations of these 8 bits are "2 ^ 8 = 256"
+    B -- [0-255] ---- 1 byte --> 8Bits --- each bite is either 1/0 -- permutations and combinations of these 8 bits are "2 ^ 8 = 256"
+
+
+    pixel == point in an image which has the output of the combination of intensities of R,G,B. the values should be in between 0-256.
+
+NOTE: The image quality is increased by increasing no.of.Pixels.and also resolution also increases.
+    pixel == (0,0,0) -------- black pixel
+    pixel1 = (255,255,255) -- white pixel
+
+    extcolors -- it is a function in library which shows the colors for images it shows values like (123,67,89) and so on for our image.
+
+image resolution === 256 * 256 -- mostly we use this resolution in our system to work on images.it is a default resolution of images we use for our course. We also use 128*128 resolution images in most of the cases we try to reduce into "128*128" but in some situations we use "256*256".
+
+
+image notation --- (height,width,#channels) -- Here "#" denotes "no.of.channels" -- 3D - because here we have 3 channels "RGB" so we say 3D image.
+
+2D image --- (height,width) -- black and white image -- we also call "gray image"
+
+2D image --- (height,width,1) -- we call it as a "gray image".
+
+NOTE:
+RGB Color Values
+Each parameter (red, green, and blue) defines the intensity of the color with a value between 0 and 255. This means that there are 256 x 256 x 256 = 16777216 possible colors.
+
+
+
+Image Operations:
+_________________
+
+NOTE:In "openCV" in doing projects we use 3 operations:- 1) Image Pre-processing 2)ML model building 3) Image Post-processing
+-- Here we discuss now 1)Image Pre-processing and 2)Image Post-processing:
+    -- In OpenCV, image preprocessing and image post-processing are two important stages in image processing pipelines.
+
+    1)Image preprocessing: refers to a set of techniques that are applied to an image before performing the main processing task. These techniques are used to enhance the 
+    quality of the image or to extract useful features from it. Some common image preprocessing techniques used in OpenCV include:
+
+    -- Image smoothing: Techniques such as Gaussian blurring or median filtering can be used to reduce noise in the image.
+    -- Image enhancement: Techniques such as histogram equalization or contrast stretching can be used to improve the contrast and brightness of the image.
+    -- Image thresholding: This technique is used to convert a grayscale image to a binary image by setting a threshold value.
+    -- Image Resizing: refers to changing the size of an image by either scaling it up or down.
+
+    2)Image post-processing: on the other hand, refers to a set of techniques that are applied to an image after the main processing task is performed. These techniques are 
+    used to refine the results obtained from the main processing task. Some common image post-processing techniques used in OpenCV include:
+
+    -- Image filtering: Techniques such as morphological operations or non-maximum suppression can be used to refine the results of edge detection or object detection algorithms.
+    -- Image segmentation: Techniques such as contour detection or region growing can be used to segment the image into different regions.
+    -- Image visualization: Techniques such as image overlay or bounding box drawing can be used to visualize the results of object detection or tracking algorithms.
+
+    Overall, image preprocessing and image post-processing are important stages in an image processing pipeline that can help improve the quality and accuracy of the results 
+    obtained from the main processing task.
+
+
+***Difference between "sliding window/kernal" and "resize" of an Image?:
+    -- Sliding window/kernel" and "resize" are two separate concepts in image processing.Sliding window/kernel" refers to a technique where a small window or kernel moves 
+    across an image in a grid-like fashion, and at each location, the pixels within the window are processed to extract some feature or information. This technique is often 
+    used in computer vision applications, such as object detection or image segmentation.On the other hand, "resize" refers to changing the size of an image by either 
+    scaling it up or down. This can be done for various reasons, such as to fit an image into a specific space or to reduce its size to save storage space. Resizing an image 
+    does not involve processing specific areas of the image, as in the case of sliding window/kernel.However, there can be some relationship between the two concepts, 
+    depending on the specific application. For example, in some object detection algorithms, the images may first be resized to a smaller size to reduce computational 
+    complexity, and then a sliding window/kernel technique may be used on the smaller images to detect objects.
+
+
+    NOTE1:Let's say if we take any image and the Operations performed on it is not done by one pixel by one pixel anytime.It always performs using "sliding window".
+
+    
+    NOTE2: Let's say We have 3*3 kernal on Image.Just imagine Our Image will be  placed on our "GPU" hardware(This phrase may be referring to the process of loading or 
+    processing an image using a GPU for faster and more efficient processing) We will do like this.But this is the reason to do resize our image into "128*128" it 
+    means we think based upon the size of our GPU or CPU.Our GPU should be able to hold the image.Now say, the our "GPU" hold that image when it holds that image we 
+    will do parallel operations on that Image by GPU instead of running on a each pixel(By taking a window we will do that or say that window to do this operation on 
+    this 3*3 in this image after that we say go side after one slide go like this again after one slide go like this way after that come down and go one by one slide
+    like this we will go on doing all these operations on 3*3 pixels on an Image).
+
+                                                                        OR
+                                                                        
+    In order to process an image using a GPU, the image needs to be loaded onto the GPU's memory. However, GPUs have limited memory, so larger images may need to be resized 
+    or divided into smaller chunks before they can be processed on the GPU. This is likely why you mentioned resizing the image to 128x128.Once the image is loaded onto the 
+    GPU, operations can be performed on the image in parallel using a kernel of size 3x3. The kernel slides over the image one pixel at a time and performs the desired 
+    operation on the 3x3 patch of pixels that it covers. This process can be repeated until all pixels in the image have been processed.                                                                    
+
+
+    --- sliding window -- search in Chrome as "sliding window operation of an gif" in image section. -- Important concept we search in chatgpt for depth knowledge.
+    --- we have to take -- window/kernel(While we write parameter names in functions in openCV we see it as a "kernel"."kernel" is nothing but "window")/filter
+    --- window/kernel/filter -- kernal sizes(Kernel size can't be even number) -- mostly we will take "3*3" only -- also it can be "5*5" -- also "7*7".
+
+
+    NOTE:Here we have that "resizing" operation right! for that operation we are going to give is "kernel".Here We can do any operation on the image sliding window
+    kernal operation will be goes on....Based on what "kernel" we give Here we have some standard values in "kernel" operations like resize with this values only.so
+    likewise the values which we use for "resize" based on those values we have couple of names for "resizing" like "interpolation" resize, "side by side" resize etc..
+    we have some names likewise.These are like some techniques each and every one is a "technique".If we apply this technique it will be going to resize in this way
+    and If we another technique it will be going to resize in this way like so on..In relation to that we have different different parameters on that like let's say 
+    "kernel"  like this parameters will decides that standards.When will that be useful means Based on the image and or Based on the domain of the image and or
+    Based on the model that we are going to build on and or That model is what type of model we are going to build and or Based on That model works on what type of 
+    images.Based on that thing we have to process the image or resize the image.

@@ -1,0 +1,96 @@
+                                                            Introduction to Pandas
+                                                            _______________________
+**************** We use Pandas for -- EDA/Feature Engineering -- In our course we deals with Structural Machine Learning*************************************
+
+NOTE: It is a subcourse in our "Full stack Datascience" course. Below are the full introduction for this sub-course."Khanacademy.org" is good for Statistocs and Probability.note- "Data Engineer" it deals with "Automation" mostly and also a good future scope most of the 50-70% are in this role.In this EDA or Feature Engineering is very impoetant for "structural ML" and also for "NLP". Cocepts and advantages and disadvantages in Feature Engineering is very very important for buiilding even a simpkle basic ML model.
+
+After completing our "Datascience" course We are apllicable for Job Roles they are:
+    1) ML Engineer
+    2) Datascience
+    3) Data Analyst
+    4) Data Engineer -- we also applicable But we also learn some other tools openly and also have knowledge on this "Datascience" then we are applicable.
+    5) Normal Python Developer
+    6) Python Full stack developer -- Bcs we also do "Flask" Project in until our course completes.Basically it will be "Django" but time concerns 
+                                      we do it in "Flask" it is lower version as compare to "Django".
+    7) EDA Developers -- Basically we call Datascience people as "EDA" developers.
+    
+
+
+NOTE:
+ML Engineer:-"NumPy & openCV" are tools Using these tools how we can build our Ml models and how we will do it perfectly w.r.t mathematical or in performance wise and how we will do optimize it and how we applied vectorization and parallelism all these are discussed in perspective of a Tools till now.But when it comes to "Pandas" it is completely for analytical purpose."Analytical purpose" in the sense Before we talked about "doing purpose " it means we must do it and by going on doing it We build our  model those people are called "ML" Engineers.The ML Engineers work is to Undertsand Numpy,opencv,tensorflow or Core tensors in tensorflow in more depth and was building  ML models by understanding all those and doing properly which we call them as a ML Engineers.To understand our ML models also We require this "Datascience" and also we need some sort of techniques in Statistics like "Distribution Curves","Tests" etc.. all these are very very importanyt inorder to build ML models 
+
+Datascience-:But Now, we are talking about "Data science" this have a term at outside we ara also distingush in same as outside,Here "Datascience" means Not in terms of
+ML model first of all We understand the data which we were given it mean how we are going to analyse the data in perspect of getting something out of the "Data" this we called as "Datascience" all these things done by datascience people and this whole thing from now, until we complete our statistics we call all these things as "Data Science".This Data science term is Completely different from outside.Here we do "Mental visualization" of data.It is a Core Datascience.More or less completely analysis purpose.
+    --- Datascience Educational Requirements:
+            -- MSc Statistics and then MBA
+            -- R Programming -- It should be a Primary.If we have "MSc Statistics and then MBA" or not have "MSc Statistics and then MBA".
+            -- " R Programming " is also same as "Python" not a new language whatever analysis or EDA We do in "Python" by using pandas same we do in " R Programming".Architecture and Performance Everything will be same But in "R Programming" it is familiar and
+            Easy.Those who doesn't learnt coding this "R" will be Easy.
+
+
+
+
+Pandas ---  is also called --- Exploratory Data Analysis & Statistics -- Pandas is a major tool one should definitely learn as a Data Scientist and as a ML Engineer and also 
+as a Data Engineer. Pandas is a common tool.If we get the "Data" where we get this term then we will use Pandas -- It deals with "Structural Data". Pandas & SQL deals with 
+managing and querying with structural data.
+
+
+
+Data --- is a raw bytes
+Infromation --- Getting some insights or knowledge from Data
+Analytic Data or Descriptive Data --- From Information we will get more insights from Information.
+Predictive Data --- from same Information We not only analyse and also find the Patterns from it --- finding "Patterns" --- Expectation or Prediction from these Patterns
+Prescriptive Data --- Suggestions
+
+
+
+
+EDA(In Datascience): and/or it is called as Feature Engineering in Machine Learning peoples will use this term.
+    1. Pandas Analysis
+        1. It deals with Smaller Datasets like around 12MB, 13MB, 15MB, Maximum 20MB Data they handle Pandas analysis and pandas framework will handle properly and with efficiently.
+        2. Easy Understanding
+        3. Most of the SQL Operations Supported(Most of Pandas operations similar to SQL operations not in syntactically exact)
+        4. Experimental & Learning Purpose
+
+NOTE: If we learn "Pandas" only we then understand "Spark" Easily.We can also do in Amazontool,Azure datafactory, or else in own distributed systems but here we need to learn how to write code.like "CUDA" layers in this we have underlying framework like "Spark' framework it will take care backend operations.Data analysis means not only "Pandas" we also use below "Spark Analysis" concepts and tools also.
+    
+    2. Spark Analysis: NOTE:In our course we don't learn it
+        1. Almost Big Datasets like 20 GB of Data or like 1TB of Data -- we can't analyse in our computers -- For this we need cluster of nodes or computers with minimum 64 and 128GB RAM in each node -- We need large systems with a cluster.
+        2. We use tools and langs like "PySpark(PythonSpark)" , Scala(It is fastest lang in performance compare to other langs,It is used in machine critical applications), Java, SparkSQL. 
+
+
+
+Data:
+NOTE:In SQL the data in database So, accessing and querying of data will have some latency.Whereas in Pandas we load our data which in disc as a buffered storage in 
+RAM therefore we have higher throuhput and faster performance as compare to SQL.Most of the operations we perform in SQL that will be done in "Pandas" like querying 
+and managing the data.It is the reason we use "Pandas" as a standard framework for "Datascience".Pandas is used instead of SQL for EDA Bcs it gives fasterness as it
+stores data in RAM and performs operations very fastly.
+    1. Structural Data
+        1. Organized Data Examples like CSV(Comma separated values), TSV, EXCEL sheets,  RDBMS Tables etc..We use "Pandas" for structured Data.In this SQL is also a tool
+        or lang to do EDA.
+NOTE:Here we won't do operations on Unstructured or Semistructured Data. Unstructured or semi-structure Data these two comes undes "Data Engineering".
+    2. Semistructural Data
+        1. XML, JSON, CSV, For separate analysis on this data "MangoDB" is also important it will be used in EDA.Our Email is also treated as semistructured Data.It also
+         Structured but also have options in it -- It is partially structured.
+    3. Unstructural Data
+        1. Generating Rapidly from every systems and mobiles
+
+*********NOTE*********: We can use "AWS" Services,tools etc.. for Data Engineering(Automation),We can Build ML models(DecisionTrees,LinearRegressions,RandomForest,Etc.)
+Automations and Deploy it into Cloud Platforms(Due to this we access any time and use) if we Provide any type of Data to that ML Automation Modules It generates Output 
+Results Based on that Which ML model is giving more accuracy and performance Based on that we can choose our ML models for our Data.
+
+Also, AWS is Providing Subsidies for Start-Ups it will be so cheap for Start-Up companies inorder to access their Services.Suppose if our Company is registerd in India 
+as a Start-Up for that Companies AWS will gives some Subsidy Points by giving that most of the Start-Ups Prefer AWS for their Works.So,If we have Knowledge on AWS 
+by Learning Tools We get more prefernce and also very helpful.
+
+Also, We can do Data Analysis using "AWS" tools and services and also Build infrastructures to provide Services etc... From DSata Enginneering to ML Engoineering tasks
+We can Perform and also there are many Tools like CDK etc... We need to learn inorder to build any Automation Modules and We also Use API's of AWS inorder to access
+their services etc..It is very Useful Platform to do Data Engineering tasks etc... 
+
+
+
+Data Science, Machine Learning Engineers, Data Analysis, Data Engineering for all these we need EDA is a common -- we use Python, Pandas , Matplotlib/seaborn, Numpy, YData_profiling as a common tools and langs.
+
+
+
+

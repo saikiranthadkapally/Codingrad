@@ -1,0 +1,96 @@
+Introduction to Data Science Libraries:- Coming to Datascience/ML it is a completely mathematical problems(Advanced mathematical problems) Which involves Matrices,Linear 
+algebra,differentiation etc...To compute these mathematical problems we require some pre-written code which will help us to build models easily with hardware compatibility
+and make our code to run faster and with less space called as in-built Libraries.
+    1. Numpy
+    2. OpenCV -- CV2 -- These both are same
+    3. Pandas
+    4 .Tensorflow - Keras -- Keras is a first "initial open source" later it combined to Tensorflow.
+    5. PyTorch
+    6. MXNet
+    7.Scikit Learn
+    8. Caffe -- Caffe is an old library nowadays most the companies or people are not using it.
+
+Data Science (Machine Learning, Artificial Intelligence, Deep Learning) --- for all of these solutions  will be higher order mathematical problems.
+
+--- The solutions for these  higher order mathematical problems will be converted to graphical execution thus that  graphical way of representation will make use of 
+    parallelism in our systems.
+
+    1. Example:
+        a = 1
+        b = 2
+        c = a+b
+        d = b+1
+        e = c+d
+
+NOTE: THese are just concepts we can't do programmes for these below While we using the "Caffe" below all these are used to handle while we are used to write programmes in 
+      C,C++.
+    2. Parallilized execution
+        --- Mathematical Statements should be clustered into clusters
+        --- For Each cluster of statements we can have a graph notation
+        --- Parallel execution is completely based on registers CPU registers or GPU registers Using these registers we have 2 benefits
+        --- 1. CPU Latency will be  reduced 
+        --- 2. Graph Execution -- 1st, 2nd and 3rd generation CPUs doesn't have capability of graph execution mostly present CPUs have capability of Graph execution.
+        --- 3. New Hardwares they are -- GPU, FPGA, TPU - These are hardwares which are having higher no.of.registers and higher no.of.processing cores but CPU and GPUs are  
+            mostly general purpose semiconductors chips where are FPGA and TPUs these are special purpose functions only  semiconductors chips completely meant for parallel execution and using registers and cores in a parallel and try to execute the things in very faster way.So these are very specific these two FPGAs and 
+            TPUs.So higher parallelism is involved here.
+        These are the details of the hardwares and their parallelism.
+
+1.  NumPy --- is a parallel executed system/software library But it only only supports on CPUs it won't Support on GPUs and TPUs. It is the disadvantage of NumPy.It has     
+          parallelized execution or graphical execution will be there registers usage will be there and everything will be there as above like clusters, parallel execution 
+          Latency reduced, graphical execution etc..For all these backend implementation will be done by "NumPy" for our written code.Like Matrices multiplication opeartion  using normal way and done same operation using by NumPy is different that NumPy will convert our code in such a way that it will be parallelized in CPU only.If we
+          have GPU or other it won't handle.
+          
+2. Tensorflow, PyTorch, MxNet --- we can write programs or Machine Learning problems in such a way that that can utilize the power of hardware using these Libraries.
+        --- Normally In most Gaming laptops we have 4 GB of RAM it will not enough Our Machine Learning Problems atleast needs 12 GB  of RAM in a GPU not in normal
+            RAMs.It need minimum 12 GB of RAM.We can also do it with 4GB RAM also But  we can Run only small problems But we can't run large problems with 4GB of RAMs
+            in GPUs.
+
+                                                                IMPORTANCE OF HARDWARE 
+                                                            _______________________________
+                                                            
+3. Machine Learning Engines --- Like we have interpreter to convert our code into CPU understandable language in same way.We need to have some sort of one more layer on top 
+of the interpreter which is called basically "Machine Learning Engines" -- These Machine Learning Engines such as CUDA will do some sort of optimization like graphical 
+representation Bcs in Normal graphical representation interpreters have less no.of. registers based on that only our graphs are defined But in GPU we have 200 and more 
+registers Suppose if we run some code which uses 20 to 30 registers in normal CPU in same way we use same no.of .registers in GPU as in CPU.But we have separate algorithms 
+to run with same no.of.registers in GPU these algorithms will be written in CUDA it means that the collection of algorithms is in CUDA.CUDA will covert our code in such a 
+way that it will be executed on our  GPU based on our GPU specifications with higher performance.For TPU again some more engines we have to install. These engines we have to
+install If we have GPUs in our system If we have GPUs in our systems we have to install CUDA like we have different CUDAs based on Libraries like Tensorflow CUDA for 
+Tensorflow, PyTorch have separate CUDA and We have separate CUDA for MxNet.We have to install these things if we have GPUs and  parallelize our written code on 
+GPUs.
+
+--- Number of cores depends and No.of.registers also  depends on parallel execution based on these two things only our interpreter will works mostly(it means graphical execution).Let's say our 
+NumPy will do based on our processor only it  Reads our processor properties first ok these are the properties ok  I have to make "Graphs" in such a way that's how it works 
+after Reading our processor.
+
+--- Every process is called main thread we don't have threads concept here in parallel or graphical execution. That main thread  will be executed in such a way that we will 
+get higher performance low latency(delay). IN GPU,TPUs we have many no.of cores as compare to CPU like 128 CUDA cores etc.. High power graphical cards used in Gaming Laptops.
+
+NUMPy -- deals with Caluclus, Linear Algebra, Matrices, differentiation all these operations we need to write in "NumPy".We call Matrices as NumPy Array.Matrices is nothing
+but NumPy Array.
+
+OPENCV ---- Deals with Images --- Importance of GPU is More
+
+PANDAS -- When we are dealing with Files like for Json Files we have Json Libraries and  We use "CSV and Excel" highly used files from many sources we get these "CSV and 
+Excel" data files in companies. So, Inorder to process and  manage those kind of  files  in an efficient way as a dataframe.Mostly we handle with "CSV & Excel" Files.Using 
+Pandas we store data Inmemory process in very efficient way and process it will be done automatically instead of doing in our own way.
+
+Matplotlib --- To plot mathematical/statistical graphs
+
+Tensorflow, PyTorch, MxNet --- For Example we want to build a Machine Learning Model.We can built it using Tensorflow,We can built it using PyTorch,We can built it using
+MxNet for same Model.PyTorch was invented by Facebook, Tensorflow was invented by Google, MxNet was invented by AWS.Each library has some advantages in their own architecture
+Each has it's own architecture copyrights so no other Libraries can use their architecture. --- These are mostly Graphical Executed Frameworks --- CPU, GPU
+USES:
+1. PyTorch --- When we use PyTorch we will have Higher GPU Throughput.We will use GPU more.PyTorch Architecture is designed in such a way that.In CUDA Layers PyTorch is highly
+has highly Optimized.It has it's own architecture copyrights so no other Libraries can use their architecture.We have PyTorch Models or PT Models.
+
+2. Tensorflow --- Tensorflow is meant for Learning Ofcourse we are building models in Tensorflow only So, Easy to learn, Easy to get acquaintance with ML concepts
+and all we can go for Tensorflow.Its very easy even without understanding backend also we can easy to learn.Even if we watch 10 minutes videos of linear ligression 
+problems we will understand easily.We are definetly convinient with that we can understand it easily.We can understandthe code easily it is the advantage of
+Tensorflow.We have many Models in Tensorflow.
+
+3. MxNet -- MxNet will generate a model in a ZIP File.
+
+NOTE: Models -- Model generation is nothing but parameters or It's a function like "F(X) = MX + C".
+
+
+

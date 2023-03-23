@@ -1,0 +1,46 @@
+Till Now We Discussed:
+Statistics:
+    --- Attributes
+        1. Numerical Attributes
+            NOTE:We need not to go in deep for these "Ratio-Scaled" & "Interval-Scaled" just understand the concept for now
+            1. Ratio-Scaled -- Age -- It can be performed "multiplication" & "division" 
+            2. Interval-Scaled -- Temperature -- K(kelvins) -- We can perform addition,subtraction Except "multiplication" & "division"
+        2. Categorical Attributes -- These below are interchanged based-on the context or situation given
+            1. Binary Attributes
+            2. Ordinal Attributes
+            3. Nominal Attributes
+
+    --- Distribution
+            1. Normal Distribution
+                1. Skewness(Right-Skewed/Left-Skewed)
+                2. Kurtosis
+            2. Uniform Distribution/Balanced Distribution(Balanced Data) -- Categorical Data/Attributes it should be Uniform Distribution only -- then our ML is unbiased.
+            3. Imbalanced Distribution
+
+Featuring Engineering Project -- (FEP)
+    1. Feature Importance
+        1. Numerical features
+        2. Cat features
+        3. Balanced Data/Imbalanced Data(We have to see Data Distribution)
+        4. Zeros are populating/Not
+        5. Same Values
+        6. Outliers
+        7. Duplicates, etc.
+        8. Coefficient of Correlation -- R 
+
+Project Code
+        1. project Folder Heirarchy
+        2. Dependencies/Modules -- PATHS Setting, Shell Scripting
+        3. Utilities 
+            1. Read Utils
+            2. Process Utils
+            3. Visual utils 
+
+Implementation Strategy -- For our Module/Project
+    1. Efficient in terms of
+        1. hardware -- Here we are using "Pandas"
+            1. In memory Processing -- Dataframes
+            Disadvantage -- doesn't scale for bigdata in real-time industry in Pandas 
+    2. Scalability 
+            1. Spark -- Used to handle Scalability
+    3. Availability

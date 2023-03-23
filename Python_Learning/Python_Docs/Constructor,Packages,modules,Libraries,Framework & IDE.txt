@@ -1,0 +1,184 @@
+                                     **Constructor,Packages & modules,Libraries,Frameworks & IDEs**
+                                     _______________________________________________________________
+
+
+Packages:-A "package" is a folder under this many files are created with ".py" extension which are called "modules".
+          Packages are mostly defined by creating a file "__init__.py" under the each folder.A package is a 
+          collection of related modules or libraries that are packaged together for easy installation and use. 
+          Packages often contain multiple libraries, documentation, and other resources needed to use the libraries 
+          effectively.
+
+Modules:- A "module" is a file under the package which is created with ".py" extensions.A module is a file containing
+          Python code that defines a set of functions, classes, or variables. These modules can be imported into 
+          other programs to use their functions or data. A module is typically smaller than a library and contains a
+          specific set of functionality.
+
+Library:- A library is a collection of pre-written code that can be used in other programs to perform certain tasks 
+          or functions. These libraries can be accessed by importing them into the program and calling their 
+          functions as needed.A library, on the other hand, is a collection of related modules that are designed to 
+          work together to provide a larger set of functionality. A library may include several modules, and often 
+          provides a higher-level interface to the functionality than the individual modules provide.
+
+          A Python module is a file containing Python definitions and statements, such as functions, classes, and 
+          variables, that can be imported and used in other Python code. Modules can be organized into packages, 
+          which are directories that contain one or more modules and a special __init__.py file that tells Python 
+          that the directory is a package.
+
+          Libraries can also include files that are not Python modules, such as documentation, examples, and 
+          configuration files. These files may have different file extensions, depending on their purpose. For 
+          example, a library might include README.md for documentation, requirements.txt for specifying dependencies,
+          or .yml files for configuration.
+
+          So, while Python libraries are not defined exclusively by their file extensions, the .py extension is 
+          commonly associated with Python modules that are part of a library.
+ 
+_____________________________________________________________________________________________________________________
+**NOTE:-**In summary, a module is a single file containing code, while a library is a collection of related modules 
+          that provide a larger set of functionality and also sometimes libraries are smaller units of pre-written 
+          code, while packages are larger collections of libraries and other resources.
+_____________________________________________________________________________________________________________________
+
+
+We should talk about "custom packages" that are basically being used.Basically,Each project has a "common package".
+most of the big projects that is industrial projects commonly have the "common package,utils package, tests package,
+files package(In this all we store files like csv,json before/after we execute the results or data etc..) and source
+package,where the source package is the main package means that it refers to the code package.So,these are basically
+the folders used for every project.Packages are:
+
+_____________________________________________________________________________________________________________________
+**NOTE:-** Here "common, src, tests, utils" these are created as a sub main folders(which called as "packages") Under 
+           Main Folder which is "OPPS" if we need we can also make this Main Folder to Main Package by creating a 
+           file "__init__.py".Every folder is linked to eachother for example in this "config.py or libs.py" if we 
+           take this "config.py" it will be needed to "src,tests and utils".In this each folder(package) contains 
+           particular files(which are called "modules"). which is stored with ".py" extension.In this each file or 
+           module which contains "functions/modules or classes".Nowadays,the python interpreter automatically 
+           consider these folders as a packages and handles or controlls the folders.In olden years under each folder
+           explicitly we must create a file as "__init__.py" in order to tell the python interpreter that it is a 
+           package.For a good practice we must write a "__init__.py" file under each folder inorder to make it a 
+           package.
+______________________________________________________________________________________________________________________
+
+General Structure:
+
+OOPS
+  __init__.py
+  1) common
+     __init__.py
+     1)libs.py -- functions/methods
+     2)config.py -- functions/methods
+     3)config.yaml -- functions/methods
+     4)config.json -- functions/methods
+  2) src 
+     __init__.py
+     1)logic.py -- functions/methods
+     ----------
+     ----------
+     ----------
+     etc.....
+  3) tests 
+     __init__.py
+     1)test_logic.py -- functions/methods
+     ---------------
+     ---------------
+     --------------- 
+     etc.....
+  4) utils
+     __init__.py
+     1)dbUtils.py -- functions/methods
+     2)pandasUtils.py -- functions/methods
+     3)timeUtils.py -- functions/methods
+  5) files
+     __init__.py
+
+
+
+                                               **Constructor**
+                                              _________________
+
+2) Constructor:-A constructor is a special method in Python that is called automatically when an object is created. 
+                It is used to initialize the object's properties or attributes. The constructor has the same name as
+                the class and is defined using the init method.In Python, a constructor is a special method
+                named __init__() that is used to initialize the state of an object when it is created. The __init__()
+                method is called automatically when an object is created and it's responsible for initializing the 
+                instance variables of the object.
+   
+  Example: class Car:
+                  def __init__(self, make, model, year):
+                  self.make = make
+                  self.model = model
+                  self.year = year
+
+                  def print_car_info(self):
+                          print(f"Make: {self.make}, Model: {self.model}, Year: {self.year}")
+
+           # create an object of Car class and pass values to the constructor
+           car1 = Car("Toyota", "Corolla", 2021)
+
+           # call the method of Car class to print the car info
+           car1.print_car_info()
+              
+  Output:- Make: Toyota, Model: Corolla, Year: 2021
+
+  In the above example, we have defined a Car class with a constructor that takes three parameters: make, model,
+  and year. When we create an object of the Car class, we pass values to the constructor to initialize the object's 
+  properties. We can then call the print_car_info method to print the car information.
+
+
+                                                  **IDE & Framework**
+                                                 ______________________
+A framework and an IDE are two different tools used in software development.
+
+A framework is a collection of pre-written code and libraries that provides a foundation for building software
+applications. A framework provides a structured approach to software development by defining a set of rules, best 
+practices, and guidelines that developers can follow to create high-quality applications more efficiently. A 
+framework provides a skeleton structure for an application and is designed to be extended and customized to meet 
+the specific needs of the application.
+
+On the other hand, an IDE (Integrated Development Environment) is a software application that provides a 
+comprehensive set of tools for software development, including a code editor, debugger, build automation tools,
+and project management features. An IDE is used to write, test, and debug code in a single, integrated environment.
+IDEs are designed to streamline the development process and increase productivity by providing developers with all
+the tools they need to build software applications in one place.
+
+Here are some examples of popular frameworks and IDEs:
+
+Frameworks:
+___________________
+Django (Python)
+Ruby on Rails (Ruby)
+React (JavaScript)
+Spring (Java)
+Laravel (PHP)
+
+IDEs:
+_________________________
+Visual Studio (Microsoft)
+Eclipse (Open-source)
+PyCharm (JetBrains)
+IntelliJ IDEA (JetBrains)
+Visual Studio Code (Microsoft)
+
+As for which one is better, it really depends on the needs of the project and the preferences of the developer. 
+A framework can be a powerful tool for building software applications, but it requires some level of expertise 
+and can have a steeper learning curve than an IDE. An IDE, on the other hand, provides a more user-friendly 
+environment for writing and debugging code, but it may not provide the same level of structure and guidance as a
+framework. Ultimately, the best tool for the job will depend on the specific requirements of the project and the 
+skills and experience of the developer.
+
+__________________________________________________________________________________________________________________
+**NOTE:-** a framework is not a subpart of an IDE, and an IDE is not a subpart of a framework.
+__________________________________________________________________________________________________________________
+
+An IDE is a software application that provides a comprehensive set of tools for software development, including a 
+code editor, debugger, build automation tools, and project management features. An IDE is used to write, test, and 
+debug code in a single, integrated environment.
+
+On the other hand, a framework is a collection of pre-written code and libraries that provides a foundation for 
+building software applications. A framework provides a structured approach to software development by defining a 
+set of rules, best practices, and guidelines that developers can follow to create high-quality applications more 
+efficiently. A framework provides a skeleton structure for an application and is designed to be extended and 
+customized to meet the specific needs of the application.
+
+In other words, an IDE is a tool that helps you write and manage your code, while a framework is a tool that provides
+a foundation for building your application. An IDE and a framework are both important tools in the software 
+development process, but they serve different purposes and are not directly related to each other.

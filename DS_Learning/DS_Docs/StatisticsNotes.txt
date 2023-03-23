@@ -1,0 +1,334 @@
+****NOTE****: These are the Basics we have to follow before starting our "Statistical Concepts" Or when we need to take "Statistical" course. We also have open "M.sc"
+              in statistics.We have an availability and also most of the companies are also supporting this we also get Reiumbursement and also it is like a fun course.
+              Data Scientist will mostly do the "Structural" Data analysis only they won't come computer vision Or they won't do any other stuff,Machine Learning models 
+              and buildings and all they will only do analysis of the Data.how that is Data and what happens to the Data and how much it will effect the Data these are
+              the most concerned things.
+
+Structural Data: We have talk about the rows and columns
+    - Rows/columns
+    - Rows --- Can be called "Examples/Observations/Instances/Fields
+    - Columns --- Can be called "Features/Attributes/Series(In Pandas we call it "Series" for column)"
+
+Statistics of Data: We will have major thing as "Measures of Central Tendencies" 
+    -  Measures of Central Tendencies
+
+Basic Statistical Summary of the Data:
+Central Tendency/Features: Central Tendency is nothing but the data where "The data is Distributed Completely" 
+ We have terms for this "Central Tendency". This terms are based on the type of the Data as follows:
+    - Numerical Data:
+        Note:In future we will get more metrics with theoritical explanation which will be more robust and robust by Statisticians.Such type of metrics we should able
+             to know what does it does it is important to know instead of byharding the metric formulae what it is doing and what we are getting out of it.So,here from
+             "Geometric mean" it's robustness is the major thing Bcs frommedian the Geometric mean will give us very good result.Basically,it is not in "Pandas" we have
+             to get it from "scipy" library."scipy" library is a very good library Mostly relates to "Statistical functions" it has mechanism to execute the formulae 
+             very quickly.It's good to learn some of the "scipy" stats functions.In "scipy" stats is module in that we have plenty of good functions.If we have free 
+             time then we once look into it.
+
+        Central Tendencies: For "Numerical Data" the "central Tendencies" are -- "Mean and Median and Geometric Mean" -- We have another metric which we missed it is 
+                            called -- "Geometric mean" -- It is the highly robust metric which will proven therotically "Geometric mean" will consider the some of the 
+                            outliers and remove the remaining outliers.So, Geometric Mean is more robust compare to the median again.
+            - Example: NOTE: When we taken any example it is which we are defined and it changes based on our Data and context
+                1. Age: [1,1,1,10,12,13,10,12,18,18,18,25,25,25,25,25,30,30,30,45,40,45,45,50,55,60]
+                    -- children -- 3
+                    -- Youngsters -- 5
+                    -- Medium Range -- 11 -- Central Tendency == # no of instances/examples/rows --- Range
+                    -- Senior Citizens -- 4
+                    -- Super Senior Citizens ---- 3
+
+                    Central Tendency: are defined for this Example in a way that:
+                        --- [18-30] - this one kind of "Central Tendency" -- in terms of "Age" group here "Medium Range" 
+                        --- 11 - this another kind of "Central Tendency" -- in terms of "Rows" here "11"
+                        We can Measure the Central Tendency In these 2 terms like Statistically.But if we want to caluclate it mathematically face sort of struggle
+                        we can't do that Everytime time we need to write this way and we need to write whole the list and we have to find out these manually Or using
+                        Program that for these 2 things as our "Central" Tendency measurements in numbers.If we don't want to do this we have other "Tendencies" like
+                        --- Mean --- Mean is a mathematical formulation will give us "mean" of the whole data which can also be treated as a "Central Tendency"
+                                 --- sum of all values/total number of values
+                                 --- NOTE:Mean is highly sensitive to outliers Oreven odd dataa(different from others).It means it doesn't works for Outliers  Or Odd
+                                          data.It means Suppose,In real-time the values will be misentered like if we take an above example for "Age" generally
+                                          our age will be max upto 100 if a person or "Data generation machine" entered data or values incorrectly then the "Central
+                                          Tendency" value will become change unexpectedly then our graph distribution will also changes then our "mean" doesn't
+                                          handles.So,Inorder to handle such things we always use "Median" Bcs in real-time we can't have permission to see the data
+                                          so we don't know what data inside it is Unless and until we know the data properly then only we can use "Mean" otherwise
+                                          we can use "Median" always.
+                        --- Median --- "Median" is used to handle "Outliers/Odd values" -- ((n+1)/2 + ((n+1)/2)+1)/2 for even values (Or) (n+1)/2 for odd values
+                            --- Sort the values in list first --> find the middle number then that particular number is called "Median" Number
+                            --- median is 25 in this example
+                        --- gmean --- "Geometric Mean" The formula for this as follows:
+                            --- x1,x2,x3,....--->Here "x1,x2,x3,.." are called "Examples/Rows" where x1 is a row and x2 is another row and x3 is another row then
+                            --- "gmean = sqrt(x1*x2*x3...)" where "*" represents "into" which will give us high robust to "Central Tendency".Mostly we can also 
+                                consider "gmean" while developing our applications.
+                            --- gmean considerations/pre-requisites
+                                1. values should not be null
+                                2. zeros should not be there
+                        NOTE:When we have "null" values inside our geometric mean we will get "nan's" which is "not a number".So,we replace some of the values with 
+                        "zeros" Or "nulls" this is the reason we don't use mostly in Pandas.But it's worth to use "gmean".
+
+            --- Alert: This also we should do only for "Numerical columns"
+            Where "ydata_profiling" will not give this alert We should only write this here.we have to find some alert Here.we can write some function in
+            our project saying that:
+                    if  abs(gmean-median) is 5:
+                        there are no outliers
+                    elif there is high difference:
+                        there are outliers
+
+            --- Alert:
+                    if abs(max-median) is large:
+                        maximum is an outlier
+                    else:
+                        data is proper 
+
+                        ## Finding mean in time complexity --- O(n)
+                        ## Finding median in time complexity --- O(nlogn) -- Basic sort algorithm will take (nlogn) like Merge sort, Heap sort,Rank sort etc..
+
+   -- Categorical Data:
+        Central Tendencies: For "Categorical Data" the "central Tendencies" are -- "Mode"
+        -- NonImportantNominal Attributes / ID Columns / Index Columns --- There is no use of finding "Central Tendency" for this.Ofcourse we discard these Attributes.
+                                                                           Even we need not do any Statistical Analysis.
+        -- ImportantNominal/Binary/Ordinal Attributes --- These are the our focus of interested Attributes.We can't find mean Or median something like that we use "Mode"
+            --- Mode - Most repeated category -- It means which has an influence on the overall summary of the Data,which is influencing that is our point of interest.
+    NOTE: In order to find any column as which type of category.We can use our Basic Feature Module "Feature Engineering".It gives the results in the form of 
+          "Statistical" approach.Even though we doesn't come to conclusion.Bcs,No model is "100%" accurate Bcs,we have just built the model based on some certain 
+           Rules and conditions.We can also analyze the data even if it provides output as "Statistically" Whether it is important feature Or not.And also If we 
+           require we can also approach to Domain Expert.
+           ****SUB NOTE****:If the Data(columns/Features) is Improper and also if it has most more number of "Nulls" and less number of "Non-Nulls" are there.Even 
+                            though,there is no "Default" value to setup for the "NaN" values Or "Null" values even though after,So much Or Deep Analysis.So,In that 
+                            situation we are not even clear about the Data.So,we are not sure about the particular column.So,we can directly "Discard" it(column).
+                            This is done in where there is no "Machine" critical problems In-real time.If it is "Machine" critical which we can't perform Using 
+                            our own analysis by "Statistically". 
+
+ In addition to those we have
+    Advanced Central Tendencies:
+    Our Data have Certain characteristics those characteristics can be depicted through below these Numbers called Statistical Techniques and describe how it is 
+    distributed and what type of graph it is based on these "Statistical Techniques".with tose numbers we can depict what kind of distributed Graph it is.  
+        - Dispersion
+          We just find "Skew" & "Kurtosis" Score in Google as of now no Idea
+            - Skew Score
+            - Kurtosis Score
+        - Standard Deviation
+        - Variance
+        - Range
+        - Boxplot
+        - IQR(Inter Quartile Range)
+    NOTE: With these measurement we can analyse our data.At last It's all about how we are analyzing the data therotically is important rather than Numbers.how we 
+          are seeing it "Visually" is more important.
+
+    Graphs:We have some graphs in "Advanced Central Tendencies".In above "Dispersion"," Standard Deviation","Range","Boxplot","IQR" does have the "Statistical values"
+           like "Standard Deviation","Variance","Kurtosis" etc.. are in a set of Range Based on this "Range" we will decide that particular graph is called either
+           "Normal Distribution  Graph" Or "Binomial Distribution Graph" Or " Uniform Distribution Graphs" Or "Gaussian Graphs".It means the "Statistical values"
+           like Standard Deviation,Range,Boxplot,IQR for all these values or numbers which we going to discuss if they have a set of "Range" of values then that
+           particular Graph is treated as "either Normal Distribution  Graph Or Binomial Distribution Graph Or Uniform Distribution Graphs Or Gaussian Graphs".
+    --- Normal  Distribution Graphs
+    --- Binomial Distribution Graphs
+    --- Uniform Distribution Graphs
+    --- Gaussian Graphs
+    --- Skewed Graphs
+    --- Kurtosis Graphs
+    Etc............................
+    Based on these kind of "Graphs" what kind of correlations we can do that again this correlations one more big topic to discuss.
+
+    "How the data is distributed /dispersed around the central tendency" -- it is definition for 1st three things "Dispersion","Standard Deviation","Range"
+
+    Measures of Dispersion of data:Once the data is been scattered already then we are going to measure that scatterness.whether that scattered will fit in which 
+                                   type of Graphs.The Domain specific analysis which we can do that particular Graph Or that particular scatteredness is allowed or not
+                                   not we only do it is going to be done by "Senior level expertise" in our class we only learn its Basics only.
+        --- Range:The Range will be caluclated from "Start" to "End or maximum" value.By the Range also we can decide or we can understand our particular column.This
+                  may not be a proper use of it.But we can also understand it about values.Suppose if we going to any Statistical Processsing we will take these as a
+                  a boundaries and we use it in our logic and in for loops etc..in our code.
+                -- Ex:"Age" Range of the Age Data --- (0-120) - (min,max) - It helps us indirectly
+                -- Ex:"Fare/Price" Range of the Fare/Price --- (200$-2000$)
+
+        --- Boxplot --- It is very important ****
+        Basically we have names for this they are called 
+            -- Q1 -- where "Q1" is 25th percentile
+            -- Q2 -- Median -- It also called "Central Tendency" value
+            -- Q3 -- where "Q2" is 75th percentile
+        NOTE:Betweeen "Q1 to Q3" where our data is largely or mostly distributed
+
+        IQR ---  Q3-Q1
+
+
+        ****Basically,we have a fixed RULE in statistics -- If the data is in "Normal" Distribution --- which is the desired distribution for data for our analysis 
+                                                         --- Bsically,the STD(Standard deviation ) == 1.96 then 95 - 100% of the data around the central tendency(mean,
+                                                            median whatever it may be) it is a central tendency.This is very desired Data & which is going to be useful
+                                                            for most of our Analysis.
+
+
+Correlation:
+
+    Relation between attributes 
+    --- n*(n-1) no of permutations of correlations we have  -- This is an -- (np2)
+    --- where 'n' is the number of attributes/Features/columns/etc...
+    --- Challenge -- This challenge is "NP-Hard problem/DP(Dynamic Problem) problem
+        numerical == (Interval scaled, ratio scaled)
+        categorical == (binary, ordinal, nominal)
+        Combinations -- 5*4 = 20 combinations
+        you have to find the for particular combination types? -- It means suppose we have given a combination like "Age & Embarked".you have to find that what is an
+                                                                  "Age" column is an "Interval" scaled Or "Ratio" scaled & what is an "Embarked" column is an "Binary
+                                                                  column" Or "Ordinal column" Or "Nominal column" How you will find that 1st question that is even an
+                                                                  NP-Hard Problem.But when we give a this whole problem to System like as a Program then how the Program
+                                                                  will come to know that the name Or that the age is an interval scaled or ratio scaled then how you make
+                                                                  our Program to understand.We will do this Even though it is a NP-Hard Problem it means it's a very Hard
+                                                                  Problem to perform.Even though if we find that combination then you will find 
+        for a particular combination -- we have "particular correlation Formulae" we won't have for every column Or for every combination we won't have one formulae 
+                                        that will work.
+NOTE:We are talking all of those "Central Tendencies" and all Bcs of this "correlation" only Formulae.To measure the correlation we require all these "splitting" of the 
+     Data first of all After "splitting" of the Data we also need "Central Tendency" for each of the category with those values with those formula and all we will find
+     this correlations(correlation formulae).In this a basic correlation formulae very very basic one between "Numerical" & "Numerical" Attributes that is as follows:
+    It is a very basic one and only one most people will be using we Basically call or denote with "R". the formulae as follows:
+
+    Formulae -- Coefficient Correlation (R) = x1,x2  --> where x1 & x2 are the "Attributes" 
+    Let's say if we have "m number of examples/rows" then we have to write this formulae for "1 to m" rows Or values
+
+        "Sigma(1 to m) =  (x1-median1)(x2-median2)/sqrt(x1-median1)^2sqrt(x2-median2)^2" --> we have to do this for every value in every row for evbery column -- then we 
+                                                                                           will come a particular number here we will get a number this number will 
+                                                                                           always persist between === (-1,+1)
+
+        If the value R = 0 then x1,x2 are not related/ they are Independent features
+NOTE:   "If it is a "MAchine " critical application mostly in real-time industry "CORRELATION THRESHOLD = 0.95".But it's our wish based on our context & based on our 
+        data we can determine this.some of the people will put it as a "0.75" some people will do "0.8" etc.. based on their context and their Data." We are doing 
+        this Because there is no 100% sure it's an accurate caluclation given by "CORRELATION (R) score" and also there is no book it has 100% accurate and perfect
+        then why can't we restrict on the "THRESHOLD".So,the score might be a problem.the formulae might be sometimes works well sometimes not works well.So, that
+        based on our Data we can shift this THRESHOLD.Even we can shift it to the "0.05" that also works and the values which are greater than "0.05" we can assume 
+        it is also works.Bcs, the Relation formulae is not that much proper still there are Researches are going on.
+            SUB NOTE: And To find what is proper correlation and we have to work on our own research and we can also write a new answer and publish a new paper to 
+            become a Data Scientist then that is also possible.   
+        If R = approaches to -1 then we can call this as negatively related 
+        If R == approaches to +1 then we can call this as positively related
+        If we have R = abs(R) either it is "+ or -" we consider it as a "+" positive only which is nothing but "R" only is approaches to 1 then they are highly related.
+          NOTE:This approaches to "1" is an Book definition.
+
+        R > correlation threshold ---> that we will called as "related" otherwise not "Related".Even though it is positively Related or Negatively Related sometimes
+                                    concerns and sometimes not concerns.When it comes to "Linear" Regression it is concerned.When it comes to "Neural" Networks it is
+                                    not concerned Bcs the "Non-Linearity" is a functionality of Neural Network itself.
+
+    Pandas: Correlation in Pandas.We use "corr()" In-built function in Pandas to find "correlations"
+
+            ***NOTE***:Correlation is again an "NP-Hard/DP(Dynamic programming)" Problem.We can't justify Or we can't say that it's
+                    a correct solution ever.Maybe in future we get some Robust formulae Or some Robust techniques to do that But for 
+                    currently we are not sure on anythings Completely we have to analyze we have to put our minds on it.We can't prepare
+                    an "Automated" System on "Statistics" Even "chatgpt" can't replace "Statisticians".We can find "correlations" when 
+                    we take a particular Attribute either using "ydata_Profiling" Or "Pandas".Anyway we can find.
+
+            ***NOTE***:In Pandas the "correlation" is based on how it is determing different differnt types for each "Attribute" in 
+                    Combination pair Based on that it has different formulae for each "Combination" in correlation.So,the "Statistical"
+                    formulae to find-out "correlation" between the "Survived & PassengerId" In this PandasFramework is differenrt
+                    "Statistical" formulae and also same to all combinations that's why we are getting different values
+                    here as compare to "Pandas".
+
+    YDATAPROFILING: Correlations in "YDATAPROFILING"
+            ***NOTE:***: Here In "ydata_Profiling" the correlation between the "Survived & PassengerId" caluclation between these two taking
+                         as a different "Statistical" formulae and also same to all combinations that's why we are getting different values
+                         here as compare to "Pandas".
+
+            **NOTE**: The "correlations" between parameters/Attributes based on the type of that attribute the correlation is decided automatically by 
+                      the "ydata_profiling" and then that "correlation" formulae applied to those 2 columns and the "correlation" will be given to 
+                      us.It means automatically been done.Like mostly 70-80% this correlations are accurate.We can't say that it's 100% accurate but 
+                      mostly this correlations are accurate.somehow they are doing differentiating categorical and numerical and doing some stuff
+                      and then they are deciding Whether that variable is how much it is correlated with other and all it is going to tell us.
+
+NOTE: This is about correlation and it's really really very important problem and Even It's a NP-Hard Peoblem still there are Researches are going on for every formulae.
+
+
+***********************************************************************************************************************************************************************
+Tommorrow concepts:
+----------------------
+Feature Engineering: This is now we going to start "Practical Feature Engineering",Day before yesterday We discussed and talked about "Feature Engineering" 
+                     Pre-proceesing.Here what we will do it means we will first answer some question here.
+    --- what happens if the data filled or populated wrongly Or populated zeros?
+    --- what are your considerations on correlations of a particular variable for a particular permutation.?
+    --- How you will handle the situations?
+    --- What is the Importance of the Label? Like what we are going to do with that Label and what actually the term Label Is?
+    --- what is the Correlation with the Label?
+    --- Scaling of feature values?
+    --- Scaling of features?
+   
+Tommorrow concepts:
+-------------------
+Matplotlib plots:
+    plotting different plots in python
+
+Pandas different functions:
+***********************************************************************************************************************************************************************
+
+YDATAPROFILING -- CORRELATIONS:
+NOTE:We will have Supervised,Unsupervised,Semi-Supervised and Reinforcement Machine Learning.
+
+    --- LABEL: Supervised Machine Learning Uses Or Requires Labelling data.Most of the real-time projects that we do in "Supervised Learning".
+        --- Labelling data:
+    --- Correlations with label for all variables:
+        NOTE: "THRESHOLD" for Correlation again it's based on the "context".It's not based on the "Theory" Books.In theory books we have "95%". "95%" is the right 
+              answer basically.If it greater than "95%" then it is "Highly" correlated.So,that we can take into consideration and build our model that's the
+              Book definition. 
+        --- THRESHOLD for Correlation = 95% 
+                
+    ***NOTE***:Here If we see in our Example "titanic" Data is "more Non-linear(Randomness)" Bcs, Suppose If we see Or let's take "Age" column it 
+               is also highly correlated to the "Survived".Bcs,more aged people have high chances to die due to "coolness" Or "Health" 
+               conditions etc...But here the data "Age" column is "Statistically" showing that "0.15(15%)" which is low correlated.So,We can 
+               decide such type of Data has more non-linear and Randomness which is highly Recommended to go to "Nueral" Networks.
+   
+    --- Bassed on correlation scores if we find the data is more non-linear(Randomness) -- It's highly suggested to go "Neural Networks" to build a Model.
+    --- Bcs, "Neural Networks" itself "Non linear complex higher order mathematical functions" we are suggested to got to this when our Data is more "non-linear"
+
+    ***NOTE***:In our example it is giving maximum correlation that is "0.54(54%)".If we take our threshold as "50%" then If we
+               find our correlations scores are very Nominal it means like most of them are "50" above like Attributes which we 
+               are expected are related or intusion we feel then they are fine not very bad If it has scores 50% and above like 
+               that based on the context threshold then we are good to go "Linear-Models".
+
+    --- Linear simple higher order mathematical functions
+
+    InAddition to these we have again some more different types of ML models they are like:
+    --- Decision Trees --- When our Data is having "Good number of categorical variables then we can suggested to got to "Decision Trees".In this we again have couple
+                           of things they are:
+                       --- Ensemble methods:It has very higher "Accuracy".If we want to solve "kaggle" competetions Or any other competetions we will use
+                                            "Ensemble" methods.We will win the competetions,Mostly people win with this only "Ensemble methods".
+                            In this we again have "Random Forests", "AdaBoost" etc...
+    
+    ***NOTE***: Uses of Correlation:
+                       --- We can find the "Linearity" Or "Randomness" of the Data Based on the Relation(Correlation) scores.Here In my suggestion we just ignore the 
+                           correlation scores and go with the intusion what we feel intusionally and conceptually and what we feel it has properness go with that Bcs,
+                           Here we learnt one thing and discussed some rules and conditions and 95% etc..But when we come to here in Analyzing we are not doing all
+                           that stuff and Completely opposite based on the context of the Data.So,that is the challenge thing in "Statistics".So, when the "Statistics" 
+                           come most of the people has to work basically they need to do work.
+
+                           SUB NOTE:When it comes to "Machine Learning" we can build "Models" and we can "Automate" the things.We can "Automate" the "Machine Learning"
+                           But When it comes to "Statistics" we can't do "Automate".But here we must require "Human force".No one can replce this Jobs like "Statistical"
+                           Jobs, "Data Analysis" Jobs and "Data Science" Jobs no one can replace Especially and mostly "Statistical" Jobs.
+                                                              
+    
+        
+**************************************************************************NOTE*****************************************************************************************
+Q) between "O(n)" and "O(nlogn)" which one will have more time complexity?
+
+In terms of time complexity, O(nlogn) has a higher time complexity than O(n).
+
+To explain this further, O(n) represents linear time complexity, meaning the time taken to complete an operation grows linearly with the input size n. In other words, 
+as the input size n increases, the time taken to complete the operation increases proportionally.
+
+On the other hand, O(nlogn) represents superlinear time complexity, meaning the time taken to complete an operation grows faster than linearly with the input size n. 
+In other words, as the input size n increases, the time taken to complete the operation increases much faster than proportionally.
+
+Therefore, if you have two algorithms with time complexities of O(n) and O(nlogn), the latter will have a higher time complexity and take longer to complete for large 
+input sizes.
+
+SUB NOTE: If we concern about "time" complexity finding median will take more time Compare to the "Mean" finding mean will take less time.But even though if it 
+          takes more time to find "Median" we take "Median" as a "Central Tendency".Bcs, "Mean" has a higher sensitivity to the "Outliers" 
+
+Q) between "O(n)" and "O(nlogn)" which one will have more space complexity?
+
+In general, the space complexity of an algorithm represented by O(n) is less than or equal to that of an algorithm represented by O(nlogn).
+
+This is because an algorithm with O(n) time complexity typically uses a constant amount of additional space, whereas an algorithm with O(nlogn) time complexity usually 
+requires more space to store intermediate results during the computation.
+
+For example, consider the Merge Sort algorithm, which has a time complexity of O(nlogn). It requires extra space to store temporary arrays during the merging process, 
+which can increase the space complexity to O(n) in the worst case.
+
+On the other hand, an algorithm with O(n) time complexity, such as a simple linear search, only requires space to store a few variables and does not need additional 
+space for intermediate results.
+
+So, in general, an algorithm with O(n) time complexity will have less space complexity compared to an algorithm with O(nlogn) time complexity. However, the space 
+complexity may vary for different algorithms and depend on the specific implementation.
+***********************************************************************************************************************************************************************
+
+   
+
+

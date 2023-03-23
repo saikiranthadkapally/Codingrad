@@ -1,0 +1,243 @@
+                    ********************************************** Intermediary course overview*************************************
+
+If we want to Refer any Notes or Book -- Probabilities & Distributions B.s.c first year Written by C.S.V Narsimha Rao -- For easy understanding.
+                                                               OR
+If we want to Refer we follow Blogs Mostly "Medium Articles" in web Browser bcs in that Real-time experience only will write in that for "Probability & Statistics"
+
+In this Sub-course we will cover topics in our Project they are:
+   1) Python Pandas
+   2) Python Matplotlib
+   3) SQL -- Concepts or theory BCS most of the SQL is covered in "Pandas"
+   4) Github
+   5) Statistics
+   6)Probability
+
+
+NOTE: In this intermediary course completely we deal with Data and Distribution which is related to Data and statistics which are related to Data and Feature Engineering
+So,Completely therotically and We make our ML models performance increase and more accurant inorder to do what type of strategies and approaches we will follow then we will 
+get good output.All these approches we will discuss in this course.This whole concept is a pillar for building ML models like linear regression,logistic regression,Decision 
+trees etc...We will be dealing with "CSV & Excel" Files Whereas "JSON" Data is semi-structured Data.In "Pandas" we won't do that mostly Bcs we again do it in "Data 
+Engineer" and convert it into "Structural" and then we will do it.Here We won't deal with "Large data's" But we will write programmes in such a way that we will handle 
+the "Large Data's".But we don't do real-time inustrial data here we do sample data or dummy data from  internet.In this course first we wil do in "Pandas" after that we 
+will introduce "Spark"and in that we prepare the "diagnostic code" that "diagnostic code" will be Run on any "Size of the Data(Inorder to support Scaling)".
+
+NOTE:In this domain in ML point of view we spend more time on Data which includes "Data Engineering" and "Data Analysis" Phase But in other Software Development we spend 
+more time on "Development" of Softwares.Actually we have phases in SDLC that is "1)Requirement Analysis Phase 2) Designing Analysis Phase 3)Building or Development of model 
+Phase 4)Deployment Phase and 5)Monitoring Phase" in these last two phases "4 & 5" will taken care by "Devops" Engineer and also given more time. Before "Development" Phase 
+in "1 & 2" will taken by Data scientists or Data Engineers or Data analysts or ML engineers or Architects for Designing all these do's and given more time to "1 & 2 & for 
+Data Processing" But only "4" Phase will be given less time for model developing Bcs the model developing is taken care by "Automation" System.We build an "Automation" System 
+by combining all "Architectures".it does not requires more time in model Building.NOTE:-Not even "Structured ML" and also in "Computer vision" we won't spend much time in ML 
+Buildings.Most of the ML Projects are having more time in "Data" related,Model building and deployment and monitoring timeline will be less in our Project timeline also.
+
+Data Analysis  -- or we call EDA -- or we call Descriptive Statistics -- or we call Feature Engineering 
+
+Structural Machine Learning:
+Insights about the data in the perspect of Statistics.
+
+Data:
+    Data Analysis:
+        1. Graphical Analysis
+        2. Statistics
+            1. We learn -- Attributes/Features/Columns/Variables(In text books it called variables,In industry it called features,In some courses called Attributes) -- our 
+                           convinent name is "Columns" in this course.
+            2. We learn -- Data Distribution
+            3. We learn -- Central Tendencies
+       
+
+CSV --
+    1. Domain Knowledge -- Very important for understanding "Structural Data". -- Domain in the sense like the data is coming from Automobile or Healthcare or Pharmacitical 
+                           industry etc... such knowledge is very important Based on the industry the "feature importance"will increase.
+
+    2. Feature Importance -- For our analysis which Feature is Important in "Structural Data".When it comes to real time industry the data has huge no.of.features like 200 
+       or more in this case it is important to Feature Reduction that means which features will be given more importance and which are not etc.. for our analysis.The 
+       techniques and mathematical approaches and statistical approaches for doing this concept these techniques We will learn and concentrate more in this intermedatory 
+       course after python before starting Machine Learning in this intermedatory course(techniques and mathematical approaches and statistical approaches).These are the 
+       basic pillars for further projects which we will do and in "NLP" and in "Tableau" and in "Data Analytics" and in "Structural ML".
+
+    3. Attribute Selection
+        1. Numerical Attributes
+        2. Categorical Attributes
+    
+
+Outcome Feature Module: -- Given an input CSV file we have to do feature engineering.We will get some "statistical Feature Engineering" Module.But we have
+                           not done any "Feature Engineering" yet.We will do "Feature Engineering" When we will show this to the "Domain" Expert.If "Domain"
+                           Expert says Everything is fine and whatever you are predicting is good and these all are Expected.Based on "Domain" Expert we will 
+                           modify and do Feature Engineering Or EDA analysis again like modifications etc..Whatever we did is very small small small thing Here.
+                           Just we are filtering and doing such kind of stuff.
+                           
+    --- It is very very important project also -- we have many real time use cases and business use cases also.
+    --- Data profiling: profiling is the process of examining, analyzing, and creating useful summaries of data. The process yields a high-level overview which 
+        aids in the discovery of data quality issues, risks, and overall trends. Data profiling produces critical insights into data that companies can then leverage 
+        to their advantage.This we are building from "Scratch" in this Feature Engineering/Feature Module Project.Which will help Data generation Systems clients as well 
+        as Data scientist,Two way of using.
+    --- Already we have a product to this But We are doing it from Scratch(root) Bcs Inorder to understand everything in it means in Feature Engineering(Data profiling) 
+        therefore we are building it from Scratch.
+        
+OUTCOME:-We will develop one project called Feature Module -- This "Feature Module" will do the "Statistical Feature Engineering" for any "Dataset" it means we will 
+        build a "Dataset" diagnostic model.Ofcourse we also need interaction of "Domain" Expert who gives or handover the "Data" to us -- At end of this sub course we 
+        prepare a "feature engineering" Module it is a Python module -- This Module takes Whatever the Domain of "Data" We gives and It will do Statistical Analysis and
+        Mathematical Analysis and in that it will do "Feature Reduction" and also Categorize the Features all these details should send to the User.By End of this 
+        course we have to prepare a "Feature Module" which will Engineers(In the sense which will do filters or which will do whatever the operations it requires like 
+        statistical operations etc) our Features.In our code we also introduce "Spark" also So,that 1GB Data But it won't work in our System's But our code will 
+        
+        persists for Long.
+
+Features/Attributes/Columns/Variables:
+
+Types of Features:
+1. Numerical Attributes / Quantitative Attributes
+2. Categorical Attributes / Qualitative Attributes
+
+1.  Numerical Attributes --- and or Continuous Attributes/Continuous Data.
+        -- Mostly important for Linear models -- Linear regression and Logistic Regressions both which comes under the "Linear Models".
+        -- Data distribution -- We have "Distribution" for  Numerical Attributes only. -- how the values are distributed in the rows of a particular feature -- What 
+           kind of distrubtion the "Data" is and that particular column is Based on that also our "Feature Engineering" will be performed -- We need to understand 
+           the "Data" distribution also.
+        -- These 3 are very basic distributions actually we have many distributions like poission,binomial etc.. we have plenty of distributions.
+            1) Normal Distribution
+            2) Skewed Distribution
+            3) Kurtosis Distribution
+
+            --- All these 3 Distributions are also called as Continuous Distributions -- or Density Graphs -- or Probability Density Curves
+            1. Normal Distributions -- are Desirable
+            2. Other 2 are undesirable --- Second Opinion is required from Domain Expert while we consider those feature/columnn which is have data in  these 2 types of 
+            distribution graphs -- we have 2 advantages in Second Opinion as follows:
+                    1. Decisions -- ML Strategy is based on these curves -- whether we take linear or non linear regression model etc..
+                    2. At Source Data Generation Problem fix -- This will be done at side of Person who giving the Data to our company to do Project on that Data 
+                       related to industries like   pharmacitical or healthcare etc..
+
+****NOTE:****Age can be considered a distinct value in certain contexts. In many situations, age is treated as a continuous variable because it is measured on a 
+    continuous scale (e.g., a person's age can be 23.5 years old). However, in some cases, age is treated as a categorical variable where each individual is assigned 
+    to a specific age group or range (e.g., ages 0-4, 5-9, 10-14, and so on). In this case, age can be considered a distinct value because it is being categorized 
+    into discrete groups rather than being treated as a continuous variable.
+    SUB NOTE: A Numerical Attribute must have Quantitative or Numerical Measurements then only we consider that "Attribute" as a "Numerical" Attribute.We can also
+              say a "Numerical" Attributes have "Continuous" values.
+
+    Examples: Age is a "Continuous Variable" ---- Even though it has limited Range and distinct we treat it as a "Numerical Attribute" -- (0-100) -- into that we have 
+                                                  one more category it is a "ratio-scaled Attribute".
+              Temperature ---- will fluctuate daily.I mean the Ranges are same but the fluctuations will be different from one place to another place continuously 
+                               fluctuates.therefore it is also called "Continuous variable".
+
+
+2. Categorical Variables: Most of the people don't consider and interested Bcs of the challengings are involved in the "Categorical Attributes".Inorder to sort this 
+                          Reasearches are still going on.
+    Limited Range --- This Range we will call as Categorical "Threshold" by default we set it into --- 100
+
+    The No.of.Categories(values)/Unique values in a particular column < 100 then we treat this as --- Ordinal Attributes(which we can take into our consideration)
+    /Numerical Attributes(which we take into consideration) -- Here "100" the Threshold value It's a default one We can change it Based on our Project.
+
+    The No.of.Categories(values)/Unique values in a particular column > 100 then we treat this as --- Nominal Attributes(which we can't take into our consideration)
+    Here "100" the Threshold value It's a default one We can change it Based on our Project.
+
+****NOTE:****
+    1. When the number of unique/categorical values in a particular column is less than or equal to the threshold value (in this case, 100), we consider it as an 
+       ordinal attribute.Ordinal attributes have a natural ordering or ranking among their values. For example, education level (e.g., high school, bachelor's degree, 
+       master's degree) or income range (e.g., $0-$50,000, $50,000-$100,000, $100,000+).
+       SUB NOTE:-An Ordinal attributes doesn't have any "Numerical measurements" .While ordinal attributes can be ranked in a specific order, they do not have a 
+                numerical measurement scale that allows for meaningful arithmetic operations such as addition or multiplication. Therefore, it is not appropriate to 
+                perform statistical analyses that require numerical measurements, such as calculating means or variances, on ordinal attributes. Instead, 
+                non-parametric methods that do not rely on numerical measurements, such as chi-square tests or Wilcoxon rank-sum tests, are more appropriate for 
+                analyzing ordinal data.
+
+    2. On the other hand, when the number of unique/categorical values in a particular column is greater than the threshold value, we consider it as a nominal attribute. 
+       Nominal attributes do not have any natural order or ranking among their values. For example, eye color (e.g., brown, blue, green) or country of residence (e.g., 
+       USA, Canada, Japan).
+       SUB NOTE:-We can differentiate "Nominal" and "Numerical" features.Unlike numerical measurements, nominal features cannot be quantified or ranked based on a 
+                numerical scale, and therefore, there are no numerical measurements associated with them. Instead, they represent qualitative characteristics or 
+                attributes of the data, and statistical analyses for nominal data usually involve comparing frequencies or proportions of the different categories, 
+                using methods such as contingency tables or chi-square tests.A "Nominal" Attribute doesn't have "Continuous" values Bcs nominal variables are 
+                categorical variables that represent discrete categories or groups with no inherent order or hierarchy. They do not have continuous values, as their 
+                values are qualitative in nature and cannot be measured on a numerical scale.
+
+
+    In Summary The "Threshold" value of 100 is a default value and can be changed based on the project requirements. In general, the threshold value can be adjusted 
+    based on the size of the dataset and the complexity of the problem.
+
+    Cardinality:
+        Cardinality refers to the number of distinct values in a column or dataset. It is a measure of the uniqueness of the data in a particular attribute. In other 
+        words,it measures the variety of values that a particular attribute can take on.
+
+        For example, consider a column in a dataset that represents the gender of individuals. If the column has only two distinct values, "Male" and "Female", then 
+        the cardinality of this column is 2. On the other hand, if the column represents the names of individuals, and there are many distinct names, then the 
+        cardinality of this column would be high.
+
+        In general, high cardinality attributes can be more challenging to work with in data analysis and machine learning because they can result in large and sparse 
+        datasets. This can lead to challenges in terms of model complexity, computational efficiency, and overfitting.
+
+        NOTE:
+            Cardinality refers to the number of unique values in a particular column or variable in a dataset. In the statements you provided, the concept of 
+            cardinality is being used to determine whether a variable should be treated as an ordinal attribute or a nominal attribute.When the cardinality of 
+            a variable is low (i.e., the number of unique values is small), it is typically treated as an ordinal attribute. On the other hand, when the cardinality 
+            of a variable is high (i.e., the number of unique values is large), it is typically treated as a nominal attribute.
+
+    Sub-Types of Categorical Attributes:
+        1. Nominal Attribute -- Mostly It's not required we can directly remove it.
+            -- A Nominal Attribute has either a string or values or combination of both with distict values in each row of a column.
+            -- Discard this Nominal Attribute without need of Secondary Opinion(Domain Admin) We have to find Nominal Attribute through this formulae: 
+            -- #Uniquevalues == number of rows - (1% of total number of rows) if this formulae satisfies then we remove that Attribute.
+            -- But  our Client(Domain Admin) specifically if he says "Don't discard anything I have to see everything then we have to 
+            showcase or else if our client is liberal(I mean if this project may not be Realistic in that case without hesitation we 
+            can remove this Attribute from our Analysis.) Examples are like "Customer-Id","Employee-Id" etc..
+
+        2. Ordinal Attribute -- The Reasearch is still going on.So, Inorder to consider "Ordinal Attributes" we have to face many challenges.
+                                Examples like "Rating" etc..
+
+        3. Binary Attribute -- All over there(The Research has been completed on this Binary Attribute) --- We have Available all like Statistical formulae and rules 
+                               and Regulations and related formulaes etc.. Everything will be available for us in "Binary Attributes" we need not to worry about it. 
+                               Examples are like "Gender" etc..
+
+*****Imp_Note*****:The above "Numerical Attributes" and "Categorical Attributes" which we have discussed those will be changed Based on the "Context" Even though
+                   they are against the "Definitions" Or "Definition" Rules which we discussed above like Let's take Attribute "Age" we have age values upto
+                   some  Range and also Generally,age is not a continuous variable and some times we also caluclate age as a continous variable by taking values
+                   like "20.6" years old etc.. and also we can measure the age in terms of "Years".
+
+Above 2 Features or Attributes are been used in our "Featured Module" Building and We mostly deals with "Numerical Attributes" and also we use "Categorical Attributes"
+based on situation and projrct goals etc...These are the basic description for "Feature Engineering"
+
+---- In addition to these Categorical and Numerical We also do as follows:
+        --- Is any column has same values
+        --- Is any column has zeros
+        This is must be reported to the Domain Experts and Data generating teams Bcs In some of the situations the data generation system by any reason that system 
+        by default settings or any of the settings it may populate zeroes in all columns which is really undesirable.When we find zero in our result which generated by
+        our "Feature Engineering" module or Our automated System when it find the "zero" we immediately send an very high important email or immediately send an email
+        to our Clients by saying that "your data generating system populating Zeroes".When wwe encounter such situation completely stop as soon as possible.
+        --- In a particular column how many null values are there
+        --- One-Hot Encoding -- we won't do this But we discuss what it is -- Used in Categorical for Ordinal and Binary.
+
+NOTE: In "Feature Module or Engineering" we won't do labelling.In this project of doing which is "Feature Module" we only consider on X-axis only and not considered 
+on "Y" What is the label and what are the leabel features we are not considering them.In this "X" means No.of.features in this We discuss how to reduce the 
+"No.of.Features" and how to do "Feature Engineering" to them.So, once it is done When we start the "Machine Learning" We discuss "What is X & Y and then how to do 
+labelling and what format is it and how to convert if it is in a particular format etc.. 
+
+NOTE:These above all "Concepts" which we are dissussed are the important to do "Pandas".In this "Feature Module" as a Project in this We discuss and Uses Pandas,NumPy
+or any other library if we want to use then we use it.We are treating using "Pandas" as a Major tool and that Major tool & how we use this in Real-time industry & what 
+is the major purpose of it in that perrspective we will use it.
+
+VERY IMPORTANT NOTE:
+    Normal, skewed, and kurtosis distributions are primarily used for numerical attributes, but they can also be applied to some extent for categorical attributes.
+
+    The normal distribution (also known as the Gaussian distribution) is a continuous probability distribution that is often used to model numerical data that follows 
+    a bell-shaped curve. It is commonly used in statistics and machine learning because many natural phenomena follow this distribution, such as heights, weights, and 
+    test scores.
+
+    The skewness of a distribution measures the degree of asymmetry in a distribution, and it can be applied to both numerical and categorical attributes. However, it 
+    is more commonly used in numerical data to identify whether the distribution is skewed to the left or right.
+
+    The kurtosis of a distribution measures the degree of peakedness or flatness in a distribution, and it is also primarily used for numerical data. It can be used to 
+    identify whether the distribution has a sharp peak or a more flattened shape compared to the normal distribution.
+
+    In summary, normal, skewed, and kurtosis distributions are typically used to analyze and model numerical data. However, skewness can also be applied to categorical 
+    data to measure the degree of asymmetry in the distribution, while kurtosis can be used to analyze the shape of the distribution in categorical data to some extent.
+
+    Unifrom/Balanced Distribution:
+        Uniform distribution can be generated in both numerical and categorical attributes.
+
+        In numerical attributes, a uniform distribution occurs when the values are evenly distributed across the range of the attribute. For example, if a dataset 
+        contains the ages of a population ranging from 1 to 100, a uniform distribution would mean that the number of individuals in each age group is approximately 
+        equal.
+
+        In categorical attributes, a uniform distribution occurs when each category occurs with the same frequency. For example, if a dataset contains information on 
+        the preferred ice cream flavor of individuals, a uniform distribution would mean that each flavor is chosen by an approximately equal number of individuals.
+
+        Uniform distribution can be useful in some situations where we want each value or category to have equal probability of occurrence, but it is not always the 
+        case. In some scenarios, non-uniform distributions may be more informative or representative of the underlying data.

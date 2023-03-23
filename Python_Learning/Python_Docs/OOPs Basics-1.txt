@@ -1,0 +1,92 @@
+
+                                                    OOPS Basics
+                                                   ______________
+
+1) Class: A blueprint of a properties and actions of a situation
+
+2) Object: is an instance of a class
+
+Examples: --- Human, Bird, Car, Bank
+
+3) Properties: --- attributes/features/member variables/also called as Id_name
+        1. Class Properties
+              -- Properties which are available and accessed by all the objects of the class
+              -- will be defined inside the class
+              -- will also have access specifiers
+              -- Most used for count
+              -- Class properties can be accessed by the class name and also object --- specific to access specifier
+        2. Instance Properties
+              -- Properties which are sole to single object
+              -- instance properties will have access specifiers
+              -- defined in constructor of the class
+              -- will be defined using self keyword.
+              -- Instance properties can be accessed through only objects with self keyword inside class and with 
+object outside the and also access specifiers matters(getters and setters are used while accessing properties outside 
+the class using objects.) getters and setters for private properties outside the class and setters also used to update private properties 
+              ---- when you are accessing instance properties inside the class using self, you can access 
+all properties irrespective of access specifiers.
+              -- outside the class only public instance properties will be accessed through object.
+
+**NOTE**:setters and getters are used for update and access the "private properties(class or instance(object))" 
+         outside the class using object(instance).Whereas Class properties(private members) can be updated and 
+         accessed inside the class without using any "setters & getters" methods and "self" keyword.
+
+
+        3. Member Point --- memory management
+              -- (->)
+              -- (.)
+         
+4) Class Constructors:
+        1. def __init__(self,a,b,c):
+        2. constructors will be called at the time of creation of an object
+                object_name = class_name() --- default constructor will be called if there is no constructor is 
+defined.
+        3. Default constructor contains nothing --- object has no instance properties but it can have class 
+properties and access permission for member methods. 
+ 
+5) Object State:
+        --- When we are creating an object it has all class properties,instance properties and member methods.
+
+        --- object state will be determined by the values of the properties
+
+6) Class Methods, Instance Methods, Static Methods:
+
+           1. class methods --- are common methods of a class
+                            --- defining class method -- @classmethod(it is a wrapper around the function) as a decorator.
+                            --- mostly class methods will use class properties
+                            --- class properties of a class method will be accessed through "cls".Here "cls" keyword is similar to "self" keyword.
+                            --- class methods will be accessed through "class name or else object names"
+           2. static methods --- defining static methods -- @staticmethod(it is a wrapper around the function) as a decorator.
+
+                                                           ABSTRACTION AND ENCAPSULATION
+                                                          ________________________________
+7) ENCAPSULATION:
+        --- Definitions -- Binding of whole Data and Methods/Binding of Properties and Member methods it is nothing but "Encapsulation".
+        --- It's a property of a class of binding data and member methods -- Book definition
+        --- Properties like:
+                     1. class members/variables
+                     2. instance members/variables
+                     etc....
+        --- Methods like:
+                     1. constructor
+                     2. instance methods
+                     3. class methods 
+                     4. static methods
+                     5. setters & getters
+                     etc....
+
+8) ABSTRACTION: General Definition -- Hiding the implementation details of data and methods is an "abstraction". In this we have "abstract classes" in abstraction concept.
+        --- Definitions -- We can define abstraction into 2 types
+                                   1)  withrespect to access specifiers
+                                   2)  withrespect to interface
+        --- withrespective access specifiers -- Our private and protected properties are accessed at which and where it will be shown and it will be hide.So the details 
+                                                are hidden here.Hiding the details of the data from the class is nothing but a abstraction.
+        --- withrespective to implementation -- Hiding the implementation details like we have written "main" file in LMS Project by hiding the unecessary code like
+                                                writing only business logic as we did in LMS Project in "main" file.
+        
+        --- **Abstract class** -- Abstract classes are typically used in OOP to define common interface or set of behaviors that subclasses must implement.It serves as a blueprint or 
+                                  template for other classes to inherit from.
+                               -- In general An abstract class can define methods, properties/variables/members, and 
+                                  other attributes that are shared by all of its subclasses.
+                               -- In "abstract class" we do not write any implementation we just list out what are the functions instead we implement it in  our required
+                                  subclasses or libraries.it contains just definition of functions but we can't implement in it.

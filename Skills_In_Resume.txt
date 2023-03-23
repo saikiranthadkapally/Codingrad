@@ -1,0 +1,28 @@
+IN LINKED-IN/NAUKARI/IN JOB PORTALS ETC -- Need to Update Profile and Resume Everything should be Updated Everytime. What Skills we should have Which are mentioned Here.
+
+In Naukari Freelancing OR Freelancing Jobs OR In LinkedIn Keep Status as "Freelancing Open to Work" OR Part time Jobs OR In start_ups they Provide us Freelancing We can do them as a Part_time Job(It doesnot makes us officially any problems like PF(Provident Funds) Cuttings & Tax Paying etc..).Just they make do Payments in PhonePe -- We can also Try for these Type of Jobs and start to Apply inorder to improve Experience and Knowledge.We will Crack interviews.
+
+NOTE: Present Data Engineering Jobs are highly scoped and also for Data Analysis but not that much currently like 50% it will become more Scope in Future and also more scope for Database Administrators.So, we also have knowledge on SQL(DBMS) and also more scope on ML Engineer Statistician, and also for Developer roles like Python Developer OR Full Stack Python Developer etc..
+
+NOTE:If there are any free courses in "Great_Learning" If we want to learn anything.Because the teaching is very good in this Platform.And "Coursera" is also a good Platform In Order to
+       learn Coursers If we want to Learn and We don't need Certificate then we can select particular Zone like "Machine Learning","Deep Learning" etc.. and Next click on "Audit the course"
+       After registration then it enables free learning.We can also listen "Deep Learning" and "Machine Learning" in english by click on "Audit" But in our Course it in Telugu If we are
+       Intereseted we can also listen to Coursera with parallel to our course if Anything we didn't understand in our "Codingrad" course we may able to understand in coursera wit more 
+       Easily by Pictorial Representation.
+
+NOTE: Learning shell scripting(Linux commands) is also very good thing.
+
+    
+SKILLS:
+    --- Java Basics
+    --- Basics & Intermediary(NumPy&OOPS Basics) Python 
+    --- Basic concepts of ML & AI
+    --- Basic Concepts of Networking
+    --- Basic Concepts of Cloud Computing
+    --- Basic Knowledge on Information Security
+    --- Basic Statistical Concepts(Numerical,Categorical_Attributes & Basic_Distributions) 
+    --- Data Feature Engineering
+    --- Data Analysis
+    --- Structural Machine Learning
+   
+     

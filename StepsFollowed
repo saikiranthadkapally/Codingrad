@@ -1,0 +1,34 @@
+                                                                      ** Steps to be follwed through overall course **
+                                                                     ----------------------------------------------------     
+**NOTE**:It is enough to create a single "env" for each MainFolder here MainFolder is "Data Science" and 
+No need to create "environment(env)" for every project.Bcs a single environment(env) takes much space.
+----------------------------------------------------                      
+1. Folder Organization --- Empty Folders
+2. cd main folder
+3. new file --- requirements.txt -- jupyter
+4. virtualenv env
+5. env\Scripts\activate
+6. pip install -r requirements.txt
+7. jupyter notebook
+8. vscode
+        1. Folder creation in main folder
+        2. open vscode
+        3. open folder
+        4. open new terminal -- default no env --- pwd(present working directory) -- open folder
+        5. cd to the directory where env presents
+        6. env\Scripts\activate
+        7. cd to present working directory
+
+9. Project Folder -- VScode
+        1. no env
+        2. src -- folder
+        3. requirements.txt -- placeholder for all modules
+        4. Dockerfile
+        5. 8th step -- follow
+        6. cd src
+
+IMP NOTE:
+1)When you create a virtual environment using a tool like virtualenv or conda, the environment is isolated from the Python installation on your system. This means that any Python packages you install in the virtual environment will only be available within that environment, and will not affect the global Python installation on your system.The Python interpreter that is used within the virtual environment is typically installed as part of the environment creation process, and is not the same as the system-wide Python installation. This means that you can install a specific version of Python within the virtual environment, even if you have a different version installed globally on your system.So to answer your question, when you create a virtual environment using virtualenv or conda, the Python interpreter that is used within the environment is installed as part of the environment creation process, and is not dependent on the system-wide Python installation. However, if you want to use a specific version of Python within the virtual environment, you can specify it during the environment creation process.
+
+2)When you create a virtual environment using a tool like virtualenv or conda, the Python interpreter that is used within the environment is installed as part of the environment creation process. The exact location of the Python interpreter depends on the specific tool you are using and how you have configured the environment.For example, when you create a virtual environment using virtualenv, it will create a new directory for the environment and copy the Python interpreter and other necessary files into that directory. By default, it will use the Python interpreter that is currently on your system path, but you can specify a different version of Python to use by passing a command line argument to the virtualenv command.When you activate the virtual environment, the activate script will modify your system path so that the Python interpreter and other tools installed within the environment are used instead of the system-wide tools.Similarly, when you create a virtual environment using conda, it will create a new environment directory and install a version of Python and other packages into that directory based on the environment configuration. You can specify the version of Python and other packages to install during the environment creation process.Overall, the virtual environment tool you use will handle the installation of the Python interpreter within the environment, and you can configure the specific version of Python to use during the environment creation process.
+

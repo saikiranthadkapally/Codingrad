@@ -1,0 +1,55 @@
+PIP:-
+----
+Pip is a package-management system written in Python and is used to install and manage software packages. The Python Software Foundation recommends using pip for installing Python 
+applications and its dependencies during deployment.
+
+NOTE: Manually installing software packages can be time-consuming and may not install all necessary dependencies, which can cause issues with the software. Additionally, manually searching for and installing dependencies can add more time and potential security risks to the process. Using pip as a standard tool or library for package installation can save time, ensure necessary dependencies are installed, and provide more security by avoiding malicious packages from its library. Libraries published in pip must apply for a certificate(private or general), 
+which adds another layer of security to the installation process.
+
+BUGS:-
+-------
+In the context of software development, a "bug" refers to a defect or flaw in a program's code that causes it to behave unexpectedly or incorrectly. Bugs can occur for a variety of reasons, including incorrect or incomplete code, poor testing, or unexpected inputs.Bugs can manifest in many different ways, such as crashes, errors, or incorrect output. They can also range in severity, from minor annoyances to critical issues that cause a program to fail completely.
+
+Identifying and fixing bugs is an important part of software development, as they can have a significant impact on the user experience and the reliability of the software. Testing and debugging tools are often used to help developers find and fix bugs in their code.
+
+For example, if a program is designed to add two numbers together but fails to handle negative numbers properly, that would be a bug.
+
+ERRORS:-
+---------
+In programming, an "error" refers to a problem that prevents a program from running correctly. Errors can occur for a variety of reasons, such as syntax errors, runtime errors, or logical errors.
+
+Syntax errors occur when code is written incorrectly and does not follow the rules of the programming language. For example, if a programmer forgets to close a bracket or includes a misspelled variable name, the code will not be able to run.
+
+Runtime errors occur when a program is executing and encounters a problem that it cannot handle. These errors can be caused by a variety of factors, such as trying to divide by zero, attempting to access a file that does not exist, or running out of memory.
+
+Logical errors occur when the code is syntactically correct and executes without error, but the program does not produce the expected result. These errors can be caused by mistakes in the program's logic or algorithms, such as using the wrong formula for a calculation or failing to handle all possible input scenarios.
+
+For example, if a program attempts to access a file that does not exist, it will encounter a runtime error.
+
+NOTE:-
+-------
+Exception handling is a technique used to deal with errors that occur during the execution of a program. It is used to catch and handle errors in a way that allows the program to continue running instead of crashing. Exception handling can be used for both bugs and errors, as it can help to prevent unexpected behavior and allow for more graceful handling of problems that arise during program execution.
+
+
+Basics of Python:
+------------------
+
+	1. Data --- 
+		Numbers
+			INT
+			FLOAT
+		Strings
+			CHARACTERS
+
+	2. Variables & Literals
+
+		---- a = 5 --- Integer Literal
+		---- b = "Tharun Kumar" --- String Literal
+		---- c = 90.75 ---- Floating Literal
+
+
+
+1. PYTHON SHELL --- Interactive shell
+2. PYTHON SCRIPT --- Scripting
+3. IPYTHON --- Interactive Python
+4. JUpyter Notebook --- IPY

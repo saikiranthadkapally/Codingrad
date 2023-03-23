@@ -1,0 +1,52 @@
+NOTE:Here "#" denotes 'No.of"
+n = #examples/#rows/#instances/#observations -- all these have same meaning
+n_var = #variables/#features/#attributes/#columns
+
+NOTE:These 2 terms are very important which confuses more.It is very useful while "filtering" in Excel files Or in Data Analysis like using "Tablue" we write plots it 
+means when we drawing the diagrams.These terms confuses more But 2 terms looks like same.
+
+NOTE:Currently here we only want "distinct" values foor now.In SQL point of view both "unique" & "distinct" are same.But here it's not same not only here While we
+use Data Analysis "Tablue" tools Orelse we use Excel there these 2 terms are defined differently.
+
+NOTE:unique is subset of "distinct"
+#unique values
+#distinct values
+
+Example -- for "#unique values" & "#distinct values"
+[1,2,3,1,1,2,34,1,5,7]
+
+distinct values = [1,2,3,34,5,7]
+unique values = [34,5,7,3]
+
+****NOTE****:
+    Finding numerical features in categorical features:
+        The "ydata_profiling" is an open source tool which doesn't have intellegence to identify whether it is categorical/Numerical.It doesn't seems always be 
+        fine.Numerical features are possible to come in Categorical features are very rare.We won't get anytime.But "ydata_profiling" gives good result here.
+        "ydata_profiling" library/framework correctly classifies the "Numerical variables" from "Categorical variables"
+
+    Filter out categorical features from numerical features:
+        Here we need to apply some intelligence to this.Some other technique called: But this we don't do this in our "Feature Engineering" Module/Project
+        Advanced Profiling ---> All the "Data Statistical Information" of that particular column(like "PassengerId" etc..) --> send to intelligence ML model 
+        to identify."ydata_profiling" library/framework doesn't correctly classifies the "Categorical variables" from "Numerical variables"
+
+****NOTE****: By default "ydata_profiling" will take categorical thresold as "100".
+
+*********************************************************Most Important NOTE******************************************************************************
+
+NOTE: Our "Feature Module/Software/Program/Project" OR "Feature Engineering Module/Software/Program/Project" will also work for "Agnostic" dataset.
+    It means In the context of machine learning and artificial intelligence, the term "data agnostic" is commonly used to refer to algorithms, models, or 
+    systems that are designed to work with different types of data. For example, a data agnostic machine learning algorithm can be trained on different 
+    datasets without requiring any significant changes to its architecture or code.
+
+    Being data agnostic is an important feature for many systems and applications, as it allows them to handle a wide variety of data without requiring 
+    significant modifications. This can be particularly useful in situations where data is sourced from different systems or collected in different 
+    formats.
+
+    When someone says that their feature module, software, or project will work for an agnostic dataset, it means that their system is designed to handle 
+    data from different sources or in different formats. In other words, the system does not depend on any specific data format or source, and it can 
+    process data effectively regardless of its format.
+
+    To summarize, when someone says that their system is "data agnostic," they mean that it can work with different data formats and sources effectively, 
+    without requiring significant modifications. It is a standard term in ML/AI that refers to systems designed to handle diverse data types.
+
+**********************************************************************************************************************************************************

@@ -1,0 +1,6 @@
+'''
+All requirements will be here.
+Python--3.10.7
+
+'''
+numpy==1.24.2

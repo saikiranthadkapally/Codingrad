@@ -1,0 +1,90 @@
+                                                                                UbuntuConfiguration
+                                                                             ___________________________
+
+NOTE: If we have "gitbash" in our system then we need not install "wsl(ubuntu)" os in windows.We can also install Ubuntu using 2nd method which is using "VM" box which provides complete separate environment to run Ubuntu applications and softwares and also UI inteface for installed os and we can install multiple operating system through Using "VM" tool.We can also use "bash" or else "wsl(ubuntu) if bash is not installed in windows" But for both "bash" and or "wsl(ubuntu)" requires "WSL" before we install either "bash" or "wsl(ubuntu)" we need to enable "WSL" and install it in our System Bcs in our windows is and linux complete different operating system So,our windows doesn't have support for "linux" so we need to install "WSL" for both.
+
+Installation of wsl distribution(Ubuntu):
+ --- Turn windows features on or off 
+       -- Search in search bar/find in settings
+       -- Check the check-box that "virtual machine platform" & "windows subsytem for linux" both enable if not enable
+       -- Restart the System
+ --- Install wsl distribution or linux distribution(Ubuntu):
+       -- Open microsoft store and type Ubuntu in search bar 
+       -- It opens the latest version of "Ubuntu" In my case it is "Wsl 2 version"
+       -- Install it by clicking "install" after installation it shows "open" 
+       -- click on "open" or close the ms store and open it from system.
+
+Configuration/Setting of Ubuntu:
+ --- When we open it shows "installing wait few minutes"
+ --- Next, it asks "Username" set the username -- NOTE: Username doesn't match with the "username" of your host(windows) os
+ --- Next, it asks "Password" set the password -- NOTE: It should be noted
+ --- After that, It logs into the Linux operating system(Linux or wsl environment) or bash to interact with ubuntu
+ --- NOTE:while installing wsl(Ubuntu) it divides and partition our Windows hardware and mount it on wsl environment
+ --- It means it mounts the System physical memory(C/D/E) 
+ --- Inorder to check type command as "ls /mnt/" It shows the all System drives which are mounted Drives on wsl env 
+ --- The Drives(C/D/E) Present in mnt folder or drives which are mounted on wsl environment from windows System(HDD/SDD)
+       -- Use "cd /mnt/" command Inorder to change directory to "C/D/E" drives 
+       -- Like if we need to change to "C drive" Type "cd /mnt/c" or else Type "cd /mnt/d" or else Type "cd /mnt/e" etc..
+ --- Inorder to list all files that are present in "current working directory" Use "ls -al" command 
+ --- Inorder to create any file Use "touch" command like "touch file_name" 
+ --- In Ubuntu we use a "Package manager" called "apt" with this we can install any other "Software packages, tools etc.."
+ --- First we need to update "Package manager" Using "sudo apt update" command before installing any "Packages"
+ --- In my case wsl distribution(Ubuntu) will be "wsl 2" it is 2nd version So,Python3 will automatically installed
+ --- The Python default installation will depends on "Ubuntu version".For "wsl 1" it may be Python2 so on...
+ --- Next,Install "pip3" Using command "sudo apt python3-pip" it installs "pip" for Python3
+ --- Next, install virtual environment Using command "pip3 install virtualenv" before installing we need to change to "root"
+       -- Here "root" means "Administrator" it gives all administrative privilages to perform any operations
+       -- We only install "virtualenv" through Using "root(Administrative)" Bcs our Ubuntu also needs hardware
+          information also inorder to install virtual environment to our particular directory
+       -- Inorder to change "root" we need to Use command "sudo su" where "sudo" indicates "Administrator privilages"
+          and "su" indicates super user then it changes to "root" as a User(Administrative)
+       -- Now, we can Type command "pip3 install virtualenv" then it installs virtual environment successfully
+       -- After this we can also change to normal user privilages and perform Remaining operations
+--- After installing virtual environment Type "virtualenv env" then it creates env folder in our directory
+--- After that if we want to activate our virtual evironment then Type "source env/bin/activate" it activates "env"
+       -- NOTE:In normal windows virtual environment we use "env\Scripts\activate" inorder to activate "Environment"
+--- If we want to open editor like we open "Notepad" in our windows in Ubuntu we Use command "vi file_name" but "vi" editor
+    is different we cannot operate like how we operate in "Notepad".
+
+Setting Ubuntu terminal or wsl(ubuntu) environment or bash in VScode:
+--- Initially it has default windows terminal in VScode
+--- open VScode and press "ctrl+shift+p" in keyboard 
+--- It opens Search bar Type "Terminal:de" it auto list down some options in that select "Terminal:Select Default Profile
+--- It shows different command prompts like "bash(gitbash)"," Command prompt","PowerShell","Ubuntu(WSL)","Windows PowerShell" etc..
+--- In that we select according to our convinient Here we decided to use "Ubuntu" select Ubuntu(WSL) then close VScode
+--- Reopen the VScode then open terminal now it shows ubuntu whenever we open new terminal everytime it opens ubuntu
+--- Now we can use the commands of "Ubuntu" inorder to execute our files in the terminal and perform related operations. 
+
+Commonds in linux Except we discussed Above:
+         --- $PWD->It shows "the present working directory" if we keep "$" and we write we treat it as a Shell "Variable"
+         --- echo $PWD -> Where works as "Print" function in linux environment it also prints same as "$PWD"
+         --- "export PYTHONPATH="$PWD:$PYTHONPATH"" Here we are including "Present working directory" path to "Python" path 
+             So,that the Python interpreter can find the Path throughout the directory then we can execute any file in 
+             that directory.
+         --- After we set our New Python path as we require Inorder to check new path Type "echo $PYTHONPATH" It prints new set path for
+             Python.
+         --- NOTE:We cannot hardcore our "PWD" to Python instead we can do it in separate file for linux we write "setup.sh" we can set
+             our directory path to default python existing path or to append our PWD(relative path) to Python path inside the "setup.sh"
+             file by writing "export PYTHONPATH="$PWD:$PYTHONPATH"" inside the file.It is easy to maintain and avoid hardcode.make it 
+             easier to maintain and update your code in the future. 
+         --- For Example "(env) ubuntu@DESKTOP-N8Q5DTI:/mnt/d/Codingrad/DataScience/DS_Notes/DATAANALYSIS/src$ python utils/read_utils.py"
+             Iam executing this path successfully Bcs I added this my "$PWD" to "$PYTHONPATH(Python existing path)" then it executes
+             Successfully.
+         --- NOTE:While doing projects we create each folder as a package by mentioning "__init__.py"  and in that we create "Modules" So,we are
+             creating our project as a Package heirarchy we get "Python path" error.It will not treat every folder as a single path and cannot 
+             import modules which are in other Package by Python interpreter.
+         --- NOTE:When we create "shell scripts" files we don't have permissions or anything.we have to change the permissions of those "sh" files
+             through this command "chmod +x setup.sh".Where "X" means executable make that file as a executable file.
+         --- Next Type command "./setup.sh" it means we executed file without any error or issues.
+         --- Next change directory using "cd <dest>" where we execute our file file in that <dest> file and execute file using "python <dest>.py"
+
+
+NOTE:In this wsl distribution(Ubuntu) We can perform any operation using command-line interface/bash/wsl environment/linux environment Nut we cannot use UI interface in this as we just installed windows subsytem for linux Inorder to use Ubuntu UI we need to install VMbox But it is efficient if our System is quad(4-core) and 8gb and 64-bit.
+
+
+
+
+
+ 
+
+ 

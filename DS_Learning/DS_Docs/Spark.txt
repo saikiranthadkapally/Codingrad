@@ -1,0 +1,133 @@
+Distributed System --- It have lot of Computers
+    Computer/Node --- CPU, Memory, Harddisk
+    Let's say -- 100 Computers -- In this we have 2 Types -- Master & Slave Mode
+
+
+    Master & Slave Mode
+        Masters/Computers --- Maintainer like scheduling tasks to its slave nodes(Computers),Handling Input request and Data from Users etc...
+        Slaves/Computers  --- Worker Nodes are called in "Hadoop"/Executors Nodes are called in "Spark" Based on their interest But behind the scenes 
+                              both relates to same thing
+
+    Bigdata Cluster  -- collection of masters and Slaves it is called one Cluster
+        Slave --- Configuration -- minimum RAM 128GB -- 80 Cores -- 50 TB for one Computer.
+        master --- Configuration --  RAM 24GB -- 12 Cores -- 5TB -- It doesn't need more Bcs it does less work as compare to Slaves
+    
+    Based on How Work should be Done we have Technologies:
+        Old Technology -- Hadoop ---> Mostly Used Disk Operations -- Which is Very Slow -- We need to write Program only in -- Java(More toughest task to write 
+        programs in Java) -- They Used one Technology which is called "Map Reduce" framework
+        Spark --- Basically Spark is also Hadoop it is an updated version of Hadoop---> It Uses In Memory Process --- 10*times faster than Hadoop -- write code in 
+        any language like Scala(Spark developed in "Scala"), Python, --- We use Modules to Handle Back-end we use -- PySpark, SparkSQL, SparkML -- Using these Modules
+        we can write our program directly -- These modules are like Tensorflow,Numpy etc.. which are in ML.These Modules Handles our Programme in Back-end act's like
+        a Middle-layer between our Program interface and Hardware -- Spark is used by Most of the People & -- Use more and more
+        
+    Spark ---> In memory Processing --- We also call "Not complete In memory Processing" But however it faster compare to Hadoop System
+
+    CSV --- Let's say we have "100TB" --- We need to Feature Engineering for this particular CSV file
+        1. Session --- with master(We opens a Session with Master)
+        2. Connect with Any Bigdata Cluster(Here Spark Cluster) -- Connecting and accessing by using "API's" --We have to connect it Using Python APIs -- We generally 
+           call these -- Spark-APIs, PySpark(It is also an API) from which we can connect to Spark from Python.
+
+           NOTE: We can also Connect to Spark by Using Some Websites like "databricks" by taking "Community" Edition in it and We can create Clusters same we maintain 
+           our "Spark" Ecosystem Here. this is done Using UI in our System(laptop).But Here We are Preparing "Module" OR "Project" We need to Connect to Spark from our 
+           Python in our Program.The Above APIs(Spark-APIs,PySpark) Connecting to Spark Using Python in our Feature Engineering Module.
+        3. some code in pyspark --- sequential code will be digested in master
+        4. Lazy Execution --- Until when someone/something triggered the action then only Execution will start
+                Sequential code --- master tries to make it as graphs(DAG(Directed acyclic Graphs)) & check everything is correct like configuration erros etc..
+                --- then,master has to get the 100TB --- 
+                    it performs 100TB/100 -- 1TB per Cluster initially then, it sends the code
+                    Each slave has batching mechanism for its RAM Bcs we have here 128GB RAM
+                        1TB/128 -- 1024/128 = 8 Batches in each Slave
+
+    NOTE: But we can't Experiment directly in the Systems like taking 100 Nodes we can't do experiment on that right So,we have to experiment on our local machine
+          Bcs if we use these many Nodes Everytime for Experimentation  it cost's us Huge Cost.Instead we install "Spark" in our local System
+
+    Spark installation in local --- We call it as "Standalone installation" in these we have:
+       -- Master
+       -- Slaves
+       ------- These are Processes not real time hardwares in our local machines it doesn't have CPUs, RAM.There is some sort of virtualization on these we doesn't
+               give CPU and RAM directly to it.But it assumes those are exists and works like a Processes not real Hardwareslike small doors while we are experimenting
+               like 12KB, 1MB and maximum 3MB data in our local Systems and replicate the same code in Production Environment by deploying it with huge amount of Data we
+               perform Experiment.Bcs at Initial/Starting Experiment it doesn't set correctly we have to iteratively do this No one is directly successful.But we should 
+               not repeat that in multiple times like in attempting successfuly in 2nd attempt max.But not go like beyond 5th attempt etc..Bcs it increases Cost.To avoid 
+               doing this multiple iteratively attempts mostly we do in our local system initially then we will migrate to that system which are in cloud.Bcs it costs
+               us more.
+
+    NOTE: Basically, pyspark all these will Run with Hadoop Ecosystem at Back-End.So, the "Map-Reduce" as a framework behind the framework this was written in Java
+          When we write any code like in pyspark , SparkSQL etc.. Modules these are abstract layers on "Map Reduce" So, "Map Reduce" installation also be required
+          in our Project requirements.txt then only we can run or use "Spark" 
+
+*********************************************************SOME Important Self Prepared Notes***************************************************************************
+Q)ydataprofiling is useful to write framework for both pandas and spark supported framework" what does it means and in this what is framework?
+
+In data analysis and processing, a framework is a set of tools and guidelines that help users organize and analyze data efficiently. Pandas and Spark are popular 
+frameworks for processing and analyzing data in Python and Scala respectively.
+
+Data profiling is the process of examining data to identify its properties, such as its structure, content, and quality. This can be useful in many ways, such as 
+identifying missing values, detecting outliers, and determining the distribution of data. By performing data profiling, you can gain insights into the characteristics 
+of the data and develop a deeper understanding of its properties.
+
+When you use data profiling to write a framework for both pandas and Spark, you can create a consistent set of tools and processes for working with data across both 
+platforms. This means that you can write code that is compatible with both frameworks and take advantage of the strengths of each.
+
+For example, you could use data profiling to develop a set of functions for cleaning and transforming data that work seamlessly with both pandas and Spark. This would 
+allow you to write code that can be easily ported between the two frameworks, giving you more flexibility and options for working with data.
+
+In summary, data profiling is a useful technique for developing frameworks for data processing and analysis in both pandas and Spark. By using data profiling to create 
+a consistent set of tools and processes, you can write code that is compatible with both frameworks and take advantage of the strengths of each.
+
+Q)Does ydataprofiling is a library for profiling
+
+Yes, ydataprofiling is a library for data profiling in Python. It allows you to generate descriptive statistics and data quality reports for a given dataset, including 
+information on the data type, missing values, unique values, frequency distributions, and correlations between variables. The library is designed to help you understand
+the structure and characteristics of your data quickly, which can be useful for data cleaning, data exploration, and feature engineering tasks
+
+Q)where we use pandas-profiling and where we use ydata-profiling?
+
+Both Pandas-Profiling and YData-Profiling are Python libraries used for exploratory data analysis (EDA) and generating reports on the characteristics of datasets. 
+However, there are some differences between them.
+
+Pandas-Profiling is a widely used library for EDA of Pandas data frames. It generates a comprehensive HTML report that includes a summary of the dataset's basic 
+statistics, data types, missing values, correlations, and distributions of variables. It is suitable for use in a variety of applications where data is stored in 
+a Pandas DataFrame, such as data cleaning, data preprocessing, and machine learning.
+
+On the other hand, YData-Profiling is a more advanced library that allows for EDA of both structured and unstructured data, including images, text, and time-series 
+data. It provides more sophisticated visualizations and statistical analyses that are not available in Pandas-Profiling, such as clustering, dimensionality reduction, 
+and anomaly detection. YData-Profiling is designed for use in complex data analysis tasks where advanced algorithms and visualizations are required.
+
+In summary, if you are working with Pandas data frames, Pandas-Profiling is a great tool for generating a comprehensive report on your dataset. However, if you are 
+working with more complex data, including unstructured data or time-series data, YData-Profiling may be a better choice as it provides more advanced algorithms and 
+visualizations.
+
+Q)Can we call above ydata-profiling is also called framework?if it is also known as framework then justify that you said framework and library both are different then 
+how we can say both are not same?
+
+Yes, YData-Profiling can be considered a framework as well as a library. A framework is a set of rules, protocols, and tools that provide a structured approach to 
+solving a problem or developing a software application. A library, on the other hand, is a collection of pre-written code that can be used to perform specific tasks.
+
+In the context of YData-Profiling, it can be considered a framework because it provides a structured approach to performing exploratory data analysis on complex data 
+types, such as images, text, and time-series data. It includes a set of tools and algorithms that are designed to work together to perform specific tasks, such as 
+clustering, dimensionality reduction, and anomaly detection. YData-Profiling is also designed to be extensible, which means that developers can add new algorithms and 
+visualizations to the framework as needed.
+
+However, YData-Profiling can also be considered a library because it provides a set of pre-written code that can be used to perform exploratory data analysis on 
+complex data types. Developers can use the library to perform specific tasks, such as generating reports on the characteristics of datasets or clustering data 
+points based on their similarities.
+
+To summarize, the main difference between a framework and a library is that a framework provides a structured approach to solving a problem, while a library provides 
+pre-written code that can be used to perform specific tasks. While YData-Profiling can be considered both a framework and a library, it is important to note that these 
+are not mutually exclusive categories, and a tool can be both a framework and a library at the same time.
+
+Q)does pandas-profile is also called library and framework as above?
+
+Pandas-Profiling is primarily considered a library for exploratory data analysis (EDA) of Pandas DataFrames in Python. It provides a set of pre-written code that can 
+be used to generate a comprehensive HTML report with descriptive statistics, data types, missing values, correlations, and distributions of variables, among others.
+
+While Pandas-Profiling provides some level of structure and organization for performing EDA, it does not provide the same level of structured approach that a framework 
+does. Therefore, it is not typically considered a framework.
+
+In summary, Pandas-Profiling is mainly considered a library for EDA, while YData-Profiling can be considered both a framework and a library for more advanced data 
+analysis tasks.
+
+*********************************************************************END**********************************************************************************************
+
+
