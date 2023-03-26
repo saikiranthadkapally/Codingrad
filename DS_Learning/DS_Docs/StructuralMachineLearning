@@ -1,0 +1,313 @@
+Deals with Structural Data:
+
+Problem:
+NOTE: The E-commerse will crawl it's User Data from their Social Media like "Instagram","Facebook" etc.. and also from "blackteams"
+      their "Data Recommendations" and "Data Analysis" with Aim of their commercial Profits.In internet no website gives anything 
+      free.If it Provides anything free then we are the "Products" for their Business.
+
+    -- Ecommerse customer spent Analysis -- Based on the basic characteristics they will predict a person "Annual amount" spent.
+    -- Prediction Problem: Trying to have a "Set of Features" ---> We are "Predicting something"
+
+    The Models which we use Inorder to achieve "Predicting something" one of the Model we use called Linear Regression.
+
+    --- Linear Regression -- "Regression line" is known as "Forward Linear Line" is called "Regression".
+                          --  The Prediction of something will be increased based on certain things Or decreased
+                              It means It should be something like this only it shouldnot oscillate.
+         If Structural Data is linear data it will be known based on the Context Otherwise "DataScientist(who has the statistical work)" will let Us know that this is a Linear Data.
+         -- Then If we are come to know our data is linear data then the Best option tto do here
+         -- To Builda ML model ---> Building ML Model is nothing we are doing we are simply doing ---> f(x) -- Where X - set of all
+            features like X = {x1,x2,x3,....xn}.This "f(x)" is nothing but a ML model.The Technique which we used to build this
+            "f(x)" is known as "Linear f(x)" Or "Linear Function" Or "Linear Regression".If our "Structural Data" is Linear then the
+            "f(x)" will be linear(It connects only x and y)/hyper line(It contains multiple x-axes/Features Or It connects multiple axes)
+
+         NOTE: If it is Non linear data the data itself is a Non-Linear then we will go for other ML Models like "Neural Networks",
+              "Decision Trees",etc...In furture it also exists "Linear-Data".We have lot many things the ML models are going to
+               built still with "Linear Regression" Models.The data comes as a Linear Data.We have that Data.In industry also we have
+               such type Data.Linear Regression is not an absolate due to it's a old technology.It have it's own benefits and it is a
+               kind of Benefits.Linear Regression always exists all the time.It is a starting kind of ML aswell.
+
+    -- Advantages:
+    Linear Regression is a Linear Lines/Linear Hypotense those are determines as "Functions".Even the data sets exists like
+      1. Time Series Analysis
+      2. Stock Market -- along with Linear Regression they also uses now -- Reinforcement
+      3. Forescasting/Prediction(Forward Eye)
+      4. Easy to implement
+      5. Easy to inferencing
+      6. Historical Data--->
+
+NOTE: We have to definitely understand whatever I have written below in terms their "shapes" determination and "Matrix" multiplication etc.. By using 
+      pen and paper to practice all these below inorder to understand the shapes and matrix multiplication and how we Generalizing the "f(x)" means 
+      "Y=W*X+B" which is nothing but Ultimately,we get the Model for "Linear Regression" in Structural ML.
+
+    y = f(x) = mx+c -->This is for only 2D where "x" is an single attribute whatever we studied in our school days
+
+
+    Ultimately,we are building ---> Y = F(X) --> where "X" is a features and "Y" is a labell.But here "X" contains set of X0,X1,.... Or 
+                                                 set of features.
+
+
+    Xi = {x1,x2,x3,x4,....xn} --> If we write it in a small "x" this is for a particular example.These are the set of features for particular example.
+
+    ith example/Row in dataset
+    #features/#columns/#attributes = n --> where "#" tells Number of
+    #examples/#instances/#rows/#fields = m --> Each "example" have a set of features X
+
+    {X1,X2,X3,X4,X5,......,Xm} --> If i write it in a capital "X" then that is called Example.
+
+    X0 ---> 1st example/Row
+    X0---> [X0,X1,X2,X3,.....,Xn]
+
+    shape X0 = (n,1)
+
+    shape X = [X0,X1,X2,....Xm]
+        -----> "X" can be ---- n*m --- if we stack examples in vertical
+        -----> "X" can be ---- m*n --- if we stack examples in horizontal
+
+
+    y ---> scalar -- single number -- Where "y" is a Labell/Output
+    m examples ---> for "m examples" we have to get all the "scalars(y)"
+    Y ===> m examples---> (y0,y1,y2....ym) (Or) [y0,y1,y2,....ym]
+
+    shape Y = (m,1) OR 
+    shape Y = (1,m)
+
+
+    Y = F(X) = P1 * X1 + P2 * X2 + ...... + Pm * Xm -- where "P" is the Parameter.
+
+    Y = F(X) = P1 * [x0,x1,x2,...xn] + P2 * [x0,x1,x2,...xn]..... --> Here x0,x1,x2,.... are set of features in each "X"
+
+
+    Weights---> It is nothing but "parameter(P) which known as 'm' in "y=mx+c" we call it technically as a "Weights"
+    constant (Or) c ---> It is nothing but "Intercept(c)" Technically we call it as "Bias" 
+
+
+                      ----> shape W(1,n) * shape X(n,m) + shape bias (Or) c(1,m) --> Here we are doing matrix multiplication and addition
+                          == (1,m) + (1,m) --> Result of Matrix multiplication
+                        y == (1,m) ----------> Result of Matrix Addition
+
+
+    Y(1,m) = W(1,n) * X(n,m) + B(1,m) --> If we simplify it we get "Y = WX + B" 
+                                      --> This is our "Linear Regression" Model w.r.t shapes.
+
+
+    Y = WX + B --> This is what our "Linear Regression" formulae (Or) This is our "Linear Regression" Model w.r.t these shapes
+                   "Y(1,m) = W(1,n) * X(n,m) + B(1,m)"
+               --> Basically,we are writing "Y=MX+C" conventionally as "Y=WX+B"
+
+    Basically, people write "Y = WX +B" in other way like
+    Y(1,m) = W(n,1).T(transpose) * X(n,m) + B(1,m) -->This is generalized formulae for most of the book references and many Reasearches 
+                                                      will be used this formulae only.
+    
+    Y = W.T * X + B
+
+
+
+    W * X = [(w1*x00+w2*x01+w3*x02+w4*x03),(w1*x10+w2*x11+w3*x12+w4*x13),
+             (w1*x20+w2*x21+w3*x22+w4*x23),(w1*x30+w2*x31+w3*x32+w4*x33)]
+
+    shape of W * X --->(1,4) ---> (1,m) --- m #examples
+
+   
+    NOTE:This is "Generalization" of this whole Array/Matrix "[(w1*x00+w2*x01+w3*x02+w4*x03),(w1*x10+w2*x11+w3*x12+w4*x13),
+                                                              (w1*x20+w2*x21+w3*x22+w4*x23),(w1*x30+w2*x31+w3*x32+w4*x33)]"
+    NOTE:Here we are performing Matrix internal Multiplication
+    W * X = [([w1,w2,w3,w4] * [x00,x01,x02,x03]), ([w1,w2,w3,w4] * [x10,x11,x12,x13])
+            ([w1,w2,w3,w4] * [x20,x21,x22,x23]), ([w1,w2,w3,w4] * [x30,x31,x32,x33])]
+    
+    1st Generalization/Simplification
+    W * X ---> [W] * [X]
+               shape of [W] --> (1,4) -- Here it represents for "[w1,w2,w3,w4]"
+               shape of [X] --> (4,1) -- Here it represents for "[x00,x01,x02,x03]"
+               Output shape of [W] * [X] --> (1,1) -- This "(1,1)" is nothing but this whole term "(w1*x00+w2*x01+w3*x02+w4*x03)"
+
+    W * X ---> 
+
+        W = [w1,w2,w3,w4] --> "[w1,w2,w3,w4]" Replaced with "W"
+
+        X = [x0,x1,x2,x3] 
+
+        x0 = [x00,x01,x02,x03] --> internally -- "[x00,x01,x02,x03]" is Replaced with "x0"
+        x1 = [x10,x11,x12,x13] --> internally -- "[x10,x11,x12,x13]" is Replaced with "x1" 
+        x2 = [x20,x21,x22,x23] --> internally -- "[x20,x21,x22,x23]" is Replaced with "x2"
+        x3 = [x30,x31,x32,x33] --> internally -- "[x30,x31,x32,x33]" is Replaced with "x3"
+    
+    2nd Generalization/Simplification of above complex statement "W * X = [([w1,w2,w3,w4] * [x00,x01,x02,x03]), ([w1,w2,w3,w4] * [x10,x11,x12,x13])
+                                                                          ([w1,w2,w3,w4] * [x20,x21,x22,x23]), ([w1,w2,w3,w4] * [x30,x31,x32,x33])]"
+    W *X = [(W * x0), (W * x1), (W * x2), (W * x3)]
+    
+    NOTE:This should be again written which is compatible to "Matrix" Multiplication
+    W * X = [W * [x0,x1,x2,x3]]
+
+       ---> shape of W(w1,w2,w3,w4) is (1,n) * shape of X(n,m) is (n,m) ---> (1,n) * (n,m)
+
+    3rd Generalization/Simplification of " [W * [x0,x1,x2,x3]]" into "[W * X]"
+    W * X ----> [W * X] -- It tells "[(w1*x00+w2*x01+w3*x02+w4*x03),(w1*x10+w2*x11+w3*x12+w4*x13),(w1*x20+w2*x21+w3*x22+w4*x23),(w1*x30+w2*x31+w3*x32+w4*x33)]" 
+                           which is "W * X" is Equvivalent to "[(w1*x00+w2*x01+w3*x02+w4*x03),(w1*x10+w2*x11+w3*x12+w4*x13),(w1*x20+w2*x21+w3*x22+w4*x23),
+                           (w1*x30+w2*x31+w3*x32+w4*x33)]" which is "[W * X]".Therefore we can say "W * X === [W * X]"
+
+                        -- Instead of writing this "[(w1*x00+w2*x01+w3*x02+w4*x03),(w1*x10+w2*x11+w3*x12+w4*x13),(w1*x20+w2*x21+w3*x22+w4*x23),
+                           (w1*x30+w2*x31+w3*x32+w4*x33)]" whole Matrix/Array.We just simply write it as "[W * X]"
+    
+    Y = W*X + B --> This is about the Final Equation "Y = W*X + B"
+
+            shape of W*X ---> (1,m)
+            NOTE: Here "B" is the bias when we are applying whatever it may be a smaller Number (Or) anything.In Python While we 
+                  are Learning "NumPy" we have discussed something about "BroadCasting". Let's say I have written here "6" as a Bias
+                  then Automatically this "6" will be tend to ([1,m]) shape. It happens like "6" will be changed to Number of "m"
+            shape of B -----> 6 ->>> ([1,m]) -- "([1,m])" is the shape of the "6" or "B" where "m" is the No of Examples.
+
+
+
+    NOTE:Basically,In Interview they will ask the questions like what is the shapes
+    ***NOTE***: Linear Regression will exist with only "single neuron" we can also call Linear Regression or single neuron that is why we have this formulae
+                 "Y = W*X +B".If we will have "Multi-Neurons" in the sense we are going to learn further/future in our course which is known as "Neural Networks".
+                 For that we have different kind of formulae and also same thing applies to "Convolution neural networks"
+
+    Question --> I have a dataset with 15 features and 10200 examples then what will be my Weights shape in Linear regression or single
+                 neuron?
+
+    Answer ----> shape of W --> (1,15) --- (1,n)
+           ----> shape of X --> (15,10200) -- (n,m)
+           ----> shape of B --> (1, 10200) --->(1,m) -- May be sometimes they will ask my ---> B value is a scalar then you are saying that it is a (1,10200) will it   
+                                                        work? --> Ofcourse,it will work even it is a "scalar" value means  if it has only number even it is a Number also No Problem as we are using "NumPy" all these Matrix multiplications are in "NumPy(NumericalPython)" we want to do Numerically. As all of these are dealing with "NumPy".Even the "B" is Scalar --> Scalar(simple number Let's say "10") will be  broadcasted to the shape of (1,10200) & then applying the Vectorization.So, that we will get the "Y" by comining "Y= W*X+B"
+
+
+
+
+Everything we are going to Write in 
+Numpy()
+
+
+------> While writing in "Numpy".Let's say when we have shape of W(Wieght) -- (1,n) --> (1,4)
+        NOTE: Whenever we create an "Arrays" like "(1,n)" in NumPy that should not creates something like "(1,n)" that automatically creates "(4,1)" 
+              Orelse "(n,1)". 
+        a = np.array([1,2,3,4]) then 
+        a.shape ---> gives us ---> (4,) --> this is nothing but (4,1) or (n,1) where -- in "NumPy" Programming.
+        
+
+        NOTE: Inorder to do "(4,)" or "(4,1)" or "(n,1)" that we have to do something like a formulae this kind "Y = W.T * X + B" where "T" is the Transpose.Bcs,Theortically when we write shape of W is "[1,2,3,4]" we understand it that "(1,4)" only.But in NumPy it automatically gives us "(4,1)" automatically it will store something like that in the shape "(4,1)".So,when we are doing or  multiplication is not possible if we write like this as "Y = W * X + B".It will not perform Bcs, "(4,1)" which is "(n,1)" is different So, it won't work that is the reason we need to
+        write our formulae as "Y = W.T * X + B".
+
+        Y = W.T * X + B
+
+        Generalized used term for "Y = W.T * X + B" in NumPy as follows
+
+        Y = np.dot(W.T,X) + B --> Where "dot()" is a function in Matrix multiplication in NumPy.Also known as ".product" is nothing But "Matrix multiplication"  -- So, this is the final "Equation"
+
+        Y = np.dot(W.T,X) + B = F(x) which is nothing But our -- Machine Learning "Model/Linear Regression/F(x)/Y"
+
+Y = np.dot(W.T,X) + B
+
+Y ---> labels of m examples
+X ---> features of m examples
+
+
+Let's say We have a Couple of Data 
+Dataset---
+
+X0 -- [1,2,3,4] --> where "1,2,3,4" are feature values. ----------------- Output/Label Let's say -- 18 degrees or 18' -- y
+X1 -- [2,21,14,5] --> where "2,21,14,5" are feature values. ------------- Output/Label Let's say -- 42 degrees or 42' -- y
+.
+.
+.
+.
+.
+.
+X1000 -- [0,1,0,0] ------------------------------------------------------- Output/LAbel Let's say -- 5 degrees or 5' -- y
+
+
+
+Y = F(X) ---> This function has mapped properly (Or) has to be predicted properly for above "Dataset" with labels "y" for each example So that
+
+
+Whenever I give new example "XNew" with features "20,0,20,0" then what is the temperature we have to find inorder to find our Model(F(X)) should accurate."F(X)" this model is nothing but mapping of above Dataset values.It should learn based on our given dataset like for one type of data
+iam getting one type of temperature value and for (Or) for one type of input im getting one type of value.That has to do some sort of mapping.
+
+Let's say f(x) = 2x^2 + 3x -10 is a function/Model then if we asked to find -- Here we are doing this "2 and 3 and 10" we are finding out so that
+                                                                               So,that this function "f(x) = 2x^2 + 3x -10" will also work  for
+                                                                               new value properly.Here which is "F(2)" is taken as our new value.
+
+-- Convex functions -- If a function have "x^2 or x^3..." then that function is known as
+                       Non-Linear Function and also the line of that function is not in
+                       straight or linear in Graph.Any function which is something like
+                       this or in a squares of polynomial function any polynomial function
+                       it means "square,cube,four etc..." all of those functions are 
+                       "Convex" functions.
+                                                      
+NOTE: We have a Rule in caluclus and differentiations as follows:
+----> Every Convex function will get a global minima. Maxima,Minima,Local minima, Global minima are in differentiations and caluclus in our mathematics.
+----> If you have "n" Number of features then ---> we will end up with "n+1" dimensions
+----> On top of "n+1" dimensions we will be having a convex function always for "Linear Regression" -- For linear regression it will be always a convex
+                                                                                                       function.It is mathematically proved one that linear regression functions are always be a convex function.
+----> If any function is convex function then we will get global minima of it -- It is a Theorem.
+----> Gradient Descent --> We are going to find that "global minima" of the function with the help of some technique called "Gradient Descent".
+      -- Without "Gradient Descent" we don't have a ML and "Gradient" means slope this slope has direction and "Descent" means less
+      -- Gradient Descent is nothing but "slope will be descended until and unless we get the "Global Minima"
+      -- Ultimately, which is lowest to among all of the local minima is called "Global Minima".So,We have to find this using "Gradient Descent" Alg.
+
+      
+***NOTE***:IN Linear Regression we also get "Non-Linear" Data Inorder to handle "Non-linear/heavily scattered" Data in that case we will use the 
+           "Non-Linear" function to our data which is used to find "Global minima" inorder to train our ML Model with all points or features in 
+           our data.If the relationship between the dependent variable and independent variable(s) is non-linear, linear regression may not be the best approach to modeling the data. In such cases, we may need to transform the data or use a different type of regression analysis that can handle non-linear relationships.In summary, if the relationship between the dependent and independent variables is non-linear, we cannot handle it directly using linear regression. We may need to use a non-linear function or a different type of regression analysis, such as non-linear regression, to model the data. 
+
+      NOTE: Here we will use "Differentiations and Partial Differentiations"
+----> Gradient is nothing but ---> slope ----> Basically we find slope for --> f(x) using --> differentiation of "f(x)" with respect to parameter(W,B)
+                                               OR features/variable(X) what we are doing we call it as "slope".Here we are doing w.r.t "x" means "dx" which is d(f(x))/dx.Suppose,If what we want to write tommorow then the "parameter" may changes let's say
+                                               w.r.t to "W" is the parameter and  "B" is the parameter.we will write w.r.t those two then we will get
+                                               the respective slopes of those 2 not in terms of "X".
+                                               NOTE:If we have only one parameter "X" then we call it as "differentiation" or we will do using 
+                                               differentiation.
+                                          ---->NOTE: Suppose,If we have many parameters.Here if we have many parameters like "x1,x2,x3 etc..." then 
+                                                     we will do partial differentiation with parameters (W,B) only Bcs, these 2 not fixed and also
+                                                     changes these two (W,B) with these two are used to optimize or determine loss function which is
+                                                     "global minima"
+                                          ----> many parameters (W,B) then ---> the function which is in terms of "(W,B)" which is "F(W,B)" has 2 
+                                                parameters So, the slope for that will be partial differentiation of  
+                                                --> dow(F(W,B))/d(W) ---> we will get --> slope of F(W,B) w.r.t W --- B will be constant
+                                                --> dow(F(W,B))/d(b) ---> we will get --> slope of F(W,B) w.r.t B --- W will be constant
+                                                NOTE: Here will get the slopes for both "W and B" then we will get the "slope".Based on the slope
+                                                direction we are going to find the "Descent" of it or Descent of "W" and Descent of "B" then we will
+                                                get the minimum values of "(W,B)" So,that our function is optimized for our "Dataset".It's trained 
+                                                completely It's trained perfectly then we can say that "Linear Regression" is trained Perfectly.
+
+----> One more advantage of "Linear Regression" is We can achieve 100% accuracy with traindata it means we will get the "global minima" definitely.Bcs,
+      it gives us "Convex function" if it is a convex function then we definitely have a global minima.what we have written is a simple function So,
+      definitely we will get the global minima.When we get the global minima that Machine Learning Model is 100% accurate w.r.t to traindata.It means 
+      has learnt correctly and 100% with traindata whatever we have given.Global minima is a metric to say about our ML Model how much Accurate or Correct in learning.
+
+                                                
+
+
+
+F(2) = 8 + 6 - 10 then
+F(2) = 4 
+
+
+NOTE:Our "W" is dependent on "X" Bcs, if we have how many Number of features or "X" then we have that many Number of "W" as per our shape definition.In one example if we have how many number of features then we have that many  number of "W" parameters.
+
+F(X) = Y = W.T * X + B -- In this we know the "Y" and "X" But we are not sure or not known about "W,B" these are called "Parameters".
+                       --  we have to find "Wights(W)" and "Biases(B)".So,that those Particular combination of W,B will be a ML Model 
+
+
+So,that those Particular combination of W,B will be a model ---> This combination will going to tell us how much Performance (Or) how much 
+                                                                 Accurate our ML Model is going to told by this particular combination of
+                                                                 "W,B"
+
+
+
+Parameters ---> W, B where Any ML Model "W,B" should be there Even "Chatgpt" will also have these parameters.The no.of parameters for "Chatgpt"
+                is 172 billion when we have seen last time and also for "Chatgpt-4" 1 Trillion Parameters.
+           ---> So, we are going to find these Parameters "Wights(W) and Biases(B)" in Machine Learning Terminology
+
+
+
+
+XNew == [20,0,20,0] ------------> F(X)
+
+    
+    
+
+
+
+   
+

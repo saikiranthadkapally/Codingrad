@@ -1,0 +1,200 @@
+Terminologies we used till now from "StructuralMachineLearning" Notes
+----------------------------------------------------------------------
+Number of examples #examples = m 
+Number of features #features = n
+One example X(i) - ith example = [x0,x1,x2,x3,....xn] --> These are "features" for particular "ith" example
+m examples = [X0,X1,X2,X3,......Xm]
+labels(Y)  = [y0,y1,y2,y3,......ym] --> we call it "truth" label and also some people call "ground" truth
+Weights    = [w0,w1,w2,w3,......wn]
+Bias(any scalar number(any number)) = b
+-----------------------------------------------------------------------
+
+Linear Regressor/Model/Function --- Y^(It is called as Y pred/prediction) = np.dot(W.T,X) + b(either small 'b' or capital 'B') --> written programaticaly
+                                --- Y = W.X + b --> It is a line/Linear Regressor/ML Model/Function --- Ultimately, we find this only with best "W,b"
+                                    values inorder to best fit the Data/future new Data to do that we are doing all kind of stuff below.
+
+
+Y Actual ----- From the training dataset
+Y Pred ------- Predicted Y value from the function --> Everytime 'Y' prediction may be correct or may be incorrect Bcs we will assign random numbers for
+                                                       Weights(W) and Bias(B)
+
+
+abs(Y(pred) - Y(actual))
+
+Probability ----> Function Space---> Y^ = np.dot(W.T,X) + b OR Y = W.X + B OR Y = M.X + C which is general linear regression formulas can have any 
+                                ---> number of lines 'm' no.of.lines which can fit with the Dataset can have any number of functions.So,that is 
+                                ---> called Hypothesis Space (H) ----> from this Hypothesis Space OR from those many functions/lines we have to find
+                                ---> "which is the best function" which will fit our Dataset properly and also give us some confidence on the Future
+                                ---> Dataset or our future unknown Dataset.This is our end goal.
+
+Measure of the Linear Regressor(best line) will be loss Function/ Cost Function / Error Function:
+
+J(Y) = abs(Y(pred) - Y(actual)) --- where "J(Y) or J" is a loss Function/ Cost Function / Error Function
+
+
+Here we are doing "abs" to avoid positives and negative values and its cancellation.And also we have an another Rule mathematically when we have 
+something like this "abs(Y(pred) - Y(actual))" we can also "square it" like this "(abs(Y(pred) - Y(actual)))^2".Even if we do just "absolute" also
+it is fine there is no problem But mathematically when we have a square function which will give us more it means it describes that function more.like
+its a mathematical theorem.In somethings it will be useful in differentiations by using "square" likewise we have many Benefits.
+
+J(Y) = Sigma(1,m)(abs(Y(pred)(i) - Y(actual)(i)))^2 --> Here "Y(pred)(i) and Y(actual)(i)" in this 'i' describes for each "example" where 'i' equal 
+                                                        to "(1,m)--> 1 to m" and "Y(pred)(i)" for particular example and also "Y(actual)(i)" for 
+                                                        particular example.
+
+When we are doing some kind of this one "J(Y) = Sigma(1,m)(abs(Y(pred)(i) - Y(actual)(i)))^2" we can also write whatever the scalar can be as follows:
+J = 1/2(Sigma(1,m)(abs(Y(pred)(i) - Y(actual)(i)))^2) --> Here we written '1/2' we understand this in differentiation.Here in place of '1/2' we can
+                                                            write whatever the value.We can see the significant of 2 in '1/2' why we can written like 
+                                                            this.In '1/2' this 2 will be also useful in cancellation in differentiation.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+********NOTE*********:
+Convex function: convex functions are commonly used in linear regression to find the best fitting line for a given set of data points.
+                 This is the convex function "J = 1/2(Sigma(1,m)(abs(Y(pred)(i) - Y(actual)(i)))^2)" which we use to find the best fitting
+                 line from "Hypothesis Space".
+
+J = 1/2(abs(Y(pred) - Y(actual))^2) --> We can also write "J = 1/2(Sigma(1,m)(abs(Y(pred)(i) - Y(actual)(i)))^2)" 
+                                        as "J = 1/2(abs(Y(pred) - Y(actual))^2) --> it automatically tells "sigma(1,m)""
+
+J = 1/2(abs(W*X+b) - Y(actual))^2 --> Here "Y(pred) or Y^ = np.dot(W.T,X) + b" So, we can also write it as "W*X+b"
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Now,
+what are the  variables/parameters ? --- W,b
+what are the fixed values ?  --- X,Y(Actual)
+
+In terms of OR w.r.t parameters/variables (W,b) as follows:
+J(W,b) = 1/2(abs((W*X+b) - Y(actual)))^2--> This is function in terms of "(W,b)" parameters
+
+This function "J(W,b)" is also a "convex function" --> NOTE: "J(W,b) == Y(pred)"
+
+----> When a function is a convex function ----> we will get lowest or global minima of the Cost function.Our Ultimate Goal is to what we have to 
+                                                 Reduce this "J(W,b)" Cost.
+
+----> For what values of W,b we will get global minima global minima or lowest possible value of the cost function J(W,b).We need to find "(W,b)" So,
+      that we will get the "global minima" of this Cost function "J(W,b)".This cost function "J(W,b)" is a convex function which will definitely 
+      have the lowest possible minima.
+
+
+*NOTE*:Last time we discussed "Chatgpt" will have 172 billion parameters in same way we have parameters in our linear regression as follows
+## Number of parameters in Linear regression = n+1 -->where 'n' is the "Weights(W)" for n number of features and '1' is the  scalar which is "Bias(b)"
+
+**NOTE**:Here we are going to write mathematically using differentiation
+Gradient Descent Algorithm:
+
+J(W,b) = 1/2((W*X+b)-Y(actual))^2 -->Above we have written 'abs' for all absolute will make a number always positive(+) irrespective of sign 
+                                    But It is not required When we are doing the "square" we will get the proper value and we will get the positive(+)
+                                    number itself.So,we need not write "absolute(abs)" again.When we are doing "square" it doesnt require "abs".
+
+
+***NOTE***:If a function has only one variable then we will do normal differentiation to the gradient or slope
+
+***NOTE***:If a function has more than one variable then we will do partial differentiations to get the gradient or slope of the function w.r.t 
+           particular variable.
+
+Gradient of this function "J(w,b)" w.r.t W === dow(J(W,b))/d(W) --> then we will get the Gradient or slope of this function "J(w,b)" w.r.t 'W'
+Gradient of this function "J(w,b)" w.r.t b === dow(J(W,b))/d(b) --> then we will get the Gradient or slope of this function "J(w,b)" w.r.t 'b'
+
+When we find the Gradient of 'W' the slope of the 'W' will tell us:
+Slope/Gradient of the "J(w,b)" w.r.t W will tell W the direction of minimum of the cost function "J(W,b)"
+Slope/Gradient of the "J(w,b)" w.r.t b will tell b the direction of minimum of the cost function "J(W,b)"
+
+W = W - alpha(slope(J(W,b) w.r.t W)) --> Here this "(slope(J(W,b) w.r.t W))" is telling the 'W' about direction it need to go(direction is down)
+                                     --> Here "alpha(slope(J(W,b) w.r.t W))" in this 'alpha' is telling 'W' about number of "steps" it need to go
+b = b - alpha(slope(J(W,b) w.r.t b)) --> Here this "(slope(J(W,b) w.r.t W))" is telling the 'b' about direction it need to go(direction is down)
+                                     --> Here "alpha(slope(J(W,b) w.r.t W))" in this 'alpha' is telling 'b' about number of "steps" it need to go
+
+learning rate ---> alpha --- This alpha is nothing but "Learning rate" and also alpha will decide with how much fastness it need to move/learn inorder
+                             to Reach "global" minima.Suppose,if we give 100 steps inorder to learn fastly then it "can't".We talk about this learning
+                            rate further in "ML" startegies and all
+Gradient Descent Algorithm 
+--> It is a "Basic" Gradient Descent Algorithm.We also have lot of other things like Batch,stochastic,Adam,RMS prob,momentum etc....
+------------------------------
+Training Phase of the Model:
+--> We are training our Model to get the "global minima " of "W,b" So, that we will end up with those "W,b" with very good proper costless function 
+1. Random initialization of W,b --> It means "(W,b)" are starting from Random positions
+2. find out the cost function   --> "W,b" first find out the cost function after starting from Random positions 
+                                --> Training dataset will only be useful here Inorder to find out the cost function using ---> (Ypred - Yactual) = cost
+3. slope of that function w.r.t both --> After finding out the cost function by "W,b" then it will find the slope from those 2
+--->We need to update "W,b" directions and speed/steps Until we get the minima---> Condition: (W,b) are not changing ---> it will called as 'Converging'
+***NOTE***: Converging will be happen w.r.t the parameters if the function is convex function to get the "global minima"
+4. Update W,b: --> It means "W,b" update their directions and their speed using 
+    W = W - alpha*(slope(J(W,b)) w.r.t W)
+    b = b - alpha*(slope(J(W,b)) w.r.t b)
+
+At the end:
+W,b ---> Y = W*X + b --> The values which we got will be written in the function " Y = W*X + b" then that function will become our "Linear Regressor" 
+                         Model
+
+slope(J(W,b)) w.r.t W ==> dow(J(W,b))/dW --> This is the derivation of the cost function w.r.t W
+
+                      ==> dow(1/2(Y^ - Y)^2)/dW --> Here we are Replacing "J(W,b)" with "1/2(Y^ - Y)^2"
+                      ==> dow(1/2(W.X + b - Y)^2)/dW -->  Here we are Replacing "Y^" with "W.X + b"
+                      
+
+slope(J(W,b)) w.r.t W = (Y^-Y)*X --> This is our derivation function we got after differentiation Which is nothing but our "slope(J(W,b))" w.r.t W
+slope(J(W,b)) w.r.t b = (Y^-Y)*1 --> This is our derivation function we got after differentiation Which is nothing but our "slope(J(W,b))" w.r.t b
+
+***NOTE***: Here we can Update "W = W - alpha*(slope(J(W,b)) w.r.t W)" and "slope(J(W,b)) w.r.t b" with "(Y^-Y)*X" and " (Y^-Y)*1 " as follows:
+W = W - alpha*((Y^-Y)*X )
+b = b - alpha*((Y^-Y)*1 )
+
+
+*********************************************************PERSONAL-NOTES**************************************************************************************************************************************
+1Q) does we use convex function to find the best linear regressor line in hypothesis?
+
+A)Yes, convex functions are commonly used in linear regression to find the best fitting line for a given set of data points.
+
+The goal of linear regression is to find a linear function that best represents the relationship between the input variables (also called features or 
+predictors) and the output variable (also called the response or target variable) in the data. In other words, we want to find the line that minimizes 
+the sum of the squared distances between the predicted values and the actual values.
+
+This optimization problem can be formulated as a convex optimization problem, which means that the objective function is convex and has a unique global 
+minimum. The objective function in linear regression is the mean squared error (MSE), which is a convex function of the regression coefficients. By 
+minimizing the MSE, we can find the best fitting line that represents the linear relationship between the input and output variables in the data.
+
+So, to answer your question, yes, we use convex functions (such as the MSE) to find the best linear regressor line in hypothesis.
+
+2Q)why we use convex function to find best linear regressor line instead we can also find by checking each regressor line with using formulae 
+  abs(Y(pred) -Y(actual))?
+
+A)There are a couple of reasons why we use a convex function (such as mean squared error) to find the best linear regressor line instead of checking 
+each regressor line using the absolute difference formula (|Y(pred) - Y(actual)|).
+
+Firstly, using the absolute difference formula to evaluate the performance of a regressor line can result in non-unique solutions. In other words, 
+there may be multiple regressor lines that have the same minimum absolute difference to the actual values, which can lead to ambiguity in selecting 
+the best regressor line.
+
+On the other hand, the mean squared error (MSE) is a strictly convex function of the regressor line coefficients, which ensures that there is a unique 
+minimum point that corresponds to the best fitting line. By minimizing the MSE using convex optimization techniques, we can find the unique set of 
+coefficients that correspond to the best fitting line.
+
+Secondly, the use of the MSE as a loss function has several desirable mathematical properties, such as differentiability and continuity, which allows 
+for efficient optimization using gradient-based techniques. The absolute difference formula, on the other hand, is not differentiable at zero, which 
+can make optimization more difficult.
+
+Overall, while the absolute difference formula can be used as a measure of the performance of a regressor line, the use of a convex function like the 
+MSE has several advantages in terms of uniqueness of solution and optimization efficiency, which makes it the preferred approach for finding the best 
+fitting line in linear regression(Lets imagine that we have some data about the height of children and their corresponding weight. We want to use this 
+data to find a line that shows the relationship between height and weight. This is called a linear regression.
+
+One way to do this is to draw many different lines and see which one is closest to the actual data points. We could measure how close a line is to the 
+data by using the absolute difference between the predicted weight and the actual weight.
+
+However, there are a couple of problems with this approach. Firstly, we might end up with more than one line that is equally close to the data, so we 
+dont know which line is the best one. Secondly, it can be hard to find the line that is closest to the data because we would need to check an infinite 
+number of possible lines.
+
+Instead, we use a different approach called mean squared error (MSE). This involves finding the line that gives the smallest value for the MSE. The MSE 
+measures how well the line fits the data by squaring the difference between the predicted weight and the actual weight for each data point, adding up 
+all these squared differences, and then dividing by the number of data points.
+
+The benefit of using the MSE is that it gives us a unique best line that fits the data. Also, it has some nice mathematical properties that make it easy 
+to find the best line efficiently.
+
+So, even though using the absolute difference formula is a valid way to measure how well a line fits the data, using the MSE is preferred because it 
+gives us a unique best line and is more efficient.)
+
+**************************************************************************************************************************************************************************************************************
+
+
+
+
+

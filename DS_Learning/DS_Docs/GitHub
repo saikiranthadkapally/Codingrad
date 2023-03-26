@@ -7,3 +7,20 @@ GitHub:
     Code into it and they can Use  the Data.
   - GitHub is an "Open-Source" Every User who "SignUp" in it and then he allocated with Some Free Space like "5GB".It means
     we can store our Data (Or) Code in it Upto what free space they have Provided to Us we can Use it.
+
+Steps to Create GitHub:
+  1. Create your account in GitHub
+  2. Send me your github id(If i want to add anyone as my "Contributers" then I want to add them.So,I need their github Id's)
+  To Access My Team Coordinator GitHub account and Data:
+    Github Notes folder:
+    https://github.com/tharuncodingrad
+    Clonning:
+      --> ("copy of the entire repository, including all its files, code, and version history, onto your local machine. ")
+    steps to follow:
+    1. git clone https://github.com/tharuncodingrad/FDS-Course-2.git 
+    2. dont do any updates in cloned folder(FDS-Course-2) and Don't create any "environment" in this folder..
+    3. daily do this ----> git pull origin main --> This command pulls the updated GitHub Repository Data of My Team Co-ordinator Everyday to my Local Machine.
+    4. SSH add to your systems
+    5. Send me ur ids(I need to send My Id to my Team Co-ordinator he adds me into his Contributor then only I can access "Team Co-ordinator" Repository/Data/Code)
+    6. git clone git@github.com:tharuncodingrad/DataAnalysis.git --> This should be done only when My team Coordinator sends msg as "I added to you as my Contrinutor"
+    

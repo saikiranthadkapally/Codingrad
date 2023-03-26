@@ -4,13 +4,25 @@ In Naukari Freelancing OR Freelancing Jobs OR In LinkedIn Keep Status as "Freela
 
 NOTE: Present Data Engineering Jobs are highly scoped and also for Data Analysis but not that much currently like 50% it will become more Scope in Future and also more scope for Database Administrators.So, we also have knowledge on SQL(DBMS) and also more scope on ML Engineer Statistician, and also for Developer roles like Python Developer OR Full Stack Python Developer etc..
 
-NOTE:If there are any free courses in "Great_Learning" If we want to learn anything.Because the teaching is very good in this Platform.And "Coursera" is also a good Platform In Order to
-       learn Coursers If we want to Learn and We don't need Certificate then we can select particular Zone like "Machine Learning","Deep Learning" etc.. and Next click on "Audit the course"
-       After registration then it enables free learning.We can also listen "Deep Learning" and "Machine Learning" in english by click on "Audit" But in our Course it in Telugu If we are
-       Intereseted we can also listen to Coursera with parallel to our course if Anything we didn't understand in our "Codingrad" course we may able to understand in coursera wit more 
-       Easily by Pictorial Representation.
+NOTE:  If there are any free courses in "Great_Learning" If we want to learn anything.Because the teaching is very good in this Platform.And "Coursera" is also a good Platform In Order to
+       learn Coursers If we want to Learn and We don't need Certificate then we can select particular Zone like "Machine Learning","Deep Learning" etc.. and Next click on "Audit the 
+       Course" After registration then it enables free learning.We can also listen "Deep Learning" and "Machine Learning" in english by click on "Audit" But in our Course it in Telugu If 
+       we are Intereseted we can also listen to Coursera with parallel to our course if Anything we didn't understand in our "Codingrad" course we may able to understand in coursera with 
+       more Easily by Pictorial Representation.
 
 NOTE: Learning shell scripting(Linux commands) is also very good thing.
+
+NOTE: Learning Cloud Technology is also One of the important Task Bcs, Most of the "StartUp" Companies they will directly go to Cloud PLatforms like AWS, Azure etc..
+      for Deployments and Most of the "StartUp's" try to make their Work to complete with single person Maximum.We can also learn in Udemy and in Youtube also gives 
+      best content to learn.It Best to have "Cloud Knowledge" along with the "Machine Learning".Most of StartUp companies Prefers AWS Because they provide Subsidies
+      Or Gives Credits to the StartUp Companies.
+      SUB NOTE: Learn these Technologies like AWS Devops (Or) Machine Learning Services like Sage Maker Recognition, Text Extract, Voice Related Services, AWS Devops
+                either Using CDK (Or) Using Terraform then It will be a good skill set to survive present situation.
+
+NOTE: In Indian text books for Mathematics they will teach "Machine Learnine" in a way Advanced Mathematics involved We not Undertsand and Grasp Machine Learning 
+      Easily.So, We first learn (Or) Go for Western Textbooks and their Teachings for "Machine LEarning" whatever it is don't go for Indian Textbooks directly first
+      In Western Culture they defined Machine Learning Model very Easily So,We follow that Instead of our Indian followed ML Strategies.After Learning "Western 
+      Based" then We go for "ML" Concepts in our Indian Approaches then We learn in Advanced way and It involves in advanced mathematics.
 
     
 SKILLS:
@@ -20,9 +32,20 @@ SKILLS:
     --- Basic Concepts of Networking
     --- Basic Concepts of Cloud Computing
     --- Basic Knowledge on Information Security
-    --- Basic Statistical Concepts(Numerical,Categorical_Attributes & Basic_Distributions) 
+    --- Basic Statistical Concepts
+        --- Numerical,Categorical_Attributes & Basic_Distributions
+        --- Correlations
+        --- Hypothesis Testing 
     --- Data Feature Engineering
     --- Data Analysis
     --- Structural Machine Learning
+    --- Computer Vision
+    --- Tensorflow
+    --- Scikit-Learn
+    --- Pandas
+    --- NumPy
+    --- OpenCv
+    --- Data Science
+   
    
      

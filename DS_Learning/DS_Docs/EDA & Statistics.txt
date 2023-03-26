@@ -2,7 +2,13 @@
                                                             _______________________
 **************** We use Pandas for -- EDA/Feature Engineering -- In our course we deals with Structural Machine Learning*************************************
 
-NOTE: It is a subcourse in our "Full stack Datascience" course. Below are the full introduction for this sub-course."Khanacademy.org" is good for Statistocs and Probability.note- "Data Engineer" it deals with "Automation" mostly and also a good future scope most of the 50-70% are in this role.In this EDA or Feature Engineering is very impoetant for "structural ML" and also for "NLP". Cocepts and advantages and disadvantages in Feature Engineering is very very important for buiilding even a simpkle basic ML model.
+NOTE: It is a subcourse in our "Full stack Datascience" course. Below are the full introduction for this sub-course."Khanacademy.org" is good for Statistocs and 
+Probability.note- "Data Engineer" it deals with "Automation" mostly and also a good future scope most of the 50-70% are in this role.In this EDA or Feature Engineering 
+is very impoetant for "structural ML" and also for "NLP". Cocepts and advantages and disadvantages in Feature Engineering is very very important for buiilding even a 
+simpkle basic ML model.
+SUB NOTE: In our "Full stack Datascience" we won't learn "Reinforcement Learning","Generative Models" and "Sequence Models". We only learn "Structural Machine Learning"
+and "Computer Vision". The "ChatGpt" which Uses "Reinforcement Learning" and "Generative Models". Some Exceptions for ChatGpt like It cannot do DP(Dynamic Programming)
+Problems like Data Structures Algorithms and Statistical Related Jobs and In testing Bcs it amybe misguided someone these are some I Observed in ChatGpt.
 
 After completing our "Datascience" course We are apllicable for Job Roles they are:
     1) ML Engineer
@@ -17,7 +23,12 @@ After completing our "Datascience" course We are apllicable for Job Roles they a
 
 
 NOTE:
-ML Engineer:-"NumPy & openCV" are tools Using these tools how we can build our Ml models and how we will do it perfectly w.r.t mathematical or in performance wise and how we will do optimize it and how we applied vectorization and parallelism all these are discussed in perspective of a Tools till now.But when it comes to "Pandas" it is completely for analytical purpose."Analytical purpose" in the sense Before we talked about "doing purpose " it means we must do it and by going on doing it We build our  model those people are called "ML" Engineers.The ML Engineers work is to Undertsand Numpy,opencv,tensorflow or Core tensors in tensorflow in more depth and was building  ML models by understanding all those and doing properly which we call them as a ML Engineers.To understand our ML models also We require this "Datascience" and also we need some sort of techniques in Statistics like "Distribution Curves","Tests" etc.. all these are very very importanyt inorder to build ML models 
+ML Engineer:-"NumPy & openCV" are tools Using these tools how we can build our Ml models and how we will do it perfectly w.r.t mathematical or in performance wise and 
+how we will do optimize it and how we applied vectorization and parallelism all these are discussed in perspective of a Tools till now.But when it comes to "Pandas" it 
+is completely for analytical purpose."Analytical purpose" in the sense Before we talked about "doing purpose " it means we must do it and by going on doing it We build 
+our  model those people are called "ML" Engineers.The ML Engineers work is to Undertsand Numpy,opencv,tensorflow or Core tensors in tensorflow in more depth and was 
+building  ML models by understanding all those and doing properly which we call them as a ML Engineers.To understand our ML models also We require this "Datascience" 
+and also we need some sort of techniques in Statistics like "Distribution Curves","Tests" etc.. all these are very very importanyt inorder to build ML models 
 
 Datascience-:But Now, we are talking about "Data science" this have a term at outside we ara also distingush in same as outside,Here "Datascience" means Not in terms of
 ML model first of all We understand the data which we were given it mean how we are going to analyse the data in perspect of getting something out of the "Data" this we called as "Datascience" all these things done by datascience people and this whole thing from now, until we complete our statistics we call all these things as "Data Science".This Data science term is Completely different from outside.Here we do "Mental visualization" of data.It is a Core Datascience.More or less completely analysis purpose.
@@ -75,6 +86,7 @@ NOTE:Here we won't do operations on Unstructured or Semistructured Data. Unstruc
     3. Unstructural Data
         1. Generating Rapidly from every systems and mobiles
 
+***********************************************************************************************************************************************************************
 *********NOTE*********: We can use "AWS" Services,tools etc.. for Data Engineering(Automation),We can Build ML models(DecisionTrees,LinearRegressions,RandomForest,Etc.)
 Automations and Deploy it into Cloud Platforms(Due to this we access any time and use) if we Provide any type of Data to that ML Automation Modules It generates Output 
 Results Based on that Which ML model is giving more accuracy and performance Based on that we can choose our ML models for our Data.
@@ -87,7 +99,20 @@ Also, We can do Data Analysis using "AWS" tools and services and also Build infr
 We can Perform and also there are many Tools like CDK etc... We need to learn inorder to build any Automation Modules and We also Use API's of AWS inorder to access
 their services etc..It is very Useful Platform to do Data Engineering tasks etc... 
 
+**********NOTE**********: Terraform and CDK (Cloud Development Kit) are both tools used in cloud computing to define and manage infrastructure as code (IaC).
 
+Terraform is an open-source tool created by HashiCorp that allows users to write infrastructure as code in a declarative language and manage their cloud resources 
+across multiple providers, including Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). Terraform uses a simple syntax called the HashiCorp 
+Configuration Language (HCL) to define and provision infrastructure resources such as virtual machines, load balancers, databases, and more.
+
+CDK, on the other hand, is an open-source software development framework created by AWS that allows users to define cloud infrastructure using familiar programming 
+languages such as TypeScript, Python, and Java. The AWS CDK provides a high-level object-oriented abstraction on top of cloud resources, which allows users to create 
+and manage infrastructure in a more familiar and scalable way. With CDK, users can define cloud resources using code, and the framework automatically generates the 
+necessary cloud formation templates to provision those resources.
+
+Both Terraform and CDK are popular tools used in cloud computing to automate the deployment and management of cloud infrastructure.
+
+***********************************************************************************************************************************************************************
 
 Data Science, Machine Learning Engineers, Data Analysis, Data Engineering for all these we need EDA is a common -- we use Python, Pandas , Matplotlib/seaborn, Numpy, YData_profiling as a common tools and langs.
 

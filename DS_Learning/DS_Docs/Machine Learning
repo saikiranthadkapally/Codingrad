@@ -1,0 +1,209 @@
+Concepts Completed from Start to Till Now:
+------------------------------------------
+Phase 1 Python --- LMS 
+Phase 2 Libraries & Statistics ---- DataAnalysis
+
+NOTE: "SQL" We are going to complete this in a Project atLast While doing Projects in LMS for persistent DataStorage. 
+
+Going to Discuss Further:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*********NOTE************: In "Machine Learning" We are going to use "Differentiations,Partial-Differentiations,Integrations,Calculus" and we mostly use 
+"Differentiations" and "Partial-Differentiations".
+
+NOTE:We build Many Projects in this Phase.For Every Model Or Architecture we build a "Project".Instead of building and deploying every Project/Model as a Separate 
+"Project" and Writing Rules for it and Creating Folders for Each "Project" for Every Model.We use a FrameWork called "Flask" inorder to Deploy our "Projects".We can 
+build our Project in Notebook and Deploy Each "Project" into a Flask.
+
+Phase 3 Machine Learning ---- Model Deployment Using Flask(Framework) -- Docker -- AWS ECS Server to deploy Code/Project. 
+                                                                                -- ECS is same like Kubernets.
+                                                                                -- It will be on 24/7 Unlike lambda which 
+                                                                                   activate when we send Request.
+
+Concepts going to Learn in Machine Learning:
+    --- Supervised Machine Learning -- This is only we aree going to Learn Mostly.We are going to try Upto Advanced level of "Supervised".In these we are going to  learn the concepts as follows:
+        --- Structural Machine Learning
+        In this  Linear and Logistic Regressions are just Techniques (Or) Architectures In this we have as follows:
+            --- Linear Regression
+            --- Logistic Regression
+            --- Decision Trees etc..
+            --- Support Vector Mchines.
+        --- Artificial Neural Networks
+        In this Artificial Neural Networks are the different Architectures In this we have Neaural and DNNs as follows:
+            --- Neural Networks
+            --- DNNs(Deep Neural Networks)
+        --- Computer Vision 
+        In this also we have different Architectures/Techniques In this we have Techniques as follows:
+            --- Mobile Nets
+            --- Efficient Nets
+            --- Transfer Learning
+            --- Inception Nets/Google Nets
+            etc...........................
+        --- ML Strategies
+            --- Train/Dev/Test
+            --- Bias & Variance
+            --- Hyper Parameters
+            --- Regularization
+            etc.................
+    Actually We have 4 concepts including "Supervised" in Machine Learning they are:
+    --- Semi Supervised Machine Learning 
+    --- Unsupervised Learning -- In this we going to learn very "Basic Clustering" concept and  We will not go "Advanced Techniques".
+        --- Clustering(In this we have an Algorithm "K-means" We learn this details and we implement it)
+    --- Reinforcement Learning -- We just Learn what is "Reinforcement Learning" We don't touch any Basics too.
+
+Libraries going to Use in this Phase 3:
+    --- Tensorflow
+    --- Scikit-Learn
+    --- Pandas,Numpy,OpenCv -- We must use these everywhere without these we can't do Anything.
+    --- PyTorch -- In "Computer Vision" We won't use PyTorch Completely.We just use PyTorch Models like by Using Yulo Algorithms etc..
+
+NOTE: Mainly we use these Libraries.We don't use "Scikit-Learn" Mostly.We only use for "Linear Regression" and "Logistic Regression".
+      We can able to write a code and we can able understand the code if anyone written very Easily in Tensorflow,Numpy,Opencv,Py-Torch.
+
+Projects going to be Build: For Evey Concept we will do Project
+   1. Linear Regression
+   2. Logistic Regression 
+   3. Decision Trees
+   4. SVMs
+   5. Neural Netwrks & Deep Neural Network
+   6. Barcode Detection 
+   7. Car Damage Classification 
+   8. Drivers License Detection
+
+NOTE: All these Projects are going to be done in this course Based on that particular Domain Dataset only.But same Ideas same Implementation same Machine Learning Model Except the Data.Here highest playrole is again Data.We need not to write this whole
+Machine Learning Model building code always.Once if we written Next time onwards we concentrate on Data and try to do fine-tune 
+Model Architectures.Before doing all these we need to Require Basic knowledge on it for doing major thing.So,that basic knowledge
+is very very Important.This is the overall Brief to the "Machine Learning".
+
+Supervised ML:
+----------------------
+When we gives Question(Examples/Characteristics) and Answer(Output/Answer) to Supervised ML It means we are giving Examples and 
+its Labels for training the "Supervised Model" with many Examples then it learns a Pattern from those Trained sets and whenever we 
+give any new Example it Try to give Output Based on Previous Data.The Machine Learning Model will Learn something out of those
+Examples which we given that Pattern which it learns is nothing But We call as a "Function" Or "Model" Or "f(x)".
+
+    function --- f(x) --- model
+    x -- feature/qualities
+    set of features(denoted by) == X^ 
+    f(X^)
+
+    qualities/features --- x1,x2,x3,......
+    answer/output --------- y
+
+    y = f(x1,x2,x3,...) --- This is for one example --- Same notation used for all Examples.
+                        --- If we have Suppose 10000 Examples then this function will become generalizes.
+                        --- generalizes means the function will learn some Pattern from these Examples which we 
+                            given that Pattern is known as "f(x)" also called as "Model".
+    
+    NOTE: This "y^" is known as Generalized function After training has been completed.Whenever we give 10000 Examples for ML Model
+          then ML Model will learn some pattern from it similar to human beings that we call it as "Model" and which is nothing but
+          "f(X^)" Where "X^" denotes nothing But "set of new feature".  
+
+    y^  = which we call "model" = f(X^) --> Here "X^" nothing but set of new features.
+
+    new features -- output ---? ---> Here we dont know the O/P for new features 
+
+    y^ = f(X^) ---> Here "y^" is a new output which is our Required output.Whenever I send "X^" features to the function then the O/P
+                    which we got "y^" mostly the output will be correct. 
+
+    f(X^) --- How this ML Model is learning this function for this we have "Architectures" ------- like Basic "Architectures" called
+              "Linear","Logistic","Convolution Networks","Neural Networks" etc...... all these are "Architectures" which are Required to learn this funtion.
+
+    Ultimately the whole course will run around "y=f(x)".In this It should learn "Pattern" in such a way that Whenever we give any
+    type of new Problem to it.It should be able to solve.that much accuracy we Require.In Order to make Accurate to solve any type of problem which we give to our ML.To do this we learn what type of "Architectures" we should use and what type of
+    "Machine Learning" Strategies we will use this what we will learn in our Course.Whatever it may be But the Ultimate solution will be "y=f(x)".
+
+    y = f(x)
+
+    This "f(x)" in terms of ---  f(x1,x2,x3,....) = where x1,x2,x3... are features --- It will be basically in the form of "y=mx+c".
+
+
+    y = mx+c ---> It is basically a "Linear Line" function
+
+    m --- slope ------------ we call in ML as "parameter/weight"
+    c --- intercept -------- we call in ML terminology as "bias"
+
+
+    y = 2x^2 +5x + 8 ---This is Second degree function --- This is One "Linear Regression Model" The terms we used in it they are:
+                Parameters/weight ---- 2,5
+                bias ---------- 8
+
+    y = 6x^3 + 8x^2 + 9x + 10 --- This One "Linear Regression Model" with higher degree 3
+                
+                weights/Parameters ---- 6,8,9
+                bias ------------------ 10
+
+    All these 1 degree,2 degree,3 degree etc..."Linear Regression Models" are called as "Higher order 2D space functions"
+
+    NOTE:Also, the "x" is a feature it means the "no.of.features in the above kind of functions --- is only 1".Bcs,we have only "x"
+         but we are getting x^1,x^2,x^3 etc.. Here "x" is a small number we are taking it as a normal number.It can have only single
+         space 2D Bcs, It has only x and y.But we won't work in this 2D Bcs, we don't have single feature.We have many "No.of.features"
+         in our example.
+
+    No of features can be anything more than 2, and atleast 1000
+
+    We can plot all these functions whatever we wrote above.We can draw it in X and Y in 2D(dimension).Bcs,Here we have only one parameter which is "x".But 
+    In real time we dont have only single "x" there are many features then we will be ending up with
+        
+    If our --- no of features are n -->then our dimension I mean our coordinate space will be n+1.
+           --- Basically, we can imagine upto 3D I mean coordinate Geometry will also upto 3D not more than
+    
+    y = m1*x1 + m2*x2 + c -- This our One more "Linear Regression Model" function --- This is our 3D space
+
+
+    y = m1*x1 + m2*x2 + m3*x3 +.......+ mn*xn + c --- This is our ND space -- We cant imagine But we feel that we have ND. 
+
+    weights = m1,m2,m3,....mn
+    bias = c
+    NOTE: Here our Point of interest is to find Particular "Weights" Or find particular "Wight" and "biases" so that our function 
+          will perform very well.Here x1,x2,x3.... are static numbers means feature values.Here we can fix any value Or combinations
+          of values for m1,m2,m3.... But for what values of "m and c" our function/Model  is doing Good then those values we have to
+          Capture.
+
+    Some how we have Captured -----> m1,m2,m3 values and also c
+
+    example --- (x1,x2,x3,x4.....,xn,y)
+    If we given such examples --- no of examples === 10000 --- then we will call this no of examples as a "Dataset".
+
+    Then we will get one function like Assume --- y = x1 + 2x2 + 6x3 - 7x4 - 8x5 + ..... -20 Here "-20" is a bias
+
+    NOTE:Whenever we given this no of examples(10000) as a Dataset to ML Model somehow(it did something) and given m1,m2,m3 and c values and Produced like this a    function  " y = x1 + 2x2 + 6x3 - 7x4 - 8x5 + ..... -20" This is called "Machine Learning" Model.  
+
+    Let's say a new question --- with features(x1,x2, .... xn) then I don't know Output -- These values of features x1,x2,x3,... of
+    new question will be substituted in place of x1,x2,x3,... and -20 then performing function with these values then we will get
+    y as a output.
+
+    y output -------------------> This y output is "prediction from the model" / we call it as "inferencing"
+
+    NOTE: Throughout our course we have same flow.Here this "somehow" what we will learn that how to bring best values for "somehow"
+          which is "m1,m2,m3 and c" by using our ML Techniques, ML Models, ML strategies,Concepts etc.. then our prediction Or inferencing 
+          is Accurate.So,this "somehow" we are going to learn in our Course.
+
+Definitions:
+_____________
+These are the Four different types of "Machine Learning":
+
+Supervised Machine Learning: We will need to give labelled Data to train models to get the function 
+                             like "y = m1*x1 + m2*x2 + m3*x3 +.......+ mn*xn + c"
+NOTE:The term itself the labelled Data is simple.But the effort of Labelling the Data is toughest Job.We need lot of Human workforce
+and that Labelling also to be very higher.
+    --- Labelling Tools: Open source tools and Commercial tools
+    1. Structural Machine Learning
+    2. Computer Vision
+    3. Text Analysis
+    4. Natural Language Processing 
+Unsupervised ML: We will give data only, and the techniques will try to find out the patterns out of it.  -- Example is "cluster"
+                 Here it will automatically "clustered" out Data into different different clusters.
+Semi Supervised ML: We have labelled data and unlabelled data. we will use labelled data to label the unlabelled data.
+Reinforcement ML: It works on penality/bounty.It is very Powerful Machine Learning Concept/Type/field used to Bring an Powerful AI.
+     
+
+
+    
+
+     
+
+    
+
+    
+
+      
