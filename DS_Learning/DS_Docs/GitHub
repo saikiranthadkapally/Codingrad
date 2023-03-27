@@ -24,4 +24,24 @@ Steps to Create GitHub:
     5. Send me ur ids(I need to send My Id to my Team Co-ordinator he adds me into his Contributor then only I can access "Team Co-ordinator" Repository/Data/Code)
     6. git clone git@github.com:tharuncodingrad/DataAnalysis.git --> This should be done only when My team Coordinator sends msg as "I added to you as my Contrinutor"
 
+Steps to follow to push updated files and folders into "Git" Repository:
+  Inorder to "PUSH" daily updated files,folders and contents from "Local Machine" to "Actual Git RePository" follow these steps:
+  Step-1:It moves all updated files,folders,content Except already moved files excluding "env" folder from "Local Repository(Machine)" to "local Git repository folder"
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  1. rsync -av --exclude='env' /mnt/d/Codingrad/DataScience/ /mnt/d/Codingrad/Git/Codingrad/ && cp -u /mnt/d/Codingrad/DataScience/ /mnt/d/Codingrad/Git/Codingrad/
+  Step-2:Add the updated files and folders to the cloned repository:
+  -------------------------------------------------------------------
+  2. Type "git add ." and press Enter. This will add all the updated files and folders to the cloned repository.
+  Step-3:Commit the changes to the cloned repository:
+  ----------------------------------------------------
+  3. Type "git commit -m "commit message"" and press Enter. Replace "commit message" with a brief description of the changes you made.
+  Step-4:Push the changes from the cloned repository to your actual GitHub repository/Original repository:
+  ---------------------------------------------------------------------------------------------------------
+  4. Type git push origin master and press Enter. This will push the changes from the cloned repository to your actual GitHub repository.That's it! Your updated files and folders should now be in your actual GitHub repository.
+  ***NOTE***:These "Steps" will not "Delete" our files,folders and contents from the "cloned repository on your local machine".It only updates and sync our changes to
+             cloned repository.
+
+***NOTE***:For More Information of Basics of "GitHub" Refer the videos "Statistics Final2 and "Machine Learning Intro" from "CODINGRAD" Platform OR We also have many
+           good videos in YouTube Platform.
+ 
    
