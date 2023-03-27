@@ -37,7 +37,7 @@ Steps to follow to push updated files and folders into "Git" Repository:
   3. Type "git commit -m "commit message"" and press Enter. Replace "commit message" with a brief description of the changes you made.
   Step-4:Push the changes from the cloned repository to your actual GitHub repository/Original repository:
   ---------------------------------------------------------------------------------------------------------
-  4. Type git push origin master and press Enter. This will push the changes from the cloned repository to your actual GitHub repository.That's it! Your updated files and folders should now be in your actual GitHub repository.
+  4. Type "git push origin main" and press Enter. This will push the changes from the cloned repository to your actual GitHub repository.That's it! Your updated files and folders should now be in your actual GitHub repository.
   ***NOTE***:These "Steps" will not "Delete" our files,folders and contents from the "cloned repository on your local machine".It only updates and sync our changes to
              cloned repository.
 
