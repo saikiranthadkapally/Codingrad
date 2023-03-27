@@ -1,0 +1,18 @@
+Terminology for our Linear Regression
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Linear Regression:
+    --> Structural Data
+    --> Structural Data we have --> X and Y
+    --> Whereas X refers to Examples or Rows or Fields Basically, for linear Regression we require atleast 1000 above X = [X0,X1,X2...,Xm]
+    --> Each X is a combination of features X(i) = [x0,x1,x2,x3,......xn] --> small 'x' denotes features of a single example 
+    --> Labels are Y
+    --> For each example we have one Label
+    --> Y = [y0,y1,y2,y3,....,ym] -->Here 'ym' denotes upto 'm' number of examples
+    --> X(i),Y(i) = ([x0,x1,x2,...,xn],y(i)) -->'X(i)' denotes 'ith' example and and 'Y(i)' denotes 'ith' label/Output
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    Our goal is to find Linear line which is a "Linear Regressor"
+    --> Linear Regressor/Linear Line/Linear Model/Linear Function = Y^ = W*X + b / Y^ = W.T * X + b / Y^ = np.dot(W.T,X)+b
+    --> parameters are W,b --> Here 'W' is based upon our "features" which is 'n'
+    -->Here we learnt --> Number of parameters in Linear Regressor = n+1
