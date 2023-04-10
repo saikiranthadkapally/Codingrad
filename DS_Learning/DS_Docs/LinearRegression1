@@ -1,4 +1,4 @@
-Terminology for our Linear Regression
+Terminologies in Linear Regression
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Linear Regression:
     --> Structural Data
@@ -11,8 +11,128 @@ Linear Regression:
     --> X(i),Y(i) = ([x0,x1,x2,...,xn],y(i)) -->'X(i)' denotes 'ith' example and and 'Y(i)' denotes 'ith' label/Output
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+    We Discussed till now:
     Our goal is to find Linear line which is a "Linear Regressor"
     --> Linear Regressor/Linear Line/Linear Model/Linear Function = Y^ = W*X + b / Y^ = W.T * X + b / Y^ = np.dot(W.T,X)+b
     --> parameters are W,b --> Here 'W' is based upon our "features" which is 'n'
-    -->Here we learnt --> Number of parameters in Linear Regressor = n+1
+    --> Here we learnt --> Number of parameters in Linear Regressor = n+1
+    --> Linear Regressor will be in a Hypothesis Space where there will be infinite number of possibilities of linear regressors/regressor lines
+    --> Cost/Loss Function "(J(W,b))" as metric to find the best line among the Hypothesis Space. 
+
+    ***NOTE***: Here "Sigma(0,m)" it means "Sum of all examples from 0 to m"
+    ***NOTE***: This is also known as "Mean Squared Error(MSE)/Cost Function"
+    --> J(W,b) = Sigma(0,m)[Y^(i)-Y(i)]^2/2 --> By adding all examples loss we get "Total Loss" this "Total loss/2" will gives the "Cost Function/Loss Function(J(W,b))"
+                                            --> It is also known as "Mean Squared Error/Function"
+
+    --> To find best values of W,b we have Gradient Descent Method
+    --> J(W,b) must should be converged or convex Function
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    NOTE: This Model we can build it on our own,Ofcourse whatever we discussed here we can build it from scratch everything this "PseudoCode".We already written
+    Pseudo then writing from the scratch is not a big deal here these 6 points need to be implemented logically it's not a big deal we can do that Ofcourse, there
+    are very good libraries which will do it for us let's say "scikitlearn" etc.
+
+    NOTE:The optimal values of W and b obtained during the training phase of linear regression are the same for all examples in the dataset. These values are 
+    independent of the specific data or rows in the dataset, and represent the best fit line for the entire dataset.In other words, once we have found the 
+    optimal values of W and b for a given dataset, we can use these values to make predictions for any new example or row in that dataset. We do not need to 
+    find new values of W and b for each example or row.This is because the optimal values of W and b represent the best fit line that describes the relationship 
+    between the input variables (features) and the target variable across the entire dataset. By using these same values to make predictions for all examples, 
+    we are effectively using the same model to make predictions for all examples.
+
+    Pseudo Code:
+    ------------
+    This is how the whole Linear Regression Training phase will work.In Programming we don't have all these we have only single line(These steps are performed in prgrm
+    in single line of function).
+    STEPS:
+        1. Initialize randomly W,b then we will get ---> Y^ = W.T * X + b --> Here we have values of only W and b which we Initialize Randomly
+        2. Each example X(i) ==> Y^(i) = W.T * X(i) + b ---> Here "i" means we are performing prediction(Y^) for particular example.Here "X(i)" we take from Dataset
+        3. We get Cost function J(W,b)
+        4. Finding Next W,b values
+            --> W(Next) = W(Previous) - (alpha) (Slope of J(W,b) w.r.t W) --> Here "alpha" is learning rate and "Slope of J(W,b) w.r.t W" is partial differentiation --> 'alpha' tells steps & 'Slope' tells 
+                                                                                                                                                                          directions.
+                        = W(Previous) - (alpha) (Sigma(0,m)[Y^(i)-Y(i)] * X(i)) --> Here we know "All the values of "Sigma" with "X(i)".Here "X(i)" is the features of particular examples
+            --> b(Next) = b(Previous) - (alpha) (Sigma(0,m)[Y^(i)-Y(i)]) * 1 
+        5. Repeat from 2nd step until W,b are not changing --> Condition:W(Previous) == W(Next) Here Basically, we do "for 10/100 repetitions based on our "alpha and other parameters" 
+                                                           --> #Iterations(Number of iterations) are called --> epochs
+        6. Return W,b --> We will get the "Y^ = W.T * X + b".Here the obtained "W,b" very good values.Inference will be accurate.
+                      --> In linear regression, "W" represents the weights or coefficients associated with each feature or independent variable. If there is only one 
+                          feature or independent variable, then "W" will be a single value. However, if there are multiple features or independent variables, 
+                          then "W" will be a vector of weights or coefficients, with each element of the vector corresponding to the weight or coefficient of a 
+                          specific feature.
+                      --> In linear regression, "b" represents the bias term or the intercept. It is a single value that is added to the weighted sum of the input 
+                          features to make the final prediction. Therefore, "b" is a single value in linear regression.
+                      --> In linear regression with multiple features, the weight vector "W" typically contains multiple weight values, one for each feature. 
+                          Therefore, to plot the weight vector "W" in a graph, we would need to use a multi-dimensional plot with one axis for each weight value 
+                          in the weight vector "W".For example, if we have four features, the weight vector "W" would contain four weight values, denoted as 
+                          w1, w2, w3, and w4. To plot this weight vector, we would need a 4-dimensional plot with each axis representing one of the weight values.
+                          The bias value is a scalar value and is independent of the feature values. Therefore, it would not be plotted on the same axis as the 
+                          weight values. It could be represented on a separate axis or not plotted at all, depending on the visualization goals.
+                      --> ***NOTE***:For a convex function, the global minimum corresponds to a point where the gradient of the cost function is zero, and all the 
+                          weight values for each feature converge to the same value. In this case, the weight values will be the same for each feature at the global 
+                          minimum.However,in practice, real-world data may not always follow the assumptions of linear regression, and the cost function may not always 
+                          be perfectly convex. In some cases, the cost function may have multiple local minima, which means that the algorithm may converge to different
+                          sets of weight values depending on the initial values of the weights and other factors.Moreover, the contribution of each feature to the 
+                          output variable may be different, which means that the optimal weight values for each feature may be different. For example, some features 
+                          may have a stronger influence on the target variable than others, and as a result, they may require larger weight values to achieve the 
+                          optimal fit.Therefore, in some cases, it is possible for the weight values to be different for each feature at the global minimum of the 
+                          cost function in linear regression.
+
+
+    Inference will be accurate ---> It is not 100% accurate Bcs, no model is 100% accurate But somehow it will be accurate Based on Number of "epochs" we perform
+                                ---> This accuracy will dependent on how much we are Training and how much we are updating our "W,b" based on all these it will depends
+                                ---> To train our model we need Previous Data/History that is nothing but here our "Training Dataset" based on that we will Train our 
+                                     Model and performing all these and Preparing a function "Y^ = W.T * X" using this function we are doing future predictions for new
+                                     examples or for existing ones etc...
+                                ---> We need to test with unknown/new Dataset.But we can't invent the unknown Dataset freshly right.So, we can split our existed
+                                     Dataset into known dataset and unknown dataset that splittiing we called as Training and Test split, Suppose we have 500 Rows
+                                     from that we take 300 and use it for Training and we take 200 and use it as unknown test for Testing inorder to check our
+                                     ML Model is predicting properly or not.
+    
+    Y^ = W.T * X 
+
+    Test dataset X_Test --> If we give this 25% to this function "Y^ = W.T * X " then we get "Y(pred)" which is nothing but "Y^" and we also have actual "Y_Test"
+    Ypred - which is nothing but "Y^"
+    YTest - which is nothing but "Yactual"
+
+    One of the metric that can tell us about the loss
+    (Y^-YTest) --- error/loss 
+    (Y^-YTest)^2/2 --- mean squared error --> While we are perform Inferening after getting (W,b) values we are getting a "loss" that loss has to be minimized it 
+                                              should be very low.It's a minimum value(global minimum) for "convex function/loss function".
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+********NOTE********: TO PLOT THE "Y^ = W.T * X " WHICH IS BEST FIT LINE ON THE GRAPH FOLLOW THESE STEPS IN BELOW:
+
+1.Choose a suitable range of values for x that cover the data points you want to plot.
+
+2.For each value of x, calculate the corresponding value of Y(prediction) using the equation.
+
+3.Plot the data points (x, Y) on a graph.
+
+4.Draw the best fit line by connecting the points with a straight line.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Major disadvantage of Linear Regression:
+Linear Regression ---> Its very prone to Outliers and unrelated data and dependent features/attributes/columns. So,when we impose our unrelated data to the 
+                      "Linear Regression" Model then our "Linear Regressor won't work properly.Suppose in a dataset let's take "Ecommerce-customer" dataset
+                      in that one of the feature called "Times_on_Website" which is not related or having very low correlated or negatively correlated then
+                      our Linear Regressor which is our ML Model treat as an "outlier" for that dimensioned(every feature is a dimension in a 3d space) data  
+                      But it may needed by or important feature to the client,So we can't remove.Here the problem is not with the data but with the 
+                      "Linear Regressor Model" and also if we have any data very minute data which is an outlier in a particular "feature" dimension then 
+                      our Linear Model draws the best fit line towards that outlier even though we have max of data at one place.These are all the problems
+                      which we will be face in "Linear Regressor" Model.
+NOTE: In "Ecommerce-customers" dataset for a particular dataset we have taken and when we performed statistical analysis then the "correlation" of particular
+      attribute/column which is "Times_on_Website" which is not proper or unrelated or very negatively/low correlated due to this we can't remove the "Times_on_Website"
+      Bcs, there are many factors should be considered while removing and also should consider here the "Times_on_Website" may be have good values in future dataset
+      when we have taken from Ecommerce-customer site and also it also an important feature Bcs, many people use their site on website etc... are factors.So,
+      Inorder to do Robust Model we need to consider and do further more decisions and analysis even though after EDA and statistical analysis like correlations or
+      by data visulaization analysis.This is the reason there are many other Models are came into ML like Neural networks,convolution networks,decisions trees as 
+      an advancement to "Linear Regression". Neural networks are more Robust interms of outliers data,unrelated data,highly correlated features whatever there may be
+      The problem is not with the maths which means statistics,differentiation,integration,probabilities it wll give us best for what values we provide But the 
+      problem with the "Linear Regression" Model architecture itsef
+
+NOTE: It's better to develop our own Regression model when we are doing a project for our own company/startup .So,that we can have whatever required for us.If 
+      there is a pseudo-code we can develop anything.So,it's better to develop on our own while we work on a project in any company.
+
+
+Inorder to split Dataset we need to install "scikitlean"  -- requirements.txt --> scikit-learn --> and do pip install after activating environment then it will be 
+installed and we can import it as "from sklearn.model_selection import train_test_split" 
+

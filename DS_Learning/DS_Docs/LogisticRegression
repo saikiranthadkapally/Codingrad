@@ -1,0 +1,410 @@
+Regression ---> Regression is basically finding a continuous number 
+
+Basically,
+ML Predictions are 2 Types:
+    1. Regression -----------------------> The Output of the Prediction is continuous value/number(includes decimal/point values like 2.4,7.3636 etc...)
+    2. Classification -------------------> The Output of the Prediction is discrete values/number(which doesnt have decimal values like 1,4,647, etc...s)
+
+We discussed:
+Linear Regression-----> Its a Regression problem the output of the solution will be a continuous number or a continuous value.But the output will become based
+                        on the linear property it means the output will depends on linear property Bcs, Linear Regression is a simple line/ a linear line so it's
+                        all depends on only linear things.
+                ------> It is a Single Neuron without activation.
+                ------> It is only used for "output dependent variable is continuous" values irrespective of input independent feature values.
+
+Logistic Regression:--> The name Regression doesnt denotes Regression problem But its just a naming by scientists we also followed as same But logistic regression 
+                        is not a regression problem.But Its a Classification problem.It is not a regression problem but a classification problem.It is almost similar
+                        to linear regression and same problems we face in this too and same as linear it can also achieve 100% accuracy theoritically in logistic
+                        regression aswell and mathematically very easy and also implementation very easy and we have open source libraries as we seen "scikit" learn
+                        in linear regression here also simply we call the function and do the stuff So, its very very easy to use and easy to learn aswell If we will
+                        learn this futher everything will be Easy.
+                    --> It is a Single Neuron with activation function ---> It can also called "Perceptron"
+                    --> While LogisticRegression is often used for binary classification problems, it can also be extended to handle multi-class classification
+                        problems.We will see in our Course only "Binary" classification in LogisticRegression.But we mostly use "multi-class" classification
+                        in "Neural Networks" Bcs, for multi-class classification problems, neural networks are often a better choice than LogisticRegression,
+                        especially when the problem is complex and non-linear relationships between the input features and target classes.
+        ***NOTE***: --> LogisticRegression is not used for whenever "output dependent variable is continuous".It is only used for "output dependent variable is
+                        discrete or categorical" irrespective of input independent feature values.
+        ***NOTE***: --> LogisticRegression Line is typically an "S-shape" or "Sigmoid Curve" is the standard shape for logistic regression, it is possible to 
+                        modify it to fit different data patterns and to achieve better model performance.It can also be changed to straight-linear line.
+
+    
+    Lets say it has,
+    ----> 2 classes/categories---> Binary classification problem
+    ----> more than 2 classes/categories---> Multi label classification problem 
+    NOTE: In our course first we see here "Binary" then after going to "Neural Networks" we see "Multi label" classification too. But In this "Logistic regression"
+    we will see only "Binary" classification problem.
+
+Linear Regression --> It is a Single Neuron without activation.
+Logistic Regression --> It is a Single Neuron with activation function ---> It can also called "Perceptron"
+
+Ultimately, We are going to have:
+
+y = mx+c
+
+X --> [X0,X1,X2,.....,Xm] -- #examples = m
+X(i) --> [x0,x1,x2,..,xn] -- #features = n
+
+Y^ = np.dot(W.T,X) + b --> Prediction value
+
+Shape of W ---> (1,n)
+Shape of b ---> Scalar value -- No shape to b
+total number of parameters = n+1 --> which are nothing but 'n' number of Weights w.r.t features and '1' denotes scalar value of 'b'
+Coordinate space dimensions = n+1 --> If we have 'n' then the dimension will be 'n+1' 
+                                  --> We cannot draw "n+1" dimensions in a 2D coordinate space therefore we only takes 1 feature inorder to analyze or to draw graph
+                                      to simplify the understanding
+                                  --> If we have 1 feature then "1+1" is 2dimension
+
+In logistic we are trying to establishing a Classification problem ---> Binary Classification only 
+
+NOTE: In logistic regression we dont have linear line as in Linear Regression
+
+Transforming the Linear Regressor (Y^ = W.T * X + b) to a function which specifies (0,1)
+
+Y^ = W.T * X + b ---> This is called "Linear Regressor".This is Our "Y^ Or Y(pred)" formulae for "Linear Regression"
+
+Basically, The Transforming function which specifies (0,1) is called "Sigmoid" function ---> We can also call it as "Activation" Function 
+                                                                                        ---> In out ML Terminology we call it as an "Activation" function only
+
+So, that Activation Sigmoid Function F(X) = 1/1+exp(-x) --> Here "exp" known as exponential e of '-x'
+                                                        --> Here "X" is the inputs to the Function
+
+Proof for "Activation Sigmoid Function":
+
+Leets assume,if x===> +infinity --> which is a large number then exponential(exp) of negative infinity is
+
+Generally, "exp(-x)" can be written as
+exp(-x) = 1/exp(x)
+        = 1/exp(inf) --> Here "e" power infinity becomes "infinity" then "1/inf" becomes "0".Therfore, exponential(e(-inf)) becomes "0"
+        
+    Here, Limit "x" tends to infinity 
+    -- Limit x->inf 1/x = 0
+
+        = 0
+Then, F(X) = 1/1+0 = 1 ==> It means Even if we are going to the  "infinity"  the "x" going to "infinity".The maximum tends to be only --> "1".The Range of the maximum
+                           value of "x" tends to "1" in this case of Sigmoid function. This is the power of "Sigmoid Function"
+
+
+Lets assume that we have,
+x ===> -inf then --> Here, "-inf" is very very small number
+
+exp(-x) = exp(-(-inf)) = exp(inf) == large 
+
+F(X) = 1/1+large
+     = 1/large --> Here large in the sense "infinity" then "1/infinity" is "0"
+     = 0
+
+In summary, the total of F(X) if we see if it is going to -infinity to +infinity OR if it is Traverse (-inf,+inf) then our F(X) function always persistent  between
+the 0 and between the 1 --> This is the proof of this function "F(X)". it tends to touch the 0 but wont touch and it tends to touch the 1 but it wont touch.The 
+function resides between the 0s and 1s.This function we requires for our  "Binary" classification.So,that we are using this "Sigmoid" function as a Tranforming function
+for the "Linear Regressor"
+
+Ultimately, we use this function In "Logistic Regression" at last which we used in Linear Regression "Y^ = W.T * X + b"  as follows
+
+Z = W.T * X + b --> This is the function inorder to predict the Output/label at Last 
+
+After,Applying the activation function 
+Y^ = Sigmoid(Z) = 1/1+exp(-Z) --> We are giving this "Z" as an input to this "Sigmoid" Function.So, we can replace "z" with "W.T * X + b"
+               = 1/1+exp(-(W.T * X + b)) --> "W.T * X + b" it is a linear line the value can be anything for this linear line but Output of the "Sigmoid(Z)" of this
+                                              whole thing will be persistent between "0 and 1".That is where we are using this "Sigmoid" as a Activation function 
+                                              for the "Linear regressor"by making this to the "Logistic Regression".
+                                         -->  It is our "Logistic" Regression
+                                         -->  This is an "Logistic" Regression
+                                         -->  Here we are giving input Function(Linear Regressor) directly to another function(Sigmoid) not continuous values
+                                         -->  We can also give "input" parameter as continuous values also to the "Sigmoid(Z)" function as Z.
+                                         -->  This continuous values should be anything between "-inf" to "+inf" But if i pass these values to "Sigmoid" then I get
+                                              "Y^" in between 0 to 1 only.Bcs, while classification we need either 1 Or 0 values
+Intermediately, the Output in Linear Regression is "Y^".But in Logistic Regression it is not like that,In Logistic Regression it should be between 0 and 1.So,for 
+that we are chaging it into "Sigmoid" and adding another function So, that the thing which we get at last we called as "Y(pred)" or "Y^"
+
+The Above, "Y^" can also be written as follows:
+
+Y^ = Sigmoid(np.dot(W.T,X)+b) ---> This is called "Logistic regression" function
+
+NOTE:
+Y^ = 1/1+exp(-(W.T*X+b)) --> This is Actually, Our "Y^ Or Y(pred)" formulae for "Logistic Regression"
+      OR
+Y^ = 1/1+exp(-Z))
+
+Loss/Cost Function ---> Sigma(1,m)(Y^(i)-Y(i))^2/2 --> Where "i" transverse 1 to m examples
+                                                   --> This is nothing but "MSE(Mean squared value)"
+                                                   --> This "MSE" is applied only for continuous values
+                                                   --> **NOTE**:If we have our "Y^" between 0 to 1 values Or if I have multi-labels we should not use the "MSE"
+                                                       as a loss function.If "Y^" values persistent between 0 to 1 then this function is not applicable.If our
+                                                       "Y^" is has continuous values then only we get "Convex function"
+
+----------------------> Sigma(1,m)(Sigmoid((W.T*X+b)),Y(i))^2/2
+
+ ---------------------> If we plot this function(Sigma(1,m)(Sigmoid((W.T*X+b)),Y(i))^2/2) on Graph.We wont get convex function --> Not applicable for Gradient Descent 
+
+ We have to have this Loss Function something like different
+ This is one more "loss function" which is used for our "Logistic regression" as follows:
+ ----------------------> Loss function(Log Loss) ---> J(W,b) = i overs from 1,m: -(Y(i)log(Y^(i))+(1-Y(i))log(1-Y^(i)))  is a Convex/Cost/Loss Function.If we have 
+
+                         our "Y^" values in between 0s and 1s then we can use this function then this function will generate a "Convex" Function.
+
+ ----------------------> We can apply gradient descent --> we will get the best minimum possible values for W,b so that the loss will be low..
+ NOTE: ---> "Step-Function" is one of the "Discrete-Function".
+
+       ---> If X-axis which are input values can be "continuous" and the output function(f(X) or Y) is "discrete values" then that functions are called 
+            "Discrete" functions. But Here our "function(f(x))" which is "Sigmoid" function is not a discrete function but it is a "continuous" function.
+
+       ---> Here "Sigmoid" Function is never a "Discrete" function But it is a "continuous" function bcs it gives the output values "Y^" are "continous values"
+            But we are explicitly making the output values to either 0 or 1 bcs we are using our function(Sigmoid) which is LogisticRegression for 
+            "Binary classification" therefore we call these output values 0 and 1 as "Discrete Values"
+
+       ---> This value I take any value on X-axis then the correspomding value "Y^" which we get in between 0 to 1 only it need not to be "1" or "0".It Ranges
+            from 0 to 1 then we can put some "Threshold" using this threshold we are post-processing the output either "0" or "1" .We are not Expecting our
+            function to determine directly to this function(Step-Function) Even this "Step-Function" is not applicable for "Gradient-Descent" or "Convex",continous
+            functions only will applicable for "Gradient-Descent"
+
+       ---> We use "MSE" as a Loss Function in Linear Regression and "Log Loss" in Logistic Regression
+
+
+                    Proof: for Log Loss function --> "-(Y(i)log(Y^(i))+(1-Y(i))log(1-Y^(i)))"
+                    ----------------------------------------------------------------------------------------
+                    NOTE: (0,1) --> This "()" open brackets gives the values between 0s and 1s without including 0 and 1.
+                          [0,1] --> This "[]" closed brackets gives the values including 0 and including 1.
+                    --------> Y^ --- (0,1) --> Threshold ---> Y^ is more than 0.8 then our Y^ is 1 else 0 --> We change "Threshold" changed based on situation amd data
+
+                    --------> Lets Assume, Actual Y ---> 1
+                    If "Actual Y = 1" then "-(Y(i)log(Y^(i))+(1-Y(i))log(1-Y^(i))) = -(Y(i)log(Y^(i))+(1-1)log(1-Y^(i)))" this term "(1-1)log(1-Y^(i)" becomes "0"
+                    then we Remain with "-(Y(i)log(Y^(i))"  
+
+                    J(W,b) = -(YlogY^)
+                    J(W,b) = -(logY^) ---> Here our "Y^" values between 0 to 1 and also our "log" values in negative So, we written "-" before close bracket inorder 
+                                           to cancel or make our value to positive.
+                    J(W,b) = -(logY^) ---> "Never becomes 0" bcs "log1" always 0. But our "Y^" doesnt reach to 1 or touch exactly to 1.Bcs our "Sigmoid" function/line
+                                           Never touch "1".We wont reach "Y^" to 1 anymore. But We make our "Y^" to either 0 or 1 based on the Threshold
+                                           as "Y^ --- (0,1) --> Threshold ---> Y^ is more than 0.8 then our Y^ is 1 else 0 ".
+                    J(W,b) = -log(Y^) ---> Y^ tends to 1 
+                                      ---> Suppose,If my "Y^" is predicted "0.8" then we convert "0.8" into "1" as per our Threshold Condition then we write "1"
+                                           inside "-(logY^)" as "-(log1)" then the value of "log1 = 0" then "-(0)=-0".We got the loss function as Zero.it means 
+                                           when we get our "Y^ or Y(pred)" value as "1" then our cost function becomes "0" it means our cost is minimum.
+
+                    The Above " J(W,b) = -log(Y^) ---> Y^ tends to 1 " written interms of limits as follows:
+                    limit Y^->1 will give me J(W,b) = -(log(Y^)) = 0
+
+                    --- Negative example( If our "Y^" tends to "0") then it becomes ============> -(-inf) = large number---> We got high cost value/high loss value 
+
+                    ***NOTE***: If our Actual(Y) = 1 and Predictive(Y^) = 1 if both are same then our "Cost/Loss/Error" value becomes "0".
+                                If our Actual(Y) = 1 and Predictive(Y^) = 0 if both are unequal then our "Cost/Loss/Error" value becomes "large number" Or "infinity"
+
+                    ***NOTE***: We can also apply same "Method" as we discussed above in Below.But the "Actual" and "Y^" should be same then only our "Cost Minimum "             
+                    -----> Actual Y ---> 0
+
+                    J(W,b) = -((1-Y)log(1-Y^))
+                    J(W,b) = -(log(1-Y^))
+
+                    --- If "Y^=0" positive example =============> -(log(1-Y^)) = -(log(1)) ==> 0 (minimal loss)
+
+                    (1-Y^) ---> 1
+                    if Y^ -------> 0
+                    (1-Y^) ---> 0
+                    if Y^ -------> 1
+
+                    --- If "Y^=1" Negative example =============> -(log(1-Y^)) = -(log(0)) ==> large number
+
+                    Lmt x->0 log(x) == -inf
+                    Lmt x->1 log(1) == 0
+
+ -----------------------> if it is a convex function --> we can apply Gradient Descent --> then we will get the --> best minimum possible values for W,b so that the 
+ loss will be low      
+
+
+    Cost function = J(W,b) = L = -(ylog(y^)+(1-y)log(1-y^))
+
+    Z = W.T * X + b ---> Input combination where "W" is the weights [w1,w2,w3,......] based on our input "X" features for particular ith Example
+    A = Y^ = Sigmoid(Z) = 1/1+exp(-Z) --> Where "A" is an Activation function which "Y^ Or Y(prediction)" used in "Logistic Regression".
+                                      --> Here "Sigmoid" is a function which transforms or changes from one state of function to another state of function.
+                                      --> For "Tranforming" we have some functions in that "Sigmoid" is one function .
+                                      --> Whereas Linear Function which is transformed to into 0 to 1 function we use "Sigmoid" such type of functions we call
+                                          Activation functions.Basically we Represents it with "A" while doing any proofs or something in Machine Learning. 
+    L(A,Y) = -(Ylog(A)+(1-Y)log(1-A)) --> Where L(A,Y) Represents Log Loss function which is also known as Cost/Error/Loss function to find out Loss.
+                                      --> Where "A" is the Activation function which is nothing but "Y^ or Y(prediction)"
+                                      --> where "Y" is the Actual Output OR Label value.Basically Loss in between "Y^ and Y(Actual)" So, we are writing like this
+                                          instead of writing or reoresenting with "J(W,b)".We can write in both ways either in "J(W,b)" and "L(A,Y)" as a 
+                                          Representation.
+
+***NOTE***: At the end what we have Required to do We need to minimize the Loss So, that we have to Tune the "W,b" it means we can change them from one place to 
+another place likewise we are going to do until we get one "Best" W,b value.So, that our Loss should be Minimum which is "0".We Use same Rule in every iteration
+inorder to Update "weights and biases" like we used in "Linear Regression" here also we use same "Gradient Descent Algorithm" to find the global minima.
+
+
+
+
+***NOTE***:In supervised learning, the labels (y) are typically not given as input features to the neural network during the training process. Instead, the labels are used during 
+the training process to compute the loss function, which measures the difference between the predicted output of the neural network and the true labels.During training, the input 
+features (x) are passed as input to the neural network, which processes them through a series of layers to produce an output. This output is then compared to the true labels (y) to 
+compute the loss function. The goal of the training process is to adjust the weights and biases of the neural network so that the loss function is minimized.After the training 
+process is completed, the learned weights and biases can be used to make predictions on new input data. In this case, the labels (y) are not used as input features to the neural 
+network, but are used to evaluate the accuracy of the predictions made by the network.So to summarize, during the training process, the labels are not given as input features to the
+neural network. They are used to compute the loss function, which is minimized by adjusting the weights and biases of the network. After training, the learned network can be used to 
+make predictions on new input data, and the labels are used to evaluate the accuracy of the predictions.
+
+
+
+
+ 
+Gradient Descent Algorithm -- Basic
+--> It is a "Basic" Gradient Descent Algorithm.We also have lot of other things like Batch,stochastic,Adam,RMS prob,momentum etc....
+------------------------------
+Training Phase of the Model:
+--> We are training our Model to get the "global minima " of "W,b" So, that we will end up with those "W,b" with very good proper costless function 
+1. Random initialization of W,b --> It means "(W,b)" are starting from Random positions
+2. find out the cost function   --> "W,b" first find out the cost function after starting from Random positions 
+                                --> Training dataset will only be useful here Inorder to find out the cost function using ---> (Ypred - Yactual) = cost
+3. slope of that function w.r.t both --> After finding out the cost function by "W,b" then it will find the slope from those 2
+--->We need to update "W,b" directions and speed/steps Until we get the minima---> Condition: (W,b) are not changing ---> it will called as 'Converging'
+***NOTE***: Converging will be happen w.r.t the parameters if the function is convex function to get the "global minima"
+4. Update W,b: --> It means "W,b" update their directions and their speed using 
+    W(Next) = W(Prev) - alpha*(slope(L(A,Y)) w.r.t W)
+    b(Next) = b(Prev) - alpha*(slope(L(A,Y)) w.r.t b)
+5. Return W,b --> These are the best fit values of "W,b" at global minima which is a Best fit line to Train our ML Model
+
+
+
+slope of L(A,Y) w.r.t W --->
+slope of L(A,Y) w.r.t b --->
+
+
+Important Concept: Actually we say the "Logistic Regression" is a single "Perceptron Or Neuron" whereas we use multi-Neurons in "Neural Networks".
+
+Forward Propagation:
+
+BackPropagagation in Gradient Descent:
+    ---> Finding derivatives of "L(A,Y)" w.r.t "W,b"
+
+***NOTE***: Inorder to find Loss "L(A,Y)" w.r.t "W,b" first we need to find Loss w.r.t A and Z and then we need to find w.r.t "W,b" this is called chain Rule and this
+whole process is known as "BackwardPropagation" and atlast we Reach our input then we Update our "W(weights) and b(biases)".We traverse "forward" to find Loss and 
+we traverse Backwards inorder to update "W,b" until we Reach global minima where our "W,b" values are best fits.In derivatives we use "Chain Rule" Here also we 
+apply that "Chain Rule" in our Caluclation.
+    
+    ***NOTE***: Here "P" is the Representation of "dow" 
+    Derivative of Loss(L) w.r.t A = dA = P(L(A,Y))/dA 
+    Derivative of Loss(L) w.r.t Z = dZ = P(L(A,Y))/dZ = dA * P(A)/dZ 
+    Derivative of Loss(L) w.r.t W1 = dW1 = P(L(A,Y))/dW1 = dZ * P(Z)/dW1
+    Derivative of Loss(L) w.r.t W2 = dW2 = P(L(A,Y))/dW2 = dZ * P(Z)/dW2
+    Derivative of Loss(L) w.r.t b = db = P(L(A,Y))/db = dZ * P(Z)/db
+
+    ***NOTE****: L(A,Y) = -(Ylog(A)+(1-Y)log(1-A))
+    dA = P(L(A,Y))/dA = P(-(Ylog(A)+(1-Y)log(1-A)))/dA
+
+                      = -(Y * 1/A + (1-Y)1/(1-A)(-))
+                      = -(Y/A - (1-Y)/(1-A))
+
+
+    dZ = dA * P(A)/dZ
+
+    P(A)/dZ = P(Sigmoid(Z))/dZ
+            = P(1/1+exp(-z))/dZ
+            = A(1-A) ----> Here I have written direct result to see complete derivation check in "DS_Docs" folder
+
+    dZ = -(Y/A -(1-Y)/(1-A)) * A(1-A)
+       =  A-Y ----> This is also I have written result directly to see complete derivation check in "DS_Docs" folder
+
+    dW1 = dZ * P(Z)/dW1
+
+    P(Z)/dW1 = P(W1X1+W2X2+b)/dW1 --> while doing derivative w.r.t to W1 Remaining will be constant
+             = X1
+    
+    Ultimately, we have found the "W,b" values
+    dW1 = (A-Y) * X1
+    dW2 = (A-Y) * X2
+    db  = (A-Y) * 1
+
+    For Now, Assume "alpha = 0.01" where alpha is "Learning Rate"
+    W1Next = W1Prev -(alpha)dW1
+    W2Next = W2Prev -(alpha)dW2
+    bNext = bPrev - (alpha)db
+
+****************************************************************************NOTE********************************************************************************************************:
+-->Linear and non-linear data refer to the relationship between the independent variable(s) and the dependent variable(s) in a dataset. In linear data, the relationship between the 
+independent and dependent variables can be expressed as a straight line, whereas in non-linear data, the relationship is not linear and cannot be expressed as a straight line.Linear 
+data can be separable because a linear boundary can be used to separate the classes in a dataset. This means that if we have two classes of data points, we can draw a straight line 
+between them to separate them. For example, consider a dataset with two classes of data points, one representing apples and the other representing oranges. If we plot the weight of 
+the fruit on the x-axis and the color on the y-axis, we can draw a straight line between the two classes to separate them based on weight and color.Non-linear data, on the other 
+hand, cannot be separable using a linear boundary because the relationship between the independent and dependent variables is not linear. In non-linear data, the relationship between 
+the variables may be more complex and cannot be represented by a straight line. Non-linear data can be separable, but we need to use non-linear boundaries such as curves, circles, 
+or more complex functions to separate them.For example, consider a dataset where we have two classes of data points, one representing apples and the other representing bananas. If we 
+plot the sweetness of the fruit on the x-axis and the acidity on the y-axis, we may not be able to separate the two classes using a straight line. Instead, we may need to use a curve 
+to separate them based on their sweetness and acidity levels.In conclusion, whether data is linear or non-linear can determine how easy it is to separate and analyze it. Linear data 
+is generally easier to separate, while non-linear data requires more complex techniques.
+
+-->Linear regression is suitable for linear data, where there is a linear relationship between the independent variable(s) and dependent variable. Linear regression aims to find the 
+best-fit straight line that can explain the relationship between the variables. It assumes a linear relationship between the variables and tries to minimize the sum of squared errors 
+between the predicted and actual values.On the other hand, logistic regression is a classification algorithm that can be used for both linear and non-linear data. Logistic regression 
+is used when the dependent variable is categorical (binary or multi-class). It models the probability of the dependent variable based on the independent variables, and it uses the 
+logistic function (Sigmoid) to map the input values to a probability score. The logistic regression can model non-linear relationships between the dependent and independent variables 
+by adding polynomial terms or interaction terms.In summary, linear regression is suitable for linear data, while logistic regression is suitable for both linear and non-linear data. 
+However, when dealing with non-linear data, it is important to transform the data or add polynomial terms to the model to capture the non-linear relationships.
+**************************************************************************************************************************************************************************************
+
+Small Concepts are Remained:
+----------------------------
+
+**** Linear & Logistic Regression work for linear data
+
+**** Linear & Logistic Regression work for non-linear data as well in  different dimensions
+ 
+    We have "separable" and "non-separable" Here we are talking "seperable" only for Logistic Regression for classifiers w.r.t Logistic Regression only.
+    ---> Seperable---> Classifier--> Logistic Regression 
+        ---> If our data is linearly Separable then we can use Logistic Regression
+        ---> *****If our data is not linearly Separable in lower dimensions then it may be linearly Separable in higher dimensions.****
+            ----> dimensions --->features
+            ----> X --> f1,f2,f3,f4
+            ----> if X is not linearly Separable it means our Data will have "non-linear" Data then we can have some more features like
+                ---> Extension--> SVMs
+                ---> X --> f1,f2,f3,f4, f1f2, f1f2f3, sqrt(f1) ---> This technique is called "Feature Engineering" it means we are adding a new features w.r.t previous features
+                                                                    manually But it Requires some advance statistical Rules very advance topics inorder to perform these combination
+                                                                    and adding new features between what type of attributes etc.. and all.These all can be done in SVMs Automate and
+                                                                    in-built to Bruteforce these features we uses SVMs to perform operations Easily.                                                                
+                --->***** Before SVMs We can also do like adding new features by feature engineering with existing features like squaring the features or combing existing features 
+                          and so on inorder to get Higher dimensional space to get Hyperplane at particular some point it may separate our Data Linearly or may not.Here we are doing 
+                          Bruteforce technique to Experiment by checking all combinations in that which it make us correct we use that But it will take a very lot of computational 
+                          powers and we will get Irritation.So, Inorder To Automate this "Bruteforce technique" We uses a technique called SVMs and Kernals.   
+    ---> feature scaling or Normalization
+    ***NOTE***: Feature scaling is also one of the factor that impacts Training Accuracy and performance.This is also one Reason to get our performance will be Degraded.
+
+       -----> When we have our "Values of features are large numbers"
+       -----> Then our "Cost function/Loss --> will also be higher ---> If our Cost is higher then it takes ---> More training time to become Lower Cost"
+       -----> So,we have to Normalize our features ---> When we do the Normalization then our ---> cost function will be normal then it leads to --> training time will be optimal
+            ----> Normalization is
+                    --> Lets say we have f feature is,
+                    --> f1 ---> [......] -- This "f1" has some Data which is "...." Its a continuous numerical Data when we have such Data it has some its own Distribution.
+                    --> So,we have to modify this "f1 = f1/norm(f1)"
+                    --> norm of f1 = sqrt(f1[0]^2+f1[1]^2+......f1[m]^2) -- "f1[0]^2" where "f1[0]" denotes the first value in the feature and "^2" it means square of first value
+                                                                             likewise we can do upto "f1[m]^2" where "m" is the Last value.then we put this "norm(f1)" in above 
+                                                                             formulae "f1 = f1/norm(f1)" in the place of "norm(f1)" and then we just divide it for every value then 
+                                                                             we will get a "Normalized" f1 value likewise we have to do for everything(feature will have large num).
+                    --> This is called "Z-Normalization" - This is also called L2 Normalization --> We also have "L1 Normalization(Instead of square we have "absolute(abs)")" etc.. 
+                        we have couple of Normalization which are some "Standard-Normalization" Techniques. Insetad of these we also have different statistical techniques in place 
+                        of "norm(f1)" used by Statisticians which are only Required when we perform some specific "Machine" critical or for some "Machine" critical projects then we 
+                        have to do that by taking "Statisticians"Help in Real-World we use mostly "Standard-Normalization" Techniques until we get some specific "Machine" critical 
+                        or for some "Machine" critical projects. 
+                    --> After doing "Normalization" then that Data will be use for Training then that Training will be more Faster.The Training Time will be optimal.The Training
+                        Time will also be considered it shouldnt take much time and in less time only our Training should be completed.
+                    --> In Real-time we get features as a 1000 features and Number of examples/rows in 10000 and may be in Lakhs then it will be a Problem.Normalization should be 
+                        definitely there or Performed.
+
+    ***NOTE***:  We have a concept called "Contours".Every Loss function will have this "Contour" plots.Contours are nothing but the 2dimensional view of "Convex function" which 
+    is in Bowl Shape.If our "Contours" will be in the form of "Circle" then our Training will be more faster and if our "Contours" will be in the form of "ellipse" then our 
+    Training time will be slower and takes more Time.The Reason behind why this happens is Bcs, if our features are un-scaled or in large number of values then our "Contour"
+    plot will become "Ellipse" shape then our "Weights" Traversing path will be more if we have our feature values are Larger Numbers.So, We have to do the "Scaling" of features
+    So, that we will get something like Rounded Contour plot instead of elliptical Contour plot.
+
+
+
+*****NOTE*****: In logistic regression, the output layer typically uses the sigmoid activation function to convert the input into a probability between 0 and 1, which 
+can be interpreted as the predicted probability of belonging to the positive class. This is because logistic regression is a binary classification algorithm, and the 
+sigmoid function is a good choice for modeling probabilities.However, in some cases, it is possible to use other activation functions in logistic regression. For 
+example, the softmax function can be used in multiclass logistic regression to model the probability of belonging to each class. The softmax function outputs a vector 
+of probabilities that sum to 1, with each element representing the probability of belonging to a particular class.Other activation functions, such as the 
+ReLU (rectified linear unit) function, can also be used in logistic regression, but typically only in the hidden layers of a neural network that is being used to 
+perform logistic regression. The ReLU function can help the model learn complex nonlinear relationships between the input features and the output, but it is not 
+suitable for use in the output layer of logistic regression because it does not output probabilities between 0 and 1.
+
+Overall, while it is possible to use other activation functions in logistic regression, the sigmoid function is the most common choice for the output layer because it 
+is well-suited for binary classification problems.
+    
+

@@ -1,0 +1,187 @@
+We have completed these Basic Fundamental Machine Learning Algorithms:
+-----------------------------------------------------------------------
+***NOTE***: We also have many algorithms along with these like "Naive Bayes", "KNN" etc..all these we have not discussing but if we have
+interested then we go through any YouTube Video OR any other Video and understand in our corse we are not covering as a very Basic thing.
+But we covered these 4 things.Next we are moving to "Artificial Neural Networks" after completing this ANN and we go to "Machine Learning
+Strategies" and then we will come to the "Computer Vision".
+
+1)Linear Regression
+2)Logistic Regression
+3)Decision Trees
+4)Support Vector Machines
+
+***NOTE***: Using "Linear Regression" & "Logistic Regression" we are going to write an equation or Mathematical Formulae for a 
+            Neural Network  we will write it for fist of all we write it for a "Single-Layer" after that we change it into 
+            "Multi-Layer" after that we change it into "Deep Neural Network" this is the procedure then we ar good for the
+            Neural-Networks.
+
+Artificial Neural Networks(ANN):
+--------------------------------
+
+***NOTE***: In supervised learning, the labels (y) are typically not given as input features to the neural network during the training process. Instead, the labels are used during the training process to compute the loss function, which measures the difference between the predicted output of the neural network and the true labels.During training, the input features (x) are passed as input to the neural network, which processes them through a series of layers to produce an output. This output is then compared to the true labels (y) to compute the loss function. The goal of the training process is to adjust the weights and biases of the neural network so that the loss function is minimized.After the training process is completed, the learned weights and biases can be used to make predictions on new input data. In this case, the labels (y) are not used as input features to the neural network, but are used to evaluate the accuracy of the predictions made by the network.
+
+So to summarize, during the training process, the labels are not given as input features to the neural network. They are used to compute the loss function, which is minimized by adjusting the weights and biases of the network. After training, the learned network can be used to make predictions on new input data, and the labels are used to evaluate the accuracy of the predictions.
+
+
+
+***NOTE***:We have covered maximum mathematical caluclations which is also useful in ANN in "Logistic & Linear" Regression same thing we
+will have in this ANN But we need to keep our interest somewhat high and by focusing we have done there for single "Neuron OR Node" all
+those are single Node Networks which we have done in "Linear & Logistic" regreesion But here in Multi-Layer for a single layer we have
+many "Nodes" same we do Repicate those here and see how we Replicate those things Here in ANN.Most of the Maths we covered in 
+Linear & Logistic regression But here we have more number of caluclations But we already learn So, we can understand here in ANN very 
+Easily
+
+Initially what we have is 
+Perceptron ---> Already we have done "Perceptron" which is Logistic Regression -- then we have
+Multi Layer Neural Network -- then we have
+Deep Neural Networks
+
+***NOTE***: These are the Global variables these will not change.These are the Nominclature which we are going to be Use
+Features of an example in the dataset  ---> x1,x2,x3,x4 -- This is for particular example,for every example we have same no of features
+number of examples ---> m
+number of features per example --> n
+features per example ----> x0,x1,x2,x3,..
+features/particular ith examples ----> xi0,xi1,xi2,xi3,..
+
+Perceptron:
+***NOTE***: These Neurons will be similar to our Brain which simulates our Human Brain in our Brain we have Storing neurons it mean it saves our Memory whatever we Remember capability and Processing neurons these will think OR performs processing whenever there is a new 
+input it will thinks Based on the input of the Neuron it comes in that Neuron there is some sense or current power it's not a current 
+power just it's like Jerk that Jerk will make sure that gives the thinking power what it is so similar to that these Neurons will also
+be same But here we are having Artificial Neurons.The name comes from the analogy of Human Brain.
+
+    Perceptron is a single neuron or node Network
+    Neuron will have 2 parts 
+       --> Z function and
+       --> A (Activation Function)
+    
+    We will have 2 Phases Basically, we have as follows:
+    ----------------------------------------------------
+    Training Phase ---> To get thes best weights and bias for predicting 
+    Inference Phase ---> To predict or infer in realtime using the trained Neural Network
+
+    In this we have Forward Propagation  & Backward Propagation
+                       ---> Every training phase will have both "Forward and Backward" Propagation
+
+    Inference phase will only have forward propagation
+
+
+    Forward Propagation: It is nothing but Propagating through the Network.propagating is nothing but traversing or moving from the Input.
+       ---> From input it will traverse through last node/nneuron -->
+
+
+
+       ---> From Last node we have to come back to input layer to find all the weights and biases of all neurons
+
+
+
+Single Layer Neural Network:
+***NOTE***: For every Neural Network not only this "Single Neural Network" will have an input layer and Hidden layer will have 
+(one or more) and Output layer will have (only one).If we have only one single Hidden Layer then we will call it as "Single Hidden Layer"
+if we have more thn one it is called "Multi-Hidden Neural Network" Or "Multi Neural Network". Suppose if we have 100's or 1000's that 
+we will called as "Deep Layer Neural Networks" OR " Deep Layers" OR "Deep Neural Networks" 
+
+    1. Input Layer (only one)
+    2. Hidden Layer (one or more)
+    3. Output Layer (only one)
+
+
+Mathematical Notations for each layer:
+ASSUME:
+1. Input Layer ---> shape of the input matrix --> (m,n)
+
+2. Hidden Layers  ---> One Layer(in our example) --> Number of nodes in particular layer --> p
+
+3. Output Layer ---> Shape of the output matrix -- 
+    
+    
+    For Input  we will write as follows:
+    ---> X00,X01,X02,X03 -- It means 0th example of 1st,2nd,3rd,4th features -- n --> Where "n" is the no of features
+    In Hidden Layer for every node we have Z and A as functions:
+    ---> We will write for Z as follows:
+         Z00,Z01,Z02,Z03 -- It means 0th Z of 1st,2nd,3rd,4th nodes in 0th layer/1st layer -- p --> Where "p" is the no.of.nodes in 1st layer
+    ---> We will write for A as follows:
+         A00,A01,A02,A03  -- It means 0th A of 1st,2nd,3rd,4th nodes in 0th layer/1st layer -- p --->  Where "p" is the no.of.nodes in 1st layer
+
+
+    1. Shape of Input Layer ====> (m,n) ---> where "m" is the no.of.examples and "n" is the features which are input layer
+
+    2. Shape of Hidden Layer ====> (n,p) --> Here each node is getting "n" features So,this shape is (n,p)
+
+    3. Shape of Output Layer ====> (p,1) --> Where "p" is the Hidden single layer given to "1" output Layer
+
+
+    If we do all of the multiplication of shapes as follows:
+    (m,n) * (n,p) * (p,1) == (m,1) ---> It means  For each example you have one Output
+
+
+
+    Now we will talk about Actual Mathematics:
+    Wights and Bias ===>
+(m,n)
+
+    Weights and biases for each layer of the network:
+       ==> Input Layer ===> weights = shape -- (n,1), bias = shape -- (1,) only for one node in a layer
+       ==> Hidden Layer ===> weights = shape -- (n,p) bias -- Every node will again have biases --> It means there are "p" number of nodes for each "p or node" we will have more "n" number of feature weights.
+
+       ***NOTE***: In a neural network, a hidden layer can have multiple nodes, and each node has its own set of weights that are multiplied with the inputs and summed together to produce an output. Additionally, each node can have its own bias term, which is a constant value that is added to the sum of the weighted inputs before the activation function is applied.In the statement you provided, the bias term has a shape of (1,p), which means there is only one bias value that will be broadcasted across all the nodes in the hidden layer. This means that for each example that is fed into the neural network, the same bias value will be added to the sum of the weighted inputs for each node in the hidden layer.
+
+       ==> Hidden Layer ===> bias = shape -- (1,p) --> Here "1" means only one bias for "p" number of nodes -- It means for each example it will broadcast the "p" nodes 
+       ==> Output Layer ===> weights = shape -- (p,1) --> For out we will have 1 node with 4 hidden nodes output as "A0,A1,A2,A3" So ,we taken Shape of O/P Layer as (p,1)
+
+
+
+    More Generalized Formulae ===> 
+       For Multi-Layer Neural Networks:
+       We Represent as follows:
+       Nodes ===> Node(00),Node(01),Node(02)
+
+       Terms:
+       Z and A
+
+       Z == W.T * X + b
+       A == Activation(Z) --> Here we have see Lastly in "Logistic Regression" Activation Function(A) which is nothing but "Sigmoid" function But here we say just "Activation" Function bcs, we have many 
+                              "Activation" Functions other than "Sigmoid" we will learn them further for now we Assume "Activation" means some other activation function.
+
+
+      Every Node will have Z and A 
+
+      Input of every node ==> will be outputs of previous layers nodes.
+      Output of every node ==> A 
+
+      ***NOTE***: These are all Notations for all of the Layers Outputs
+      -----------------------------------------------------------------
+      First Layer is nothing but ==> Input layer --> In this we don't have "Z" Bcs, we directly giving the input values as Outputs to next Layer. --> Here we don't need "weights" bcs, we are not finding "Z"
+
+        We are treating this Input Layer instead of calling "x0,x1,...." we are generalizing the whole formulae as follows:
+
+      ===> A(00), A(01), A(02), A(03) these are nothing but == X(i0),X(i1),X(i2),X(i3) --> It means ith example 0th,1st,2nd,3rd features
+
+      First Hidden Layer OR ==> Second Layer
+      ===> A(10),A(11),A(12) -- It means "A" 1st layer 0th node Output
+
+      Second Hidden Layer(Which is nothing but) ==> Third Layer 
+      ===> A(20), A(21)
+
+      Output Layer ===> Fourth Layer
+      ===> A(30)
+
+
+
+    First Hidden Layer
+    Weights ===> W(L0) ==> Shape of W(L0) = (1,#(L-1)) --- Here "L0" is the 0th node in a Lth(it may be 1st,2nd or 3rd layers) Layer and "1" Represents the 1 node and "#(L-1)" 
+                                                           Represents Number of nodes in the Previous Layer OR (L-1) Layer is the Shape of the particular node in the Lth Layer.
+
+
+    ***NOTE***: For Input Layer we don't have Weights
+    Weight at particular Layer ===> W(L) ===> Shape of W(L) (#L,#(L-1))---> Here "W(L)" Represents the total Layer "L" and "#L" Represents the number of nodes in a particular 
+                                                                            layer "L" and "#(L-1)" the number of nodes in the previous layer "(L-1)" is the Shape of the "W" of a particular layer.      
+                                                                       ---> This is the "Shape of the Weight of a particular layer"         
+                                           
+
+    First Hidden Layer = Z(00),Z(01),Z(02),Z(03)
+
+            Z(00) = W.T * A + b
+ 
+
+
+    

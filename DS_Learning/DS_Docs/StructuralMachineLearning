@@ -169,7 +169,7 @@ NOTE: We have to definitely understand whatever I have written below in terms th
     Answer ----> shape of W --> (1,15) --- (1,n)
            ----> shape of X --> (15,10200) -- (n,m)
            ----> shape of B --> (1, 10200) --->(1,m) -- May be sometimes they will ask my ---> B value is a scalar then you are saying that it is a (1,10200) will it   
-                                                        work? --> Ofcourse,it will work even it is a "scalar" value means  if it has only number even it is a Number also No Problem as we are using "NumPy" all these Matrix multiplications are in "NumPy(NumericalPython)" we want to do Numerically. As all of these are dealing with "NumPy".Even the "B" is Scalar --> Scalar(simple number Let's say "10") will be  broadcasted to the shape of (1,10200) & then applying the Vectorization.So, that we will get the "Y" by comining "Y= W*X+B"
+                                                        work? --> Ofcourse,it will work even it is a "scalar" value means if it has only number even it is a Number also No Problem as we are using "NumPy" all these Matrix multiplications are in "NumPy(NumericalPython)" we want to do Numerically. As all of these are dealing with "NumPy".Even the "B" is Scalar --> Scalar(simple number Let's say "10") will be  broadcasted to the shape of (1,10200) & then applying the Vectorization.So, that we will get the "Y" by comining "Y= W*X+B"
 
 
 

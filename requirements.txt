@@ -32,3 +32,5 @@ pyspark
 ydata-profiling    #Here "ydata-profiling" is a library
 pandas-profiling   #Here "pandas-profiling" is a library
 openpyxl           #It is a module inorder to deal with Excel related operations
+scikit-learn
+tensorflow

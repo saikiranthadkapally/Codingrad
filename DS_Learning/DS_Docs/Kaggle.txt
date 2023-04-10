@@ -1,0 +1,33 @@
+Kaggle: A subsidiary of Google, it is an online community of data scientists and machine learning engineers. Kaggle allows users to find datasets they want to use in building AI models, publish datasets, work with other data scientists and machine learning engineers, and enter competitions to solve data science challenges.
+
+Steps:
+1) Type "Kaggle" in any Web browser like Chrome,firefox,Microsoft Edge etc...
+
+2) We will see a HyperLink "Kaggle: Your Machine Learning and Data Science Community" click on it.
+
+3) When we open HyperLink we will be Redirected to Kaggle HomePage 
+
+4) On Top Right Corner we will see option like "sign In" or "Register" options.
+
+5) By clciking on "signIn" it Redirects to another page with options like "Sign in with Google" Or "Sign in with your email" Or "Sign in with Facebook" Or "Sign in     
+   with Yahoo".
+
+6) We can directly "Sign in with Google" by clicking on it, Now our Account has been created.It Redirects to Homepage with our Username for me it shows
+   "Welcome, Thadkapally Saikiran!" in this page we find different menues and options like "Home", "Competitions","Datasets","Models","Code" etc.....
+   with many options.
+
+7) In Kaggle we can participate in different "Coding Competitions" and we can use Notebook to perform any "Coding" and also available many open source projects
+   and Datasets inorder to fork it and we can perform many Datascience and AI/ML operation Bcs, Kaggle is a "Cloud" Based platform where it provides CPU
+   and RAM and Repository and kernals etc... it all will be in "Cloud" whatever the Program which we write in "Kaggle" Notebook will Run on "Cloud".
+
+8) To know and in detailed check about kaggle Refer "Youtube" where we can get most indetailed explanation aswell as we good content explained by many people
+   OR Refer "Codingrad" watch the video "Logistic Regression Final"
+
+9) This is my kaggle Account Link: https://www.kaggle.com/
+
+
+My Kaggle Competitions/Projects:
+---------------------------------
+1) "Titanic Survival Prediction - Machine Learning" Competition Using "Logistic Regression" Link: https://www.kaggle.com/code/thadkapallysaikiran/logisticregression-1
+2) "Titanic Competition - ITBA - 2019" Competition Using "Logistic Regression" Link: https://www.kaggle.com/code/thadkapallysaikiran/logisticregression-2
+

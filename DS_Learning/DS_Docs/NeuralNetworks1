@@ -1,0 +1,440 @@
+In Detailed Understanding of Neural-Networks:
+----------------------------------------------
+Neural Network ---> 
+
+
+
+Input Layer ==> Number of "features" = Number of "nodes" 
+
+***NOTE***: The Number of Input nodes will depends on Number of features.Every Node is a "feature" in Input Layer.
+
+We are generalizing the problem So, In Diagram while we Representing/writing them as a "features" in Input-Nodes/Input-Layer not in the form of No.of.Examples --> m
+But we need to understand that the input which we are giving as an inputs(features) will have automatically we have "m" Examples.For Example we have 100 examples and
+we have 4 features 100*4=400 features it is not possible to Represent these "4" features for every example one-by-one instead we Represents with only "features" in 
+Representation But Input layer has "m" Number of exaamples.
+
+Y = W.T * X + b
+
+***NOTE***: Here why iam writing this Shape only in "(n,m)" and not in "(m,n)" Bcs, In my mind Iam Assuming that We have a formulae "Y = W.T * X + b" in this the 
+"X" which is in "second term" Before "X" I have "W".So, "W" is equated with Number of features "n" But not equated with Number of examples "m".So,If by chance i get 
+the "W" that we take n after that then we make the multiplication should be possible So, I have written as "(n,m)".
+
+Input Layer Shape ===> (n,m) ---> "n" is the features and "m" is the No.of.Examples
+
+
+
+***NOTE***: In Hidden Layer we can put any number of nodes based on the problem complexity and based on various parameters etc.. We will see in "Machine Learning"
+Strategies further in our course like "How many number of nodes we will keep" and "if we keep how many number of nodes then our ML Model will be perfect".But for
+now Assume it can have any number of Nodes.
+
+Hidden Layer 1 ===> #Nodes == It's a variable ---> we can update/modify/change Nodes as our wish
+
+    ***Every Node***: will have both Z(Normal function(Y=W.T*X+b)) and A(Activation function)
+
+        Z = W.T * X + b ---> Here "Z" is nothing but iam talking about only Single Node 
+
+        X == Outputs of the previous Layer ---> Here "X" is nothing but Outputs of the previous Layer(Input Layer) Bcs, Input Layer is itself is the Outputs.
+
+    *****NOTE: This is the General Representation of Every layer."Z^L(Array of Z functions) --> [zL0,zL1,zL2,zL3,..]" OR 
+    "A^L-1(Array of Activation) -->  [aL0,aL1,aL2,aL3,..]" it means we are doing "Vectorization" While we are doing Program/Coding
+    We Use NumPy as a Library inorder to Perform "Vectorization".
+
+    *****Vectorization:
+    Vectorization is the process of converting a mathematical or computational task that would otherwise require loops or iterations into a set of vector operations that can be performed on entire arrays or matrices of data in parallel.In other words, instead of processing each element of an array or matrix individually, vectorization allows you to operate on the entire array or matrix at once, using mathematical functions that are optimized for parallel processing.This can result in significant performance improvements in certain types of computations, especially in numerical and scientific computing applications, where large amounts of data need to be processed quickly and efficiently. Vectorization is often used in machine learning and deep learning, where large datasets and complex models require efficient processing to train and predict results. 
+
+
+    Generalized Representation of Z and A of Each Node in Every-Layer/Each-Layer/Particular-Layer in Multi-Layer Neural Networks:
+    ------------------------------------------------------------------------------------------------------------------------------
+    Z^L = Array of Z functions (W.T * A^L-1 + b) of each node of layer L --> Where "Z^L" it means Z superscript L and "L" it represents a particular layer
+                                                                         --> Where "A^L-1" it means Output of the previous layer
+                                                                         --> Here "L" we can denotes with values too like 0,1,2,3,.. where 0 means 0th layer
+                                                                             and 1 means 1st layer likewise so on...
+                                                                         --> Here "Z^L = [zL0,zL1,zL2,zL3,..]" and 
+                                                                         --> "A^L-1 = [a(L-1)0,a(L-1)1,a(L-1)2,a(L-1)3,..]" in "Z" Except I/P layer 
+                                                                         --> Here "A^L-1" is the Array of A functions in previous layer which is input to current layer
+
+    A^L = Array of of Activation of Z functions of each node of layer L(particular layer) --> "A^L = [aL0,aL1,aL3,...]" 
+
+    "Output Layer ===> A^L = Y^ OR Y(Pred) ---> For Output(Loss/Error/Cost) where we calculate the error between the predicted output (Y^ or A^L) and the actual output 
+    (Y) and use an appropriate loss function to compute the loss/cost/error. The goal is to find the best values of weights and biases (W, b) in the network that 
+    minimize the loss function."
+
+
+
+
+*************************************************************Important-Note-Points**************************************************************************************
+    
+    ***NOTE***: For Input-layer which are input Features/Nodes have "[xi0,xi1,xi2,xi3,..,xin]" where "xin" means ith example upto n feature as an Outputs to next 
+    Layers(Hidden-Layers) and doesn't have an Input "Z" Bcs, features are itself are inputs.We can also Represent "X = A^0" where "A^0" is the output of 0th/1st 
+    layer OR 0th/1st Input Layer and We can also Represent inputs/features as "Z" or "Z^0".
+
+
+    ***NOTE***: we do not have Z and A arrays in the input layer. In the input layer, we have the input features, which are directly fed as input to the first hidden 
+    layer without any transformation.Therefore, in the input layer, we do not perform any operations related to computing the weighted sum or applying activation 
+    functions. We can simply represent the input layer as an array of input features.
+
+
+    ***NOTE***: while the output node of a neural network may not have a separate activation function like the nodes in the hidden layers, it still has a Z value 
+    representing the weighted sum of inputs and a corresponding A value representing the output of the loss function.
+    
+    
+    ***NOTE***: In some cases the A value of the output layer may represent the loss function itself rather than a predicted output. This would depend on the specific 
+    problem being solved and the design of the neural network architecture.
+
+    
+    ***NOTE***: Generally, We consider "A(Activation function(like Sigmoid etc..))" is the Output to the next layer When it comes to "Hidden-Layers" and 
+    "Z( W.T * X + b)" Where the "Z" is also known as Y. is the Noraml function which takes "A" values as the Input.BUT when it comes to "Output-Layer" Where 
+    it is our Actual "Loss-Function" Where we get our global minima with best fit "W,b" values after performing "Gradient-Descent" by Adjusting "Weights and 
+    Biases" Using "Forward" and "Backward" propagation Techniques.
+
+
+    ***NOTE***:The functioning of Z and A in the output node is similar to that in the hidden layers, but there are some differences. Z represents the weighted sum of 
+    the outputs from the previous layer, while A represents the output of the node after applying an activation function to the value of Z. The type of activation 
+    function used in the output node depends on the problem being solved. The main purpose of the output node is to compute the final predicted output of the neural 
+    network, which is compared to the true output to compute the loss function. During backpropagation, the gradients of the loss function with respect to the weights 
+    and biases are computed using the values of Z and A in the output node, and these gradients are used to update the weights and biases in the network during 
+    training.
+
+
+    ***NOTE***: In the hidden layers, each node receives the output (represented by the array A) of the previous layer as its input, and then computes its own weighted 
+    sum (represented by the array Z) of the outputs from the previous layer. The output of each node in the hidden layer is then computed by applying an activation 
+    function to the value of Z.However, in the output layer, the input to the node is the weighted sum of the outputs from the previous layer, represented by the array 
+    Z. The output of the output node is computed by applying an activation function to the value of Z, and this output is represented by the array A. So, in the output 
+    layer, the input is Z and the output is A.The output node does not receive the array of activations A from the previous layer as input because it is the last layer 
+    of the neural network and there are no more layers after it. The output node takes as input the weighted sum of the activations from the previous layer, which is 
+    represented by the array Z.The reason for this is that the purpose of the output node is to compute the final predicted output of the neural network, which is 
+    compared to the true output to compute the loss function. The values in the array Z represent the influence of each activation in the previous layer on the output 
+    of the neural network, and the activation function applied to the value of Z produces the output of the output node, which is the final predicted output of the 
+    neural network.
+
+***********************************************************************************************************************************************************************
+
+   
+        A^L = Activation(Z^L) ---> Here "Activation" is the some Activation function(like Sigmoid etc..)
+
+        ***NOTE*** Input doesn't have any Weights W Bcs, it doesn't have "Z" to compute if there is no Z automatically we don't have "A".But Inorder to Activate the 
+        Input layer We require  "Weights(W)" to the next Next layer called "Hidden Layer".In Hidden Layer we Require "Weights(W)".
+
+
+        
+        Z1(0) = W1(0).T * A0 + b1(0) ---> Z1(0) ==> 1st layer 0th node
+                                    ---> W1(0) ==> 1st layer 0th node Weights
+                                    ---> T ======> T is the "transpose"
+                                    ---> A0 =====> Previous layers Output 
+                                    ---> b1(0) ==> 1st layer 0th node bias 
+        Z1(1) = W1(1).T * A0 + b1(1) ---> Z1(1) ==> 1st layer 1st node
+                                    ---> W1(1) ==> 1st layer 1st node Weights
+                                    ---> T ======> T is the "transpose"
+                                    ---> A0 =====> Previous layers Output 
+                                    ---> b1(1) ==> 1st layer 1th node bias 
+        Z1(2) = W1(2).T * A0 + b1(2) ---> Z1(2) ==> 1st layer 2nd node
+                                    ---> W1(2) ==> 1st layer 2nd node Weights
+                                    ---> T ======> T is the "transpose"
+                                    ---> A0 =====> Previous layers Output 
+                                    ---> b1(2) ==> 1st layer 2nd node bias 
+        Z1(3) = W1(3).T * A0 + b1(3) ---> Z1(3) ==> 1st layer 3rd node
+                                    ---> W1(3) ==> 1st layer 3rd node Weights
+                                    ---> T ======> T is the "transpose"
+                                    ---> A0 =====> Previous layers Output 
+                                    ---> b1(3) ==> 1st layer 3rd node bias 
+
+    
+    Shape of A0 == X == (n,m) ---> Where "n" is the number of features and "m" is the number of examples.It means No.of.features "n" for "m" examples.
+
+    ***NOTE***: Basically, the Shape of "W" will be "(1,n)" Bcs, We uses "NumPy" Library to create "Vectorization" using Arrays.But we cannot create "(1,n)" 
+    in Array So, our "Array" created in the form or shape of "(n,1) OR (n,)" When we create a single 1-D Array the Shape we get is "(n,)" But it doesn't comes
+    in the shape of "(1,n)".So, this is the Reason we are using or written "T(Transpose)" inorder to change the shape to "(1,n)"  
+
+    ***NOTE***: In Below if we observe for every "W" A0 is the input.So, "W" Shape will depends on "A0" it means "W" Shape will depends on Previous layers "A0" Shape.
+
+    Shape of W1(0) ====> (n,) -- W1(0).T ==> (1,n) ---> Here we are using "T" inorder to make matrix multiplication compatibility
+    W1(0).T * A0 ====> (1,m) ---> When we compute these two " (1,n) * (n,m)" We get "(1,m)" as an Output
+    Shape of b1(0) ====> (1,m) -- May be sometimes they will ask my ---> B value is a scalar then you are saying that it is a (1,10200) will it   
+                                  work? --> Ofcourse,it will work even it is a "scalar" value means if it has only number even it is a Number also 
+                                  No Problem as we are using "NumPy" all these Matrix multiplications are in "NumPy(NumericalPython)" we want to do 
+                                  Numerically. As all of these are dealing with "NumPy".Even the "B" is Scalar --> Scalar(simple number Let's say "10") 
+                                  will be  broadcasted to the shape of (1,10200) & then applying the Vectorization.So, that we will get the "Y" by 
+                                  comining "Y= W*X+B"
+ 
+    Shape of W1(1) ====> (n,) --W1(1).T ===> (1,n)
+    Shape of b1(1) =============> (1,m)
+
+    Let's say, 
+    #L = Number of nodes in Layer L
+
+    W1 ----> "W" 1st layer all the nodes will have same shape ====> (1,n)
+    b1 ----> "W" 1st layer all the nodes will have same shape ====> (1,m)
+
+    Shape of W1 = [W1(0),W1(1),W1(2),W1(3)] --> (4,n) ----> We will stack Or Array of "W1" layer.Where "W1(0)->(1,n),W1(1)->(1,4),W1(2)->(1,n),W1(3)->(1,n) = (4,n)"
+                                                      ----> Here we are stacking each one by one horizontally we are getting "(4,n)" it means 4 rows and n features
+                                        
+                                                       
+
+    Whole shape of W1 = 
+
+    *****Here we are Generalizing "W1 = [W1(0),W1(1),W1(2),W1(3)] --> (4,n)"  "W"  for every layer as follows: 
+    Shape of W1 = (#1,#0) --> Here "#1" Represents Number of nodes in 1st Layer.It means the Number of "W"s are based upon the Number of nodes in 1st layer
+                          --> Here "#0" Represents Number of nodes in the previous layer.It means the number of nodes are based upon the Number of features 
+                            in previous layer as an Output
+                          --> Here the previous layer of 1st layer is 0th layer.
+                
+    Shape of WL = (#L,#L-1) ---> Where "WL" It means "If I need "Lth" layer of "Weights(W)" then I need to get "Number of nodes in Lth layer" which is "#L" first
+                                 and then I need to get "Number of nodes in previous layer" which is "#L-1".So, that I will get the Shape of whole "WL" 
+
+
+    Shape of b1 = (#1,m)
+
+    Shape of b^L = (#L,m) ---> It is the Generalization of Bias "b"
+
+
+***********NOTE*********: Now We have got "Z^L", "A^L" and we have shapes of "WL". We have written Equations for every Layer and also written Generalized formulaes
+                          for every layer.
+
+
+
+
+
+Forward propagation of Neural Network:
+
+----> We have an Input Layer => Shape of (n,m) where #0 = n and number of examples = m
+
+----> Hidden Layer 1 Output = Z1 = W1.T * A0 + b1 ---> Here "A1" is nothing but "A^L = Array of of Activation of Z functions of each node of layer L(particular layer)"
+                                                  ---> Here Representation is different for each layer but formulae(A^L) is one.
+                                                  ---> Here while Iam writing like this "A1 = W1.T * A0 + b1" It means "Vectorization" is involved here which is 
+                                                       nothing but "Parallelizm" this is achieved through "NumPy".Here we have many advantages of the NumPy in ML
+                                                       Bcs of the NumPy only we are getting this much Parallelizm for each node and we are caluclating "Faster".
+                                                  ---> Here "A0" is the Output which is Activation function of previous layer.But We don't have Activation function
+                                                       to previous layer which is input but we have "nodes/features" of Input layer as the Output.Therefore we will
+                                                       say "X = A0"
+                                                  ---> Here "b1" is the 1st layers all biases.It means collection of all bias for every Node in that particular Layer.
+
+                              A1 = Activation(Z1) 
+
+----> Hidden Layer 2 Output = Z2 = W2.T * A1 + b2 ---> Here "A1" is the Output which is an Activation function of previous layer
+                              A2 = Activation(Z2)
+
+----> Output Layer (3rd layer) = Z3 = Y^ = W3.T * A2 + b3 ---> Here "A2" is the Output which is Activation function of previous layer. 
+                                 A3 = Y^ = Activation(Z3)
+
+
+
+Backward-Propagation:
+
+Backward Propagation : Here we are finding the "Loss" with "Actual(Y) and Predicted(Y^)".What is that "Loss" and How we are finding that "Loss" all these are 
+                       just Keep it as a "Blackbox" for Now. and we understand the Concept.
+
+                **** Now we will come to the some more Advanced Topic Now:
+                Predicted Y^
+                Actual    Y
+                
+                Loss between predicted and Actual ---> Assume that we will be having a Loss function at the End.
+
+                We have couple of "Loss functions" as follows:
+                Loss functions ---> mse, logloss, other loss functions(like categorical loss,etc...) ---> When we come to Programming we will see other log functions
+                                                                                                          and when we use them and where we use them in Programming.
+
+
+----> We will calculate loss function w.r.t (Y^,Y) ---> (Activation(Z3),Y)
+                                                   ---> (Activation(W3.T * A2 + b3),Y)
+
+
+
+    When we have the "Loss function" with Us Already We will see Later Bcs, it will be more complex now,
+    ****Here for any "Loss function" we are Representing as "J(W,b)" only. 
+    **** NOTE ****: "P" means dow in partial-differntiation
+    Loss function J(W,b) ===> P(J(W,b))/dW --> then we get the Gradient of "W" 
+                         ===> P(J(W,b))/db --> then we get the Gradient of "b"
+
+
+            Here at the end we should do this "Loss function" w.r.t "W3 and b3" instead of "W"
+            ----> J(W,b) ===> P(J(W,b))/dW3 --> we will get --> W3 gradient
+            ----> J(W,b) ===> P(J(W,b))/db3 --> we will get --> b3 gradient
+
+            ***NOTE***: Here Iam telling Similarly, for right now we won't do it Bcs, it will be little bit Hard. 
+            Likewise, Just Assume that we will also find out similarly for 2nd layer --- W2 gradient
+                                                                                     --- b2 gradient
+
+
+            Likewise, Just Assume that we will also find out similarly for 1nd layer --- W1 gradient
+                                                                                     --- b1 gradient
+
+
+After Completing "Forward and Backward" Propagation:
+----------------------------------------------------
+Then we have to Apply:
+
+****NOTE****: Here we need to update "Weights & biases" in every layer through Gradient Descent by "Backpropagation(We need to come from Last to Back)".In this we 
+also have different types of Algorithms.Each Algorithm is again we are going to learn in ML Strategies.
+Gradient Descent Algorithm: 
+
+       We are coming for the first layer and all of those above are stored Already, then
+        W1(new) = W1(Prev) - alpha(Gradient of W1) -> "Gradient of W1" is nothing but "W1 gradient" which we have got after partial differentiation in Layer 1
+        b1(new) = b1(Prev) - alpha(Gradient of b1) -> "Gradient of W1" is nothing but "W1 gradient" which we have got after partial differentiation in Layer 1
+
+        Similarly,
+        W2(new) = W2(Prev) - alpha(Gradient of W2) -> "Gradient of W2" is nothing but "W2 gradient" which we have got after partial differentiation in Layer 2
+        b2(new) = b2(Prev) - alpha(Gradient of b2) -> "Gradient of W2" is nothing but "W2 gradient" which we have got after partial differentiation in Layer 2
+
+        Similarly,
+        W3(new) = W3(Prev) - alpha(Gradient of W3) -> "Gradient of W3" is nothing but "W3 gradient" which we have got after partial differentiation in Layer 3
+        b3(new) = b3(Prev) - alpha(Gradient of b3) -> "Gradient of b3" is nothing but "b3 gradient" which we have got after partial differentiation in Layer 3
+
+
+Condition to Stop: Till W1,W2,W3, b1,b2,b3 are converges.
+
+**************NOTE************: After finding this "New" values again we Apply "Feed Forward Network(Forward Propagation)" then we get again "A3 = Y^" and then 
+We again apply "Backward-Propagation" In Backward-Propagation we traverse "Back" in Reverse from last to first it Includes:-Finding "Loss" Using "(Y^,Y)" and some 
+Loss-Function(J(W,b)) and again we find their "gradients" and after finding their "gradients" we come to the starting/front/initial layer and We again update some 
+Weights(W) and Biases(b) there and again we Apply "Forward-Propagation" and continues Likewise Till W1,W2,W3, b1,b2,b3 are converges.We will Repeat this process
+Until it converges.So, this is called "Training" Process.This whole process will be called as "Training" this is for Whole "Neural-Network".Same thing will be 
+applied to the "Deep Neural Networks".
+
+
+*****Deep-Neural-Networks*****: If we have a simply upto 10 Layers then we call it as a "Normal Multi-Layer Neural Network" But In some situations we Require 
+many layers then we are increasing the "Layers" along with that increasing of the number of Nodes per layer also if we are increasing and if we are making
+the Network more complex then it becomes a "Deep Neural Network".As the number of layers are increasing then number of parameters also increases in "Deep Neural
+Networks".
+
+
+
+
+
+***********EXERCISE OR ASSIGNMENT************
+
+***NOTE***: Here Our Input Data is in the form of Image which has (64*64) Resolution ==> 4,096 pixels we can also call each "pixel" as one "feature".Likewise, we have
+1024 images with (64*64) Resolution. Each input Image will be treated as an Example it means we have "1024" Examples/images with "4,096" features/pixels. 
+
+Q) My Input is (64*64) Resolution ==> 4,096 pixels/features image of 1024 images. then I have 12 nodes of hidden layer 1, 18 nodes of hidden layer 2, 6 nodes of 
+hidden layer 3, 2 nodes of hidden layer 4, 1 node of output layer? 
+
+
+Draw Network? --> We need to write/draw the Network then only we can do it furtherly, We can see OR Imagine in our Mind. When we have that in our Mind then only 
+                  we can write the Program and also Visualize what is happening in Each Layer.If anything Problem occurs OR If Training was not done properly 
+                  OR If we didn't get accuracy of our Output Propely So, we can Inspect it Ok in which layer the problem occured and where is that problem occured
+                  we can able to Inspect it.
+
+Number of whole parameters ---> It should not be too High if it is too High then the "Training" will done More (OR) It should not also be too Low if it is too Low
+                                then the "Training" will not done Properly. So, Finally it should be "Optimal" not either too High Or too Low.
+
+***NOTE***: Last time we have discussed about ChatGpt no.of.parameters of chatgpt network.ChatGpt is also somehow or some sort of Neural Networks and also the 
+            Sequence models and Transformers all those are combined is one type of Network.That Network Number of parameters we have seen 170 billion parameters 
+            in Google.Similarly, What are the Number of parameters for our created Neural Networks and also we have to tell in every Layer how many no of parameters 
+            we have when someone is give some neural network like above in the 'Exercise Or Assignment' and ask about the no of parameters in particular layer
+            then also we have to tell and also we have to tell how many no of parameters in whole network(Neural network) which is our created ML Model network 
+            likewise we have to tell and answer to all such type of questions it's very very simple there is no Hard in it.
+
+
+Shapes for Above Network:
+-------------------------
+
+*****NOTE****: Here the # param(Number of parameters) = 0.Bcs, In input layer we don't have "W,b" it means we don't have "Z"
+input layer == (4096,1024)
+
+
+
+*****NOTE*****: 
+# parameters(W,b) in hidden layer 1 without considering Examples:
+--> Here the # param(Number of parameters) = 49164.Bcs, In hiddenlayer1 we have parameters "W,b" which is calculated as "W1+b1 = (12*4096) + 12 = 49164".So, we have 
+    "49164" parameters in hiddenlayer1.
+hiddenlayer1 shape of W, b, Z, A ===
+        W1 shape = (12,4096) ----> "12" Represents "Number of nodes in a particular Hidden Layer1" and "4096" Represents "Number of layers OR Number of Outputs of 
+                                    the previous layer which are nothing but "A0". A0 is nothing but "4096". So, I got the "W1" Shape.
+                             ----> If we do multiplication this "(12,4096)"  then we know the # elements in it
+        b1 shape = (12,1024) ----> "12" is Number of nodes in a particular Layer 1 and "1024" is the Number of Examples.
+        Z1 shape = W1 * input layer + b1 => (12,4096) * (4096,1024) + (12,1024) = (12,1024) --> Multiplication will change our Shapes Except multiplication
+                                                                                              no operations will change our Shapes. 
+                                                                                            --> If we do multiplication this "(12,1024)" then we know the # elements in it
+        *****NOTE*****: "A & Z" will have the same Shapes Bcs, it's a function of function will have the same shapes.We are not doing any Multiplication 
+        Multiplication will change our Shapes Except multiplication no operations will change our Shapes.
+        A1 shape = (12,1024)  
+
+Tell me # parameters(W,b) in hidden layer 1 ==> W1 + b1 ==> (12*4096) + (12*1024) ---> with considering Examples
+
+
+*****NOTE*****: 
+# parameters(W,b) in hidden layer 2 without considering Examples:
+--> Here the # param(Number of parameters) = 234.Bcs, In hiddenlayer2 we have parameters "W,b" which is calculated as "W1+b1 = (18*12) + 18 = 234".So, we have 
+    "234" parameters in hiddenlayer2.
+hiddenlayer 2 shape of W,b,Z,A ===
+        W2 shape = (18,12) ---> This shape depends on the previous layers output shape.
+                           ---> The # nodes in a particular layer 2 are "18"
+                           ---> The # nodes in a previous layer are "12"
+        b2 shape = (18, 1024) ---> If we do "W2*A1" it means (18,12) * (12,1024) = (18,1024)
+        Z2 shape = (18, 1024) ---> "Z2" is nothing but "b2" only.Whatever we get "b2" that will be only our "Z2"
+        A2 shape = (18, 1024) ---> As we discussed above Except multiplication no other parameters will change the shape.So, "A2" is the same shape as "Z2"
+
+# parameters in hidden layer 2 ==> W2 + b2 ==> (18*12) + (18*1024) ---> with considering Examples
+
+
+
+****** Exercise OR Assignment to do same thing as above for Remaining layers ******** 
+
+*****NOTE*****: 
+# parameters(W,b) in hidden layer 3 withoud considering Examples:
+--> Here the # param(Number of parameters) = 114.Bcs, In hiddenlayer3 we have parameters "W,b" which is calculated as "W1+b1 = (6*18) + 6 = 114".So, we have 
+    "114" parameters in hiddenlayer3.
+hiddenlayer 3 shape of W,b,Z,A ===
+        W3 shape = (6,18)
+        b3 shape = (6,1024)
+        Z3 shape = (6,1024) --> W3 * A2 + b3 --> (6,18) * (18,1024) + (6,1024) = (6,1024)
+        A3 shape = (6,1024)
+
+# parameters in hidden layer 3 ==> W3 + b3 ==> (6*18) + (6*1024) ---> with considering Examples
+
+
+
+*****NOTE*****: 
+# parameters(W,b) in hidden layer 4 withoud considering Examples:
+--> Here the # param(Number of parameters) = 14.Bcs, In hiddenlayer4 we have parameters "W,b" which is calculated as "W1+b1 = (2*6) + 2 = 14".So, we have 
+    "14" parameters in hiddenlayer4.
+hiddenlayer 4 shape ===
+        W4 shape = (2,6)
+        b4 shape = (2,1024)
+        Z4 shape = (2,1024) --> W4 * A3 + b4 --> (2,6) * (6,1024) + (2,1024) = (2,1024)
+        A4 shape = (2,1024)
+
+# parameters in hidden layer 4 ==> W4 + b4 ==> (2*6) + (2*1024) ---> with considering Examples
+
+
+*****NOTE*****: 
+# parameters(W,b) in output layer O withoud considering Examples:
+--> Here the # param(Number of parameters) = 3.Bcs, In outputlayerO we have parameters "W,b" which is calculated as "W1+b1 = (1*2) + 1 = 3".So, we have 
+    "3" parameters in outputlayerO.
+outputlayer shape ==
+        WO shape = (1,2)
+        bO shape = (1,1024)
+        ZO shape = (1,1024) --> WO * A4 + bO --> (1,2) * (2,1024) + (1,1024) = (1,1024)
+        AO shape = (1,1024)
+
+# parameters in output layer O ==> WO + bO ==> (1*2) + (1*1024) ---> with considering Examples
+
+
+AO = Y^ -- (1,1024)
+
+Y -------- (1,1024) --> Here for each example we have 1 label.So, for 1024 examples we have 1024 labels.
+                    --> shape of Y^ = Y will be same always.If these 2 are in same shape then only our Network will work.
+
+
+    
+********NOTE********: Whatever the training and all the stuff which we can do in Python that is fine But at the Time of Production we won't use Python we definitely
+have go the Language Bindings in that we use C++ wrapper for Machine Learning.C++ is the only Language which will be used anywhere and all the Time.It won't absolate
+At the End our ML Model has to be Inferred and Managed in a Production through C++ language only.Bcs, C++ has a Higher In-Memory Management it have it has very 
+good capability of doing that very good Management.After completing of our course we have an ocean of syllabus to learn programatically or concepts behind the scope. 
+In our course mostly we use "Tensorflow" Framework Bcs, it has most of the followers and Easy to learn and larger community to sort out any issues and also we sort
+Errors in Stackoverflow most of the solutions for Errors are available in "Stackoverflow" and also it is opensource. We also have other Frameworks like "MSNET(amazon),
+PyTorch(Facebook)" PyTorch will have High Memory Management compare to Tensorflow But it doesn't have most community base and solutions for Error in Stackoverflow
+very few Bcs, it is Hard compare to Tensorflow to learn and less follower Base support etc...
+
+
+
+*******************************************************************PERSONAL-NOTES**************************************************************************************
+
+Q) What are Plugins?
+
+A) imagine you have a toy robot, and you want to make it do something new, like play music. But the robot wasn't built to play music, so you need to add something 
+extra to make it happen.That's where a plugin comes in. A plugin is like a little extra piece you can add to your robot (or your computer, or your phone) that gives 
+it new abilities or features.In the case of device plugins, we're talking specifically about adding new abilities to a piece of software that interacts with a hardware 
+device, like a printer or a camera. The plugin might allow the software to access new features of the device, or it might make it easier to use the device with the 
+software.So, in short, a plugin is like an add-on that makes your device or software do more cool stuff!
+
+************************************************************************************************************************************************************************                     

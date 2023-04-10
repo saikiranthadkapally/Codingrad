@@ -104,8 +104,15 @@ b = b - alpha(slope(J(W,b) w.r.t b)) --> Here this "(slope(J(W,b) w.r.t W))" is 
 learning rate ---> alpha --- This alpha is nothing but "Learning rate" and also alpha will decide with how much fastness it need to move/learn inorder
                              to Reach "global" minima.Suppose,if we give 100 steps inorder to learn fastly then it "can't".We talk about this learning
                             rate further in "ML" startegies and all
-Gradient Descent Algorithm 
+
+Gradient Descent Algorithm -- Basic
 --> It is a "Basic" Gradient Descent Algorithm.We also have lot of other things like Batch,stochastic,Adam,RMS prob,momentum etc....
+***NOTE***:The optimal values of W and b obtained during the training phase of linear regression are the same for all examples in the dataset. These values are 
+independent of the specific data or rows in the dataset, and represent the best fit line for the entire dataset.In other words, once we have found the 
+optimal values of W and b for a given dataset, we can use these values to make predictions for any new example or row in that dataset. We do not need to 
+find new values of W and b for each example or row.This is because the optimal values of W and b represent the best fit line that describes the relationship 
+between the input variables (features) and the target variable across the entire dataset. By using these same values to make predictions for all examples, 
+we are effectively using the same model to make predictions for all examples.
 ------------------------------
 Training Phase of the Model:
 --> We are training our Model to get the "global minima " of "W,b" So, that we will end up with those "W,b" with very good proper costless function 
@@ -116,8 +123,8 @@ Training Phase of the Model:
 --->We need to update "W,b" directions and speed/steps Until we get the minima---> Condition: (W,b) are not changing ---> it will called as 'Converging'
 ***NOTE***: Converging will be happen w.r.t the parameters if the function is convex function to get the "global minima"
 4. Update W,b: --> It means "W,b" update their directions and their speed using 
-    W = W - alpha*(slope(J(W,b)) w.r.t W)
-    b = b - alpha*(slope(J(W,b)) w.r.t b)
+    W(Next) = W(Prev) - alpha*(slope(J(W,b)) w.r.t W)
+    b(Next) = b(Prev) - alpha*(slope(J(W,b)) w.r.t b)
 
 At the end:
 W,b ---> Y = W*X + b --> The values which we got will be written in the function " Y = W*X + b" then that function will become our "Linear Regressor" 
@@ -133,8 +140,8 @@ slope(J(W,b)) w.r.t W = (Y^-Y)*X --> This is our derivation function we got afte
 slope(J(W,b)) w.r.t b = (Y^-Y)*1 --> This is our derivation function we got after differentiation Which is nothing but our "slope(J(W,b))" w.r.t b
 
 ***NOTE***: Here we can Update "W = W - alpha*(slope(J(W,b)) w.r.t W)" and "slope(J(W,b)) w.r.t b" with "(Y^-Y)*X" and " (Y^-Y)*1 " as follows:
-W = W - alpha*((Y^-Y)*X )
-b = b - alpha*((Y^-Y)*1 )
+W(Next) = W(Prev) - alpha*((Y^-Y)*X )
+b(Prev) = b(Prev) - alpha*((Y^-Y)*1 )
 
 
 *********************************************************PERSONAL-NOTES**************************************************************************************************************************************

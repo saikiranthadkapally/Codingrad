@@ -1,0 +1,53 @@
+Machine Learning Model
+
+Whatever Algorithm may be -->Inorder to Build the Model we should use Algorithms either Linear Regression,Logistic Regression etc...
+
+****************************************************************NOTE****************************************************************************************************
+
+-----> Algorithm --> For Which kind of data/purpose(what purpose we are taking and what data we are taking based on these and other parameters) and other parameter 
+                     like realtime/batch inferencing these 2 are also important things it means this also one of the paramter while Deciding an Algorithm.Suppose,
+                     We have One Data then What Algorithm should we need to Decide it means there are some Parameters which will effect on that Decision Making Right!
+                     Such that for these set of parameters we need to use this Algorithm and another type of set of parameters we need to use that particular Algorithm
+                     that Concept we need to Understand.So, how that will be understand inorder to Understand We are going to discuss what are such type of Parameters.
+
+                 --> Data is first of all what kind of Data it is like Structural Data Or Unstructured Data Or Text Data Or Image Data Or Audio Data Or Video Data etc..
+                     What kind of Data it is?
+
+                 --> Then Next what is the Purpose of it it means What purpose Or Ultimate goal of the OR Ultimate goal of doing OR Building a ML Model is What?    
+                     Actually, Why we are Building the ML Model and What is the Output of it by Doing and the Purpose what we need to acheive that also involves here
+                     that also should be in our consideration.Ok Done We have Built ML Model After Building ML Model We need to Use that ML Model Right and We are Using it like "on the go we are using it" it means after getting input immediately we are getting output and what is the Use-Case of it ML Model
+                     Use-Case OR else if it is "not on the go" Just we are going to Deploy it with us Whenever we need it OR Whenever We get the Data then we are trying to do it Batch-Processing then we use different kind of Algorithms for it.
+
+                 --> So,Based on different different things likewise we have many parameters we are come to know whenever we get for each Example/Situation.To  
+                     Remember all these parameters is not existed Here and there is no Practice and all.But we have to Read a Lot Here we need to study everytime 
+                     more everytime we need to study a Lot.We need to keep on Reading and Try to Debug Ourself by taking our own Use-Case OR Already Deployed Use-Cases
+                     OR Already Used Use-Cases So, we have to choose those Use-Cases and Debug it and How they are solving that Use-Cases and What Strategies they have
+                     followed and Note that Strategies what they have followed In such situation they have followed like this OR in other situations how they will follow OR If we are in that Place and how we will follow and what strategies we will choose etc.. So,it all comes under how we are Reading the things Here what does it means that Reading and Exploring with our Mind.Totally it's a Mind Work So, it's all about the Mind Work.
+************************************************************************************************************************************************************************
+
+Supervised Machine Learning: ----> input and output ---> As we are discussed till now Mostly Supervised ML.So,Mostly we use Supervised ML in our World But in future it may(chances) become Absolate and Reinforcement Learning will Replace it But we are not sure It's my Personal Opinion Exactly it will happen that I can't say But it may have chances.
+
+-----> Algorithm --> Which kind of data/purpose and realtime/batch inferencing ---> Let's Assume We have Choosen an Algorithm by Combining Or considering set of Params
+        
+        So, by that Algorithm the Phases Actually, In ML Building what Phases we have to do they are as follows:
+        --> 1. Extracting Data / Requirement Gathering ---> Mostly it will be a Data we are Extracting.
+            ---> Google Data(We will extract the Data from Google) --> General Problems(General Problems can seen by Everyonw and can available in Google)
+                                                                   --> In this 1st Step Data Engineering Techniques will also involved like search,clean,Extract etc..
+            ---> Specific Problems ---> In Specific Problems the Data Generation is really Very very Hard --> It involves lot of cost --> Highly Costly Data 
+                                   ---> Here if we want to prepare a ML Model we need the Data to Train So, that Data we have to Invest like in Phramcitical,etc..
+                                   ---> Let's take an example of "Pharmacitical Industry",a minimum of 10,000 rows/examples of a specific combination of chemicals is 
+                                        needed. This requires conducting numerous experiments that can take 2-3 years to complete, based on the size of the experiment. Once the data is collected, it is used to develop the machine learning model. However, even with extensive experimentation, there is no guarantee that the model will work properly. This poses a significant financial risk for the company. Therefore, it is important to carefully consider the challenges and costs involved in generating data for specific problems in the industry. Ultimately, the success of the industry depends on its ability to evolve and adapt to these challenges.So, this is how we are generating the Data for Specific Problem.
+
+        --> 2. Labelling Data ---> Here we have 2 Types of Labelling "General Problem Labelling and Specific Problem Labelling"
+            ---> General Problems Labelling ---> Like Car detecting Systems,Cycle detecting,Mask detecting etc.. ---> Even a Normal/General People can also Label
+                                            ---> It does'nt Involves Cost 
+            ---> Specific Problems Labelling ---> Like Glacoma detection System,Brain Tumor Detection etc.. ---> It Requires Experienced Persons in that field
+                                             ---> It Involves More Cost.The Labeling Data which we used to Train is already Labeled by Experienced Persons in that
+                                                  particular Field by investing more Amount on them for Labelling.So, we need to Build Efficient and high Accuracy
+                                                  ML Model Bcs, it involves More Cost and also whenever they Handover such Projects we should be Very Responsible
+                                                  in Build High Accuracy and High Performance ML Model.
+
+        --> 3. Architect a Machine Learning Model
+         
+            
+

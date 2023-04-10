@@ -1,0 +1,249 @@
+DecisionTrees --> DecisionTrees it's not a type of Learning.It is a "Statistical Machine Learning" Model.If our input Data  is very 
+                  Proper then our "DecisionTree" Works Best.We have a sort of advance Topic of "DecisionTrees" called "RandomForest"
+                  A "RandomForest" is a collection of Decision Trees these collection of Decision trees are also called "Ensembling"
+                  where ensembling means collecting of different different decision trees ensembling models like Randomforest,xgboost
+                  etc.. such type of ensembling models will work more effieciently in Real-time compare to "Linear & Logistic"
+                  Regression Models.
+
+              --> Decision Tree is a "Binary Tree" where it has only 2 child nodes.If our Tree has 2 child nodes to root node then
+                  we will call "Binary" if we have more than 2 nodes to root node thrn we will call "Ternary" Trees.
+
+              --> The interview questions are like "what is IG, what is Entropy, Decision Treee Importance"
+
+              --> Decision Tree importance --> It is very easy to Learn bcs, here we don't have "Gradient Descent","Differentiations" 
+                  and all Here Everything is "Statistical" and we don't have parameters like weights and biases this algorithm is
+                  non-parameter dependency it splits the Data into sub-parts and learns from previous historical Data.It is a 
+                  Predictive Model.We are not finding for best parameter or for best "W" this not an optimization Problem it is a
+                  simple "Statistical Method" approach but it follows mathematically a procedure(Pseudo code) to perform the operations. 
+
+              --> Everything is "Statistical" in Decision Trees there is no Training weights in Decision Tree and Very Easy to Learn 
+                  and Decision Tree is very easy to be Created.
+
+
+TERMS:
+------
+Root Node: Starting node (parent) node
+Children Nodes: Branches from Root Node ---> Atmost(either it can be 1 children or 2 childrens) 2 childrens
+Depth of the tree: Number of branches in longest branch of the tree
+Height of the tree: Number of nodes in longest  branch of the tree
+
+Let's Assume:
+-------------
+Dataset ---> Binary classified Data --> In this Dataset we have 2 classes it consists of Data Related to this 2 classes.
+Classes/Labels/Output ----> c1,c2 --- It is the feature "f6" called label
+Features --> f1,f2,f3,f4,f5. --> These features will define whether a particular Data point is  belonging to c1 or c2
+
+Example/Data point -->
+
+Assumptions ---> f1,f2,f3,f4,f5 all are binary categorical attributes.
+
+f1---> values ----> 2 categories ---
+feature vector/data point/example --> X0 = (f1,f2,f3,f4,f5)--> features for particular example, Y0 = f6(value for particular example)
+
+f6 is binary attribute --> c1 and c2
+
+number of total examples = m
+
+Take f1 --->
+
+
+***Decision Tree Pseudo code/Algorithm***:
+   1--> Start with all examples/datapoints/feature vectors at main root node
+   2--> Mathematical Caluclation ---> input ---> all examples, f1,f2,f3,...,fn given as inputs --> Gives a feature "fi" as an Output
+   3--> Split the datapoints/examples based on the feature (fi) values ---> 2 values --> left branch examples, right branch examples
+   4--> Repeat from 2 step by giving splitted data points and remaining features as inputs to Mathematical Caluclation
+    STOPPING METHODS OF DECISION TREES:
+       --> if 1 class at one branch then ---> Leaf node ---> (need not repeat 2 step)
+       --> else Decision Tree depth will --> Threshold (based on this threshold our splitting will be stopped
+       --> Suppose,If our "Information Gain" at particular phase while selecting below some threshold then also we can stop it.
+           Lets say we have "Threshold" 12.If we find IG for every feature then the value of all features are below 12 value
+           then also we can stop splitting of our Decision Tree.
+       --> If #examples at node below some threshold then also we can stop the splitting.Let's say we have two "features" at
+           Decision Tree leaf node then we fixed that "Threshold" is 2 then there is no splitting happens it assumes that is 
+           only leaf node.Sometimes we keep our "Examples" as a Threshold.
+       
+
+***NOTE***: Here we put more concentration on Mathematical Caluclation.Here Whatever feature it is we shouldn't split it.We should 
+split the feature or root nodes at each level which will make our total binary tree efficiently and this efficiency will be improve accuracy in our inferencing Based on this we should do or perform.We should have a justification that why we taking only this feature
+as a root node we should prove mathematically.So, this Mathematical Caluclation we used call as "Information Gain".
+
+---> Information Gain --> This "Information Gain" is a formulae we need to find out this Mathematical formulae
+     --> Here Information gain "I" of a particular feature "f(i)" equal to entropy(H) of probability of class 1 or P1
+         this is of at root minus  of capital W of left into entropy(H) of left probability of 1 then plus W of right
+         into entropy of right probability of 1. NOTE: Here right and left are branches.
+     ***Formulae of Information Gain(IG)*** ---> I(f(i)) = H(root)(P1) - (W(left)*H(left)P1 + W(right)*H(right)P1)
+
+     P1 -- Probability of class 1 of examples
+     
+
+     Lets say we have --> 6 examples ---> In this 3 examples belongs to class1 or c1 & 3 examples belongs to class2 or c2
+                                     ---> Then probability of c1 --> P1 = 3/6 = 1/2 = 0.5 --- where P1 & P2 are probability
+                                          of c1 and c2.
+     Lets say we have --> 6 examples ---> 5 examples c1 & 1 examples c2 --> P1 = 5/6
+     Probability always persists in between 0 and 1 
+     ---> P1 --> [0,1]
+
+     If we have 2 classes then probability of P1 plus P2 is always "1" ----> P1 + P2 = 1
+     Then Probability of class P2 equal to one minus "P1" ----> P2 = 1 - P1
+     Formulae: Entropy of class P1 equal to minus Probability of class P1logP1 minus Probability of P2logP2
+       Entropy -- H(P1) = -P1logP1 - P2logP2
+                  H(P1) = -(P1logP1 + (1-P1)log(1-P1)) --> This is about the "Entropy" of the probability P1
+
+
+    Let's take an Example to find "Information Gain" as follows:
+    Follow these STEPS:
+    -------------------
+    1st step -- f1,f2,f3,f4,f5 and X0,X1,X2,X3,X4,X5 --> Im giving these as an input to the "Mathematical Caluclation(Information Gain)"
+
+    2nd step -- Information gain of all features w.r.t the given data points(examples) --> "max of information of feature" from all the 
+    values which we got.So, that feature will be returned from this function(Mathematical Caluclation)
+
+
+    LET'S TAKE AN EXAMPLE:
+    EXAMPLE 1:
+    before split -- root -- {X0,X1,X2,X3,X4,X5}
+
+    f1(for a particular feature) ===> left = {X1,X3,X5} and right = {X0,X2,X4}
+
+    H(root)(P1) = -(P1logP1 + (1-P1)log(1-P1)) --> We will get Entropy of root P1 value,After applying P1
+    Assume (P1) = 3/6 = 1/2 
+
+    H(left)(P1) =  -(P1logP1 + (1-P1)log(1-P1)) --> By applying this "P1" to this formulae we will get "H(left)(P1)
+    Assume (P1) = 2/3 -- Probability of class 1 of left set = #Examples with class c1/total number of examples 
+                      -- It means there are 1 example is belonging class 2 then left(P1) = 2/3
+
+    H(right)(P1) = -(P1logP1 + (1-P1)log(1-P1)) --> By applying this "P1" to this formulae we will get "H(right)(P1)
+    Assume (P1) = 1/3 -- Probability of class 1 of right set = #Examples with class c1/total number of examples 
+                      -- It means there are 2 example is belonging class 2 then left(P1) = 2/3
+
+    W(left) = Total no.of left side examples/Total no.of. root examples ---> 3/6
+    W(right) =  Total no.of right side examples/Total no.of. root examples  ---> 3/6
+
+    Everything we got which we need to substitue in "Information Gain(IG)" they are "H(root)(P1),H(left)(P1),H(right)(P1),W(left),W(right)"
+    We need to substitue all these values in IG formulae --> I(f(i)) = H(root)(P1) - (W(left)*H(left)P1 + W(right)*H(right)P1).Now 
+    we got IG for particular feature
+
+    ***NOTE***"Likewise we Repeat samething for all features -->  We get IG for all features then we pickout the maximum IG feature from
+    all those features then we return that maximum IG feature like an "fi". After returning as an "fi" we will do samething for next 
+    iteration for every root node at each level.It is a recursive process.
+
+
+***IMPORTANT***
+Decision Tree it is Accurate we should agree But It is highly prone to single data point even ---> Even if a small datapoint will changes
+Or even a small data point will be Added too then there is a possibility or chances to change the "Tree Structure" So, Decision tree is highly prone to data points.Therefore We got some Methods on Top of the "Decision Trees" those Methods are called "Ensemble Methods".
+
+Ensembling Methods: --- Grouping
+Majorly important One they are:
+  1. Random Forest: This is one type of "Architecture" or one type of "Algorithm"
+        --> It will be called as "Bagging method"
+        Let's Assume we have: 
+        no of examples = m = 100 
+        no of features = n
+        take some sample (25) out of m examples --> then train a Decision Tree --- This is Decision Tree-1 and also called --- estimator1
+        take one more sample out of m examples:
+                ---> Sampling data points with replacement -- Repeat this step with 100 estimators/DecisionTrees --> It is same as Pick up Random balls from a Bag problem
+        Using this "Technique" we can prepare as many as estimators.Let's say Default, we taken OR prepared 100 estimators:
+            estimators --- 100
+            Let's say we got a new feature(X^) these new feature is send to 100 Decision Trees as follows:
+            X^ --> 100 Decision Trees --> In this we have a Voting Mechanism as follows:
+                    X^ belongs to C1 ---> 78 -- It means from 100 DecisionTrees "78" Trees are telling that "X^" belongs to C1
+                    X^ belongs to C2 ---> 22 -- It means from 100 DecisionTrees "22" Trees are telling that "X^" belongs to C2
+                    ---> In this the Majority will have C1 So, the Output is "C1"
+
+            Here It is "More robusting" in compare to single decision tree bcs, we are not depending on single "Decision Tree" we are taking from 100 no of Trees and asking their opinion and taking those who Votes more that class we are taking as our Output  
+
+  2. xgBoost:Gradient Boosting -- This is one type of "Architecture" or one type of "Algorithm"
+    ---> BoostingMethod--> It means we are boosting to the examples.The examples which are missed for them we are giving some Boost.We are boosting with the some more probability
+         xgBoost is also same everything is same Replacement only But here we,
+         take some random sample (p) out of m examples ---> then next train a decision tree ---> It is called "estimator1"
+                                                       ---> here "p" is a Random number which is our sample examples
+                                                       ---> ***NOTE***:It is same as Pick up Random balls from a Bag problem
+         --> In this p examples --> After establishing of Decision tree --> misclassify examples---> give the more probability to those
+                                    which are misclassified.In "p examples" Lets say there are 1 or 2 examples are misclassify due to
+                                    by "Decision Tree" to these 1 or 2 examples are given with more probability inorder to get next
+                                    iteration of taking sample we don't say exactly we take these examples exactly it is also a Randomi
+                                    -zation but we are giving or adding more probability it leads to more possibility to come in next 
+                                    sample.
+         --> For next samples we have to take the sample out of m examples and giving more probability to the examples which are 
+             misclassified in previous decision tree After giving like same by next sample by next sample likewise we give to 100
+             or 200  based on our interest But basically, by default there is 100 decision trees So,We train that 100 decision trees
+
+***NOTE***: Above Both "RandomForest" and "xgBoost" are more performance By adding extra to "xgBoost" it will be more performance and "RandomForest" is less performance
+we can't say anything can happen anytime may be "RandomForest" will perform well may be "xgBoost" will perform well. It depends on "randomization" here everything is 
+taking as a Random right So, particular Random combination of Datasets may give a Good Result.We are improving the particular chances of Randomization in "xgBoost" again 
+we are not saying that definitely "xgboost" will be excell we cannot say anything can happen either "RandomForest" will become excell or "xgBoost".These are old and Naive
+"Techniques" RandomeForest and xgBoost still they are used in some of the Industries.There are already some different "Algorithms" same in ensembling methods with different
+different Architectures.One thing we should Remember for a given Dataset OR Problem we should try Every Model "Logistic,Linear,Decision Trees,SVM's,Neural Networks,Deep
+Neural Networks" out of everything which is getting best then we will take that Model.In these Days we have more computational Power like GPUs,TPUs and not Expensive to 
+train our ML Models like we are getting Google Colab which is giving free Resources if we have enough internet we train as many ML Models we want we need to Train.So,
+computational is not a problem here But Problem only here is that "Time & Accuracy" our consideration is to be "Inferencing Time,Training Time and Accuracy".Finally our
+goal is we need to get a prediction system that should be Excellent Performed. 
+
+
+*************************************************** WE CAN USE DECISION-TREES & RANDOM-FOREST FOR CATEGORICAL DATA*****************************************************
+
+***NOTE***: In above we Assumed and used that "DecisionTree & RandomForest" for only "Binary" Data.But "DecisionTree & RandomForest" not only Restricted for Binary
+Data It can also be used for "Categorical Data(Ordinal,Nominal attributes)" aswell,by Using Different Methods OR Approach like One-Hot Encoding, Creating multi-branches
+for a Tree it is called "Ternary Tree" Suppose,if we take a "feature" Using Mathematical Caluclation(IG) as a main root node for that "feature" if we have 
+Categorical Data like Let's say we have "Ordinal" values in that feature(Rating) like 1,2,3,4,5 stars.we can create 5 Branches OR Nodes, Etc... Methods.
+
+***SUB NOTE***: Here We can Use only "One-Hot Encoding" which is one of the Best Method.We can also use "Ternary" Method it also Works But it doesn't give Best
+Performance it will not much Accuracy it is not performing well which is proven by "Theoritcal explanations and Mathematically.If we Use "One Hot Encoding" and 
+process our Data and will be given as a new Data to either "DecisionTree" OR "RandomeForest" then that "RandomForest" OR "RandomeForest" will train very Good.
+Our "DecisionTree" OR "RandomeForest" works Excellent when it is a Binary Tree.So, Binary Tree always Perform well comparing to Ternary Tree.
+
+One Hot Encoding -->If our Data will have "Categorical" Attributes then we have to convert our Dataset into One-Hot Encoding then will use it for Our ML Model.
+***** We will do "One-Hot Encoding" Exercise in programming Using "NumPy" by using a SimpleMethod called "One-Hot Encoding".This Concept is very very important 
+and we will also Learn this concept in "Computer Vision" aswell.
+
+Check "DS_Docs" Folder in that we have pictures or Images inorder Understand "One-Hot encoding" Diagramatically.
+
+************************************************* WE CAN USE DECISION-TREES & RANDOM-FOREST FOR CATEGORICAL DATA*******************************************************
+
+****NOTE****: "DecisionTree & RandomeForest" Will also works or supports for "Numerical Data". By using Numerical,Categorical,Binary,Ordinal etc. all these works as 
+Regression Task.So, "DecisionTree & RandomeForest" works for everything it means if the "Data" is only "Structural Data" Suppose if the "Data" will have image,noisy,
+text data etc... Our DecisionTree & RandomeForest will not Work. For Images we use "Computer Vision" Models and For Text we use "NLP" Models(Sequence Models).
+The Data which is in "CSV" files OR Databases OR Relational Databases Data for all those Our DecisionTrees will work all the way for Classification and For Regression.
+
+********NOTE******** In DataScience we no need to do Coding OR Programming much We have only 10% of Coding to do and Remaining Task is to be "Analyze" the 
+Data and finding out Accuracy and Reducing Training Time and Improving Acccuracy.If our Accuracy is less then we need to Analyze our Data Distribution is there 
+any Null values,Noisy Data outliers whether the Data or particular feature Distribution is biased if our Data is not Distributed Uniformly then we need to tell
+that "Data Generation System" is not producing Uniform Data So my ML MOdel not working to Clients and also tell them Alerts which are generated in their Data
+So, that they will check their "Data Generating Machine" and etc... and we need to dig in detail into the Data to sort out the Problem this is actual goal of 
+DataScience Engineer. We have to work on coding very less not even 10% too we just write a single method to Train our Data and do little bit programming stuff.
+We can Build automation for all of our ML models using Flask as automation platform where we can Deploy all of our Models in Flask. In this DataScience Actually
+we don't have much work firstofall we need to Remember all the "Concepts" and Next, we need to apply all these concepts and Analyze our ML Models in depthly like
+if there is wrong in performance and if there is performance more also it will be problem we need to analyze why this performance is got more is that a 
+"Data Specific" Performance OR Is it performing well for new Data aswell.Suppose in Training we got 98% and while we are performing Testing then Fails then it 
+means it is not Trained good like in Data we have spike Data somewhere all these analysis will be there So, manuall intervention should be more.In Future ChatGpt 
+cannot  Replace "ML Engineers" OR "Datascientist".Bcs, it will Build ML Model But it cannot analyze by digging everything and finding that problem is there this is
+the problem we got and data is not distributed So, our Model is biasing in this manner.It can't intelligently to do that So, maual intervention will be definitely 
+there in ML kind of all the Works.Suppose in future ChatGpt may replace my Developement Job chances will be more then it is best to shift Machine Learning OR
+Data Science OR Data Engineer.
+
+
+WE HAVE COVERED TILL NOW:
+Decision Trees --->
+        Classification: DecisionTrees will works for classification in all the ways if we have any type of Data like Numerical,Binary,Categorical,Ordinal 
+                        In Classification the Output variable is a Discrete values like if it is Binary classifier it will be 0,1 OR if it is ernary classification
+                        multi-class classification then we have to output 1,2,3 etc.... values --- output label --- Discrete values ---> [C1,C2] [C1,C2,C3] etc...
+                        --> Binary Attributes -- In real-time we don't have Binary Data only we also have Categorical Data
+                        --> Categorical Attributes -- see DS_Docs Diagrams
+                        --> Numerical Attributes -- see DS_Docs for Diagrams
+
+        Regression --- Our output is --- one continuous value ---> Last time we have predicted Ecommerce ---> yearly amount spent it is a continuous variable
+                                                              ---> Decision trees also supports Regression tasks
+
+        
+
+
+    
+
+
+
+
+
+     
+
+
+
