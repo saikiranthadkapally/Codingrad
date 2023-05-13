@@ -25,6 +25,7 @@ Steps to Create GitHub:
     6. git clone git@github.com:tharuncodingrad/DataAnalysis.git --> This should be done only when My team Coordinator sends msg as "I added to you as my Contrinutor"
 
 Steps to follow to push updated files and folders into "Git" Repository:
+------------------------------------------------------------------------
   Inorder to "PUSH" daily updated files,folders and contents from "Local Machine" to "Actual Git RePository" follow these steps:
   Step-1:It moves all updated files,folders,content Except already moved files excluding "env" folder from "Local Repository(Machine)" to "local Git repository folder"
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
@@ -43,5 +44,13 @@ Steps to follow to push updated files and folders into "Git" Repository:
 
 ***NOTE***:For More Information of Basics of "GitHub" Refer the videos "Statistics Final2 and "Machine Learning Intro" from "CODINGRAD" Platform OR We also have many
            good videos in YouTube Platform.
- 
+
+
+***** In order to create any Folder using Ubuntu shell or commandline Interface we need to use a command called "mkdir foldername" Before creating we need to set the Path where we need to create folder by changing "directories" using "cd pathname/"
+
+****Very Important NOTE****: 
+  - In GitHub after creating our personal account whenever we make our repositories as "Private" OR we make private repositories.So,we don't have access to these     
+    "Repositories(Private)" to anyone and also even for us dont have permission to access it from our Local System/Machine/Computer/Laptop.So, Inorder to access it 
+    from our Local System we need to do some "Set-Up".   
+
    

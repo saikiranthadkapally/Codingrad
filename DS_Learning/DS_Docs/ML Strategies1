@@ -1,0 +1,728 @@
+Data: When we have the Data we have to have 
+
+    ---> Train/Validation/Test Split
+
+    ---> Train/Validation --- Most of the People tend to Split the Data into 2 sets only.Bcs,Test Data is very Costly Data Unknown Data from Realtime which will not 
+                              not available everytime.So,taking that Realtime Data will also be a more problem it again involves in a Cost.
+    
+    *****NOTE*****: Splitting Mechanism will depends upon the Length of the Given Data.Based on the Input Data Size we will decide the Splitting Mechanism.We can split the Data Based on the Size of the input Data.We can perform with different different Experiments with the Data in Training/Testing.ML is a Randomized State we need to do Hyper-Parameters by Expermimenting with Splitting Mechanisms.Since, ML is Randomized one Every time we need to do Experiments with it and this Experiment goes everywhere.ML model is not Like a Software Development where once we develop and keep it aside and monitor or Debug the Code.Inorder to get Best and Best we need to do everytime Experiment everytime we need a workforce in ML.Building a ML Model is Random Experiment.It is like BruteForcing.Inorder to Reduce the number of Experiments we will use some Techniques and Mechanisms(like Splitting mechanisms Etc..) and also the Experiments suggested by Statisticians like if we use this Mechanism we get Best Results and a Lot Many Things.
+
+         
+           validation/dev/cross-hold data/test ---> Some people may call with these "Terms" in "Train & Validation splitting Mechanism" 
+    ---> Splitting Mechanisms
+
+    ***NOTE***: The RealTime Test Data Some People may be included in this Or may not be included.Bcs, the Test Data Should be come again From the RealTime Data.
+       Lets say, Here We can split the Data Based on the use cases and situation its Hypermetric(Randomly changed)."Splitting" is not in the same way anytime it 
+       keeps on changing based on "Problem" and other parameters etc... We can perform splitting with different different experments by splitting the values.
+
+    ***NOTE***: Therefore Splitting Mechanism depends on the "Length of the given(input) Data" --- Important point to remember for "Interview".Also, Test Data
+    may not include in the splitting.So, some people may include we can bring Test Data separately from RealTime.But people may also include Test Data in splitting.
+    EXAMPLES:
+       ---> 500 ----> 50:50 / we can also split into 70:30
+
+       Let's say/Assume we have,
+       ---> 10000 ---> 80:20 ---> In some cases Test data also included by some people as ---> 80:10:10       
+
+           1. Train Data --> 8000
+           2. Validation --> 2000
+
+        Lets say,
+        ---> 1000000 ----> 99:1 ---> 98:1:1 -- It means 980000 for "Train Data" and 10000 for "Validation Data" and 10000 for "Test Data"
+
+            1. Train Data 990000
+            2. Validation 10000 ---> 10000 is a good set for the Validation
+
+    ---> Once the Splitting Mechanism has done. We will Train ML Model 
+
+        After Training our ML Model.Our Model Performance will be taken care (Or) Basic analysis we use for our ML Model by:
+        ---> 2 Metrics --->
+           1. Accuracy ==> how many number of examples are correctly predicted/total number of examples ---> It means out of 100 it is predicting 98% examples correctly
+           2. Loss ======> Sigma(1,m) (Y^-Y)^2/2 ---> It means "Sigma(1,m)" denotes for all the examples 1 to m. It predicts/we will get the Loss by "(Y^-Y)^2/2"
+                                                 ---> This Loss is Basically which we used in "Linear Regression"
+
+              Basically, We have different differnet "Losses" Here we will name out some of them Which we will use most of the problems as follows:  
+                1. Binary Cross Entropy --- It used for "Binary Classifier"
+                2. Categorical Crosss Entropy --- Multi Class Classifier
+                3. Mean Squared Error --- Regressors
+
+
+        We have the Data of "Train Data & Validation Data"
+            1. ML Model ---> (Linear, Neural Network, etc..)
+            2. Weights initialize (random weights) -- Initializing the "random weights" is also a ML Strategy inorder to get Best Results we discuss it Later
+            3. Forward Propagation
+                1. ML Model will take Train data in Forward Propagation/ML Model will forward propagate with Train Data.
+                2. Loss
+            4. Gradient Descent (Backward Propagation for only Train Data)
+                1. Update Weights
+            5. with Updated Weights
+                1. ML Model will forward propagate with validation/Train Data ---> We will perform "Forward Propagation" 2 times with validation and aswell as Train Data
+                2. It will also find out "Loss" -- Validation Loss, Train Loss
+                3. Accuracy -- Validation Accuracy, Train Accuracy
+
+            6. You will repeat from the "Step-3" with some iterations.Actually,it will not converge easily as we discussed in Regressor we need to repeat some 100 etc..
+
+        Finally, we get these after some Iterations like 100,1000, etc...
+        ---> we will also ending up with "Train Accuracy & Train Loss/Train Error"
+        ---> And we will also ending up with "Validation Accuracy & Validation Loss/Validation Error" 
+
+
+
+    Based on these 2 "Train Accuracy & Loss" and "Validation Accuracy & Loss" we have to come to some point called "Bias and Variance" 
+    ***NOTE***: Here "Bias and Variance" are just Terminology for Overfitting and Underfitting.Here "Bias" is not the bias(Intercept) which is in Linear Regression
+    ---> Bias and Variance -- It is very very important for Interviews
+    
+       Variance: Average variability in the model predictions for the given dataset(train/validation)
+        
+               Train Loss is very less & validation Loss is high ---> This is called "Variance"
+
+               ---> This is also called "Overfitting the ML Model"
+               ---> Its Learning the noise in the Data --- Which is Undesirable state we don't need such type of model.So, we have to Tune it
+               ---> Whenever our Model will overfit on the Training Data then Ofcourse it will make non-sense predictions on Validation Data
+
+               ---> Undesirable State
+    
+       Bias: Error/Loss Between average model predictions and ground truth(Actual Y) 
+
+              Train Loss is high and validation loss is very high ---> This is called "Bias"
+
+              ---> This also called as "Underfitting the ML Model"
+              ---> Not even learning the train data properly
+    
+
+    ---> Loss ---> Checkpointing loss, Threshold loss, Optimal loss -- this has to be decided first 
+              ---> These are based on Input data & ML Model & Architecture & Maths(Statistics,etc.) these are parameters we are going to consider while deciding
+        
+        Let's say, If we have,
+        ***NOTE***:There may be chances of Train and Validation Loss merely equal, equal or can be varied 
+        Train Loss ---> 1%
+        Validation Loss ---> 15%
+
+            ----> Overfitting the ML Model/Learning noise in the data --- This Resembles "Variance".We can also call Bias "Learning noise in the data(it learns noise)"
+            ----> It is also called "Over training".Over training is nothing but we are making the Model to Learn overly with the Training Data(also includes noisyData) 
+    
+        
+
+        Let's say, If we have,
+        ***NOTE***:There may be chances of Train and Validation Loss merely equal, equal or can be varied 
+        Train Loss ---> 10%
+        Validation Loss ---> 10%
+
+            ----> This is called "Bias" 
+            ----> Then the Model is "Underfitted"
+            ----> Not even learnt train data properly --- Bias
+
+
+
+Strategies from above problem:
+
+        ---> When we encounter with "Bias" ----->
+                Underfitting
+
+                ----> We have to make our "Neural Network more bigger & change architecture of our ML Model Neural Network"
+                ----> We have to Train More
+                ----> It may solve or may not there is no 100% change 
+
+
+        ---> When we encounter the Problem with "Variance" ---->
+                ----> It will Learn Noise in the data
+                ----> Overfitting the data
+
+                ----> When we encounter "Bias & Variance" then we will perform "Bias Variance Tradeoff" inorder to perform "Bias Variance Tradeoff" we use some 
+                      Techniques like "Regularization"
+
+                ----> We can also follow one more Startegy here which is getting "New data".If we have the Huge data then our problems will become very Less.
+                ----> If we don't have data with us then our problems will become increase then we have to follow another Mathematical startegies like
+                      "Regularization", "Dropout", etc...
+                ----> Regularization --- Its very very important concept 
+                        1. Regularization 
+                        2. Dropout
+
+
+        ---> Bias Variance Tradeoff ---> Inorder to avoid Underfitting and Overfitting ---> We need to have "Optimal place in Bias & variance"
+
+
+Lets Assume,
+Example1 : My Optimal Loss is 0.01 for my specific data and specific model architecture
+
+    We have Experimenting by using some ML Techniques like changing Architecture Or using Regularization Or Activation changing, Hyperparamter-Tune etc.. as follows    
+    ---> Experiment1: 3% Train Loss, 5% Validation Loss ---> Here 3% is High comparing to Optimal Loss ---> Bias ---> Underfit 
+    ---> Experiment2: 0.09 Train Loss, 3% Validation Loss --->Variance ---> Overfitting
+    ---> Experiment3: 0.05% Train Loss, 0.09% Validation Loss ---> Normal Desired State
+
+        NOTE: validation loss > train loss in most of the cases
+
+
+In Above,
+Experiment1 --> Experiment2 ===> Train More Time --- we can decrease Train Loss by using "Train More Time" ---> disadvantage ---> Overfitting
+Experiment2 --> Experiment3 ===> Regularization --- we can decrease Validation Loss too by using "Regularization". Most of the cases "Regularization" works
+
+*****NOTE*****: Not only Regularization whatever the Techniques/Strategies we are going to use in ML Strategies are Mathematical Models those are just give 
+                hopes to get best results But it will not assure that it gives 100% Best Results.It all depends on our Problem Statement and Data and ML Model 
+                and Architecture.
+
+
+
+***** Stategies/Techniques Used for Variance/Overfitting Problem: By using these 2 there is a possibility to Reduce the "Overfitting" Problem
+***NOTE***: These 2 Regularizatio and Dropout very very important concepts/techniques which are also useful for Interview perspective and also in Real-Time apply
+***NOTE***: We can apply "Dropout" to any Layer its our wish we can apply for either a particular Layer or everything(all Layers)
+
+In detailed Explanation of Regularization refer Diagrams/Images "Regularization 1,2,3,4,5" from  ---> DS_Docs folder 
+***L2 - Regularization***: Controlling ML model weights in such a way that the model will not overfit.Its some Technique use for the most Algorithms.
+
+       We have "Loss" Function for every ML Model.Lets say,
+       Loss = J(W,b) = 1/2m * Sigma(1,m)(ypred-yactual)^2 ---> It is Loss function for Linear Regression
+
+       ****If we add an extra term to the Loss function then it is called "Penality/Loss" which is used for Regularizing the weights as follows:
+       Loss = J(W,b) = 1/2m * Sigma(1,m)(ypred-yactual)^2 + lambda/2m * Sigma(L2Norm(W)) ---> Single Layer & Single Neuron
+                                                                                         ---> This is an extra term we are going to add when dealing with Normalization 
+
+
+***** The above we have did it for "Linear Regression" same thing will be applied for the "Neural Networks" 
+L2 - Regularization; (Neural Networks)
+
+       Loss = J(W,b) = 1/2m * Sigma(1,m)(Ypred-yactual)^2 + lambda/2m * Sigma(1,L) ||W(L)|| --> Where W(L) is a Vector Array it is enclosed by "||||" 
+
+                                                           Shape of W(L) ---> (#L,#L-1) ---> "#L" represents Number of Nodes in particular Layer
+                                                                                        ---> "#L-1" represents Number of Nodes in previous Layer
+
+                                                           + lambda/2m * Sigma(1,#L) as i, Sigma(1,#L-1) as j then L2Norm(W(i,j))
+
+Because of weight decaying your weights(some of the weights) may become or tends to zero ---> your overfitting problem will be solved
+                                                                                         ---> whenever we decreased some weights to Zero then Training will not 
+                                                                                              happens properly it means we are controlling the Training.We are not 
+                                                                                              Telling the Model to learn Totally But the weights for outliers which 
+                                                                                              are going to the function that weights will become "Zero" by Randomization But we are not sure that may happen or may not happen it is based on our
+                                                                                              Data and based on our ML Model Architecture and "gamma" parameters and other parameters aswell it Depends.Repetative Experiments are needed in
+                                                                                              Machine Learning.In Single shot learning we won't get anything its not
+                                                                                              possible to get higher Accuracy in single shot.We have to repeat/Bruteforce until we are getting the desired Results. 
+                                                                                              
+
+
+We have another Term/Concept in Regularization that is called "Dropout"
+*****NOTE*****: In Above Regularization implicitly we are asking our ML Model with the formulae like giving "lambda/2m * Sigma(L2Norm(W))" this formulae explicitly to
+                Perform.
+
+
+***Dropout***:
+***NOTE***: Inorder to understand Dropout Technique more clearly refer "NumpyArrays.ipynb" in JuputerNotebook folder from "DS_Learning" folder
+Lets say,
+Dropout: 20%
+
+    ---In Every iteration ---> it will drops some weights ---> Dropout is nothing but dropping out some percentage of weights out os 100% in every iteration then our 
+                                                               weights will be Regularized in every Iteration better as compare to "Regularization" Technique/Strategy.
+
+                                                          ---> It gives better results as compare to Regularization in RealTime Experiments it also depends 
+                                                               based on parameters as we discusssed in Regularization.
+
+                                                          ---> Lets say in first iteration we have not or it will be not trained by some of the weights by dropping out
+                                                               then that weights will be remains to "0" and trained with remaining weights and in Next iteration we again send some weights which we are not sent at 1st time they will learn something likewise it continues
+                                                               in every Iteeration.So, Statistically we send the data by all weights at a time instead we send it "Randomly" in every Iteration it means we are regularizing the weights but Randomly we are Regularizing.
+                                                               This Random Regularization is more Powerful than "L2- Regularization".
+
+
+          Lets say, we have
+          ***NOTE***: We can apply "Dropout" to any Layer its our wish we can apply for either a particular Layer or everything(all Layers)
+          Number of layers in your neural network ===> L
+
+              Lets say/Assume, we are going to apply Dropout
+              4th layer ==> d4 = np.random.randn(4,1)<0.8 --> Here "randn()" generates values from -inf to +inf and dropot/discards values which are less than 0.8
+                                                          --> The values generated in it is Random in each iteration of training process.
+                                                          --> So, we are controlling the weights in each iteration of training process Randomly
+                                                          --> Dropout Technique is more poweful compare to the Regularization technique in Real-Time
+
+                                                            
+-------------------> Dropout drops some neurons randomly in particular layer for each training iteration 
+====> Disadvantages: both "L2-NormRegularization" & "Dropout"
+    1. Training Loss also may Increase  
+
+
+
+Normalization: 
+
+
+  --> Your input data should be in Normal form(Normally distributed/Uniformly distributed) then only whenever we perfrom mathematical caluclations in next layer in    
+      smoother way it means everythimg goes in smoother way it flows smoothly as mathamatically or statistically.
+  --> Scaling data into loweer values.It means we are converting data values into 0,1.Even though we are converting values into 0,1 we make sure that the 0,1 values 
+      distribution should also be in normal so this is called "Normalization".
+  --> Normalization makes our data to the "Normal form" along with that "Scaling data into the lowee values" it will do Both then it will creates an Input
+
+  --> Input
+
+  --> we write in Tensorflow as "tf.keras.layers.Normalization()(Input)" --> By writing this our Input layer will becomes into Normal form aswell as the values which 
+                                                                             are inbetween 0,1 it will be Scaleout.Due to this it reduce multiplication task with large
+                                                                             values/numbers by doing with 0,1 values.
+                                                                         --> Here we are talking about Normalization w.r.t only Input Layer
+                                                                         
+
+
+   Lets say, we have our
+   Input Data X = {X1,X2,X3,X4....Xn}
+
+   Mean of the X = Mue
+
+   Normalized X = (Input X - Mue)/Standard Deviation of X ---> In STD "Meu" is basically represents "Mean"
+   ***NOTE***: The NEw Output values which is "Normalized X" will be inbetween (0,1) Or either (-1,1) Or either (-3,3) etc.. based on the "standard deviated value"
+               Most of the cases we will get (0,1) but wither it can be (-1,1) or either (-3,3) etc.. Therefore we are saying "Lower values" we get in "Normalization"
+               Therfore, Mostly it will be very less compare to "Actual Data"
+
+***Advantages***:
+   ---> Faster Computation  
+   ---> Also,Our data will be Input distributedly.Further Mathematicall Operations will be done smoothly
+
+***NOTE***: Variance is nothing but "Square of the Standard Deviation"
+
+
+
+*** Batch-Normalization is very very important question for Interview ***
+Batch Normalization:
+--------------------
+
+***NOTE***:.Getting Real-Time Data involves more Cost that is the reason we uses such type of Techniques/Strategies
+     Normalizing intermediate layer's outputs(A1(1st layer),A2(2nd layer),A3(3rd layer), etc..) this is called "Batch-Normalization"
+     ---> Covariate Shift --> It is a Problem this problem is highly solved by the "Batch-Normalization"
+                          --> "Covariate" means our Data is variated from the previous "Training Data" like Real-Time Data."Co" is nothing but Real-Time(Test) data
+                          --> When our Test data is Completely shifted from the "Actual Taining and Validation Data" then that is called Covariate shift.Due to this
+                              Covariate Shift problem the Test accuracy will not be proper as we have seen in Milatary Problem.Inorder to solve this problem and
+                              increase just some percentage of accuracy by Using "Batch-Normalization" Strategy.So, most of the "Image recognition/Computer vision 
+                              problems will uses "Batch-Normalization" a lot.Probability of predicting Real-Time Data have high chances may increase a little bit.
+                              It increase our Model to Robust to someextent
+            
+        ---> Milatary Problem
+        ---> etc..
+
+
+     We will now come to the Maths of the Batch-Normalization.Let's say,
+     Total number of layers = L
+
+     Lets say/Assume,
+     lth layer(like 3rd layer) --->
+        p number of nodes in lth layer
+
+            Z^l = (Z1(1st node),Z2(2nd node),Z3(3rd node),Z4(4th node).....,Zp(pth node)) --> Where "Z^l" is the "Z" of a particular Layer Before "Batch-Normalization"
+ 
+        Mean of Z = Mue --> We need to find Mue
+        Variance of Z = row^2 --> We need to find Variance
+        
+        Applying Batch-Normalization on "Z^l" we get,
+        Z^(Batch-Normalized Z values) = (Z-Mue)/sqrt(variance + Epsilon) ----> This is the formulae for Every layer this is called "Batch/Base-Normalization" Formulae 
+                                                                         ----> This "Base-Normalization is just used to simplify the caluclations
+                                                                         ----> By this "Base-Normalization" our Training will be done smoothly by reducing caluclations
+                                                                               and we expect the smoothness in our Training and caluclations.
+
+        Applying Activation function on Batch/Base-Normalization,
+        A^l = Activation(Z^)^l  ---> Where "A^l" represents "A" of a particular layer and "(Z^)^l" represents Batch-Normalized Z of a particular layer(l) 
+
+        If we want to Advance the above Base/Batch-Normalization as follows:
+        Z^NewNorm = lambda * Z^OldNorm(Z^(Batch-Normalized Z values)) + Beta ----> (lambda,Beta) are the Parameters.lambda is like weights and Beta is like Bias
+                                                                             ----> These (lambda,Beta) are 2 extra terms we have in this Advance Batch-Normalization
+                                                                             ----> Where this "Advance" Batch-Normalization will be used for "Covariate Shift".It
+                                                                                   have more chances to get Solution to the problem of "Covariate Shift" by Using 
+                                                                                   this it is also called "Parameterized Batch-Normalization".Our ML Model will learn
+                                                                                   these parameters Due to this our ML Model have high chances to become more Robust.
+                                                                             ----> Initially, we need to initialize these parameters (lambda,Beta) Randomly by Backward
+                                                                                   Propagation we make it to learn by bringing new values to (lambda,Beta) to Our Model.
+
+        *****Shape of the "lambda" is based on the "Z^OldNorm" 
+        *****Therefore, Shape of "Z^OldNorm" = (3,m) --> where "3" number of nodes in a particular layer and "m" represents Examples
+        *****NOTE: Shapes of Both "Z^OldNorm" and "Z^NewNorm" will be same
+        *****Therefore,Shape of lambda = (3,3) 
+        *****Shape of Beta = (3,m) 
+        It will be written as ===> (3,3) * (3,m) + (3,m) = Z^NewNorm
+
+        If we write Generalized form of Above we get,
+
+        =========================> (#L,#L) * (#L,m) + (#L,m) = Z^NewNorm 
+
+
+       Applying Activation function on "Z^NewNorm" as follows:
+       A = Activation(Z^NewNorm)
+
+
+***Disadvantages***: Of Batch Normalization
+    ---> It is highly non-linear problem
+    ---> Its an "NP-Hard Problem" which we can get best values in n order of time not even in n order we may get in 2^n, e^n etc...
+    ---> We have to do BruteForcing in Batch Normalization we can't tell we get best values by applying "Batch Normalization" for particular Layer
+         Or for a combination of particular layer Or whole Layers we have to Experiment it and note the values whenever we get Best values.
+
+Quantization: It is a Technique in ML.It is nothing but reducing the bits like 64 to 16 (Or) 16 to 8 so on...
+    ---> Float 64 -- Basically, the programs which we will do works on "Float64" bits
+    ---> Float 16 -- Whenever our data is in a normal values like (0,1) then we have a higher chance that we are reduce this to even "Float16"
+                  -- So, that our Training Or Inferencing will be performed fastly  
+
+
+
+
+
+***Vanishing & Exploding Problem***---> When number of Layers increases Ofcourse, model will become powerful and also Deep Neural Networks may suffer with this Problem. 
+***NOTE***: In 100% there are chances/probability to occur this "Vanishing & Exploring" 10-20% in some situations by Randomizing the Weights.
+***Refer*** ===> Diagrams/Images "Vanishing&exploding" from DS_Docs folder to understand in detailed visualization
+
+----> When you have a very deep neural network ---> Due to this random initialization
+some how Weights of particular layer "L" becomes an Identity function with identity value more than 1 --> Then it is called "Exploding Problem"
+
+-------> This will incur a huge hike in the loss it means Loss will be increased too much.
+
+    Lets say,
+    *****Assume,that our weights are 2*2 Array as follows and initialized Randomly using "Dropout,Regularization etc.." without taking any care. 
+    Example: lth layer Weights[1.5 0 
+                                0  1.5]
+
+                Z = W.T * X
+
+
+
+In Last Layer we have,
+Y^(L) = W(L).T * A(L-1) ---> Here we are not including "b(Bias/intercept)" for sake of easy Understanding
+
+In Previous Layer of Last Layer,
+Y^(L) = W(L).T * activation[W(L-1).T*A(L-2)]
+
+*****For sake of understanding take "activation as Identity function and bias as 0
+
+In Previous Layer of Previous Layer of Last Layer,
+Y^L = W(L).T * activation[W(L-1)*activation[W(L-2)*activation[W(L-3)*activation[.........*W[1]*X]]]] --> Here "W[1]" 1st Layer and "X" represents input Layer
+
+
+Then, Finally "Y(Pred)" written as follows,
+Y^(L) = W^L * X ---> Here "L" is nothing but number of Layers.
+
+By Assuming, If our "W" is an Identity function which is greater than 1, Then determinent value becomes as follows,
+Y^(L) = (1.5*1.5)^L * X --->Here it will not only "1.5" it may be like 1.1,1.2,1.4, etc.... 
+
+
+***NOTE***: It will become problem if our "Y^" value is too High and too Low in Identity matrix while Randomizing the Weights we encounter these problem called
+            "Vanishing & Exploding" Problem
+Y^(L) will have more value ---> This inturns will give ---> Loss == abs(Y^-Y) ----> Then very Huge hike in loss ---> This kind of problem is called "Exploding Problem"
+
+
+        ---> If your weights in above situation is < 1 and it is an Identity matrix then Network will suffer from "Vanishing Problem"
+
+Assuming, weights in above situation is < 1 and an Identity matrix
+Y^(L) = (0.5*0.5)^L * X ---> If we keep on going to do power between (0,1) then we will get a very less value.Ofcourse this will become a very small value
+                        ---> Here it will not only "0.5" it may be like 0.9,0.8,0.1,0.2 etc.. in between (0,1)
+
+        ----> This incurs Loss = abs(Y^-Y) ----> Huge Hike in loss ---> This kind of problem is called "Vanishing" problem
+
+
+
+
+***The Strategy/Technique inorder to solve this problem(Vanishing & Exploding) we are going to use as follows***:
+***NOTE*** We can only initialize when only we encounter the "Vanishing & Exploding" Problem.
+Weight Initiialization/Reinitialization  ---> This is the Strategy/Technique we are going to use to solve  "Vanishing & Exploring Problem"
+
+---> Initialization of weights should be properly
+
+        We have some formulaes to initialize this weights,
+        ===> Initially, we can initialize as "Weights = np.random.randn([2,2]) ---> Here shape of Array is "[2,2]" matrix 
+                                                                              
+        *****This "random" will give you a proper distribution that's fine Numpy will give you But Along with that, we have to also make sure that these weights are 
+        "Normally distributed". and we need to add some Extra formulaes we have some different different formulaes to it as follows:  
+
+ ***NOTE***: So, we can apply any of these formulaes by initializing with your weights then to encounter "Vanishing & Exploding" problem chances is very very low/less.
+             This "Vanishing&Exploding" Problem will occurs due to out weight initialization there might be a chnace that very large/huge hike in the Loss Due to
+             the Random initialization of weights because, of this we will be encountering with the "vanishing&Exploding" problems when we encounter such type of
+             problems we will be solve that problem by taking consideration of "Weight initialization".
+***NOTE***: Vanishing problem is nothing but there is chance that our Network may into this "Square kind" of Neural Network.If it go into a Square kind of Neural
+            Network then our Weights small increase in the particular Weights which is > 1 and < 1 it becomes a problem "Vanishing&Exploding"
+
+        ===> Weights = np.random.randn([2,2]) * sqrt(1/number of nodes in layer l) ---> One scientist proposed by good research and they are suggesting to apply.
+                                  
+        ===> And also we can have, 
+             Weights = np.random.randn([2,2]) * sqrt(1/number of nodes in previous of lth layer) ---> One scientist proposed by good research and they are suggesting to
+                                                                                                      apply.
+
+        ===> And also we can have,
+             Weights = np.random.randn([2,2]) * sqrt(2/number of nodes in lth layer + number of nodes in l-1th layer) ---> One scientist proposed by good research and 
+                                                                                                                           they are suggesting to apply.
+            
+
+
+        
+
+*****Activation Functions*****: These Activation functions will hep a lot inorder to learn non-linearity of data by many Nodes,Layers".
+*****Refer Activation Functions Using Visualization/Images in detail Refer--> "Activation,NonLinearity_ActivationFunction,Relu&LeakyRelu,ActivationsExample" from DS_Docs folder.
+
+Why Neural Networks will performing well Or why the advantages happening of the Neural Networks Due to,
+======> Neural Networks will add non linearity to the functions.Neural Networks are interms that its property which is used to learn even "Higher Non-Linear" Functions
+
+***NOTE***: These are probably we use these kind of "Sigmoid Function,ReLu etc.." But may be we can also define our own "Activation" Functions which are called "Custom Functions". Mostly we will use as an industrialist to build a model we will use mostly these 2 "ReLu, Leaky ReLU" Activation Functions.
+***NOTE***: "ReLu" is a Linear function/Line for each "Neuron/perceptron".Here Activation function(ReLu) itself is a Linear-Function then how it becomes True for
+Neural-Networks.Activation function is a linear then combination of multiple nodes in each Layer makes/becomes into "Non-Linear" functionality/Line.So, the Non-Linearity is not "Depends" on the Linearity of the Activation Function.It depends on the "System(Neural-Network) how it is runnning".The System will make our
+functions as more Non-Linear with the Activations as a Linear Functions/Line. 
+***NOTE***: "Leaky ReLU" it also works lot better compare to the "Relu" .We see "YOLO" Algorithm in future this YOLO Algorithm also uses Leaky ReLU which will make 
+our Training More Faster. 
+
+These are Some Examples for Activation function as follows:
+Sigmoid Function -====>
+
+Sigmoid ===> f(x) = {
+    1/1+e^-x
+}
+
+ReLu ===> f(x) = {
+    x if x>=0  ---------> If our input value is greater than 0 then we send same value as an output
+    0 if x<0   ---------> Suppose, If our input value less than 0 then we send the 0 value as an output
+}
+
+Leaky ReLU ==> f(x) = {
+    x if x>=0
+    max(0.01(x),x) if x<0 ---> Here "0.01" is the Threshold we change it into as per our Requirement for Leaky ReLU its our Wish.
+}
+
+TanH === f(x) = {
+    e^x - e^-x/e^x + e^-x
+}
+
+*****In above "x" is nothing but input.But in our case Let's say, if we are going to use "ReLu" 
+F(Z) OR F(W.T.X + b) 
+
+
+
+
+
+
+***Optimization***:
+
+NOTE: Optimization is nothing but "Gradient Descent" only.We have 2 types of Optimization problems 1) Minimizing problems & 2)Maximizing problems
+
+Gradient Descent: -- Gradient Descent is a "Minimizing Problem"
+
+    In this Gradientt Descent we will have different kind of optimizations mainly we have as follows:
+    ---> Batch Gradient Descent
+    ---> Mini Batch Gradient Descent
+    ---> Stochastic Gradient Descent
+
+***NOTE***: Therotically we won't call an epoch each/one iteration in "Mini Batch Gradient Descent"
+            But while we Train our ML Model in "Tensorflow,etc.." then we will call every iteration as an "Epoch".But conceptually,we use these definitions
+            But while writing the programs we need to remember "Epochs" means "No.of.Iterations".Generally, Epochs is nothing but one epoch is one iteration
+            irrespective of Mini-Batch (OR) Batch while writing program.
+
+Batch Gradient Descent ===>
+
+    One iteration will take whole data as an input and with the whole data it will caluclate the Loss and it will do only one backward propagation
+
+    ---> Each iteration we can also call an "Epoch"
+
+    --> This Number of Iterations of our choice/until we satisfies(it means our loss will has got properly.Lets say our Validation/Weight Loss when we till satisfies)
+
+Mini Batch Gradient Descent ===>
+
+    One Iteration will have some of the data(Mini batch) only backward propagation for mini batch 
+
+    Epoch ===> If you complete whole train dataset through training phase that is called "epoch" ---> epoch
+
+    ---> In this we can't call one/each "Iteration" as an epoch.Because,In one iteration we will have some of the Data and next iteration we will have some of the Data
+
+    Iteration ===> Couple of iterations will make you one "epoch".
+    
+Stochastic Gradient Descent ===>
+
+    Stochastic == Stochastic is nothing but "Probabilistic"
+
+    So, it will take One example at a time ---> that too randomly
+
+    Lets, say we have,
+    number of examples m --->
+    what is the probability of picking 1(example/element) ===> 1/m ---> Each and every example we have "1/m" probability
+
+
+    So,Stochastic will pickout only one example at a time and do here, Gradient Descent/Backpropagation:
+    One Iteration means ==> One example and only one backward propagation for that example
+
+USES:
+Batch ---> Batch will be used "when we have Limited dataset lets say 2000,3000 ===> These are just "structural examples/data" not Images
+Mini Batch ---> Mini Batch will be used "when we have "Huge Data" which doesn't accommodate in Memory of our CPU we use Mini Batch in this we have to chunk the Data"
+           ---> Huge data ===> We need to chunk the data as "mini batches ===> MiNI_BATCH_SIZE = # examples in each batch 
+                          ===> Basically, these examples are in terms of "power of 2" then it will be good like # examples like "128,64 etc..."
+Stochastic ---> Stochastic will be used "when we have "very Limited dataset"" 
+           ---> Limited --> will be good in case of train examples/datapoints are uniform in distribution then it will perform really well.But won'ty works well if
+                            our data is imbalance or non-uniformly distributed.Ofcourse,we won't use stocastic mostly but we in some cases our Data is in uniform 
+                            distribution then we will use it.
+
+
+***NOTE***: We will use "Batch & Mini Batch" when our data is non-uniformly distributed and non-linear data.If our data is uniformly distributed then we use Stochastic
+        uniform  distributed data:
+           ---> Every example is mostly similar to the other example ===> This will not effect the loss or backward propagation much
+
+        non-uniform distributed data:
+           ---> Every Example is different from other example ==> different loss ---> we will update weights differently ---> next example loss again high
+
+
+
+Optimization Algorithms
+
+***** Refer the Diagramatically from DS_Docs Folder Images/Pictures "Optimization1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"
+
+    ---> Gradient Descent -- It is normal Gradient Descent "Algorithm"
+    ---> Other Types of it like, Majorly we use "Rms-Prop, Momentum(In momentum we use "Weighted Averages(very important in aptitude wxams etc..)") Adam" Using
+         Gradient Descent/Applying in Gradient descent formulae.
+
+    
+
+
+************************************************************************IMP-NOTES***************************************************************************************
+Q)what is linear algebra and mostly we use in Machine Learning?
+
+A)Linear algebra is a branch of mathematics that deals with vector spaces and linear transformations between them. It involves the study of systems of linear equations, matrices, determinants, vector spaces, linear transformations, eigenvectors, and eigenvalues.
+
+In the context of machine learning, linear algebra is used extensively for a variety of tasks, including:
+
+Data preprocessing: Linear algebra is used to perform operations such as scaling, normalization, and feature extraction on datasets.
+
+Matrix operations: Many machine learning algorithms involve matrix operations such as matrix multiplication, inversion, and eigenvalue decomposition.
+
+Linear regression: Linear algebra is the basis for linear regression, which is a popular algorithm for fitting a line or plane to a set of data points.
+
+Principal Component Analysis (PCA): PCA is a popular technique for reducing the dimensionality of high-dimensional datasets, and it relies heavily on linear algebra.
+
+Neural networks: Linear algebra is fundamental to the design and implementation of neural networks, which are a class of machine learning algorithms that are modeled after the human brain.
+
+In summary, linear algebra is an essential tool for understanding and implementing many machine learning algorithms.
+
+Q)what is accelerated linear algebra?
+
+A)Accelerated linear algebra refers to techniques and methods that speed up computations involving linear algebra operations. In the context of machine learning, linear algebra operations are often computationally expensive and time-consuming, especially when working with large datasets.
+
+To address this, several techniques have been developed to accelerate linear algebra operations, such as:
+
+1)Parallel computing: Distributing the computation across multiple processors or machines can significantly speed up the computation time.
+
+2)GPU acceleration: Graphics Processing Units (GPUs) are highly parallelizable and can perform many linear algebra operations in parallel, making them well-suited for accelerating linear algebra operations in machine learning.
+
+3)Approximation methods: Instead of computing exact solutions, approximation methods can be used to obtain approximate solutions that are computationally less expensive.
+
+4)Low-rank approximations: Low-rank approximations can be used to reduce the dimensionality of the matrix, which can significantly speed up computation time.
+
+5)Fast Fourier Transform (FFT): FFT can be used to efficiently perform matrix-vector multiplication and other linear algebra operations.
+
+These techniques have been widely adopted in machine learning to speed up linear algebra computations and make it possible to work with larger datasets and more complex models.
+
+Q)what is tf.xla how it i used??
+
+A)Accelerated linear algebra refers to the use of specialized hardware and software to speed up the computation of linear algebra operations, such as matrix multiplication, inversion, and decomposition. By using specialized hardware such as Graphics Processing Units (GPUs) or Tensor Processing Units (TPUs), along with optimized software libraries, it is possible to perform these operations much faster than with standard CPUs.
+
+TensorFlow XLA (Accelerated Linear Algebra) is a domain-specific compiler for TensorFlow that can optimize TensorFlow computations for performance on a wide range of devices, including CPUs, GPUs, and TPUs. XLA can automatically optimize TensorFlow computations to take advantage of hardware-specific features, such as vector instructions, memory hierarchies, and parallelism.
+
+To use XLA, you need to install TensorFlow with GPU support and enable XLA compilation by setting the appropriate environment variable. Once XLA is enabled, TensorFlow will automatically compile and optimize computations for the target device. For example, if you have a GPU installed, TensorFlow will automatically use XLA to compile and optimize the computation for the GPU.
+
+Overall, XLA can significantly improve the performance of TensorFlow computations, especially for large-scale machine learning applications. By using XLA, you can take advantage of the power of specialized hardware and achieve faster training and inference times for your models.
+
+************************************************************************************************************************************************************************
+
+
+
+************************************************************************IMP-NOTES***************************************************************************************
+
+An iteration typically refers to one complete cycle of forward and backward propagation in a neural network during the training process.
+
+During one iteration, the input data is passed forward through the network to produce an output, and then the output is compared with the target output to calculate the loss or error. The error is then propagated backward through the network to update the weights and biases of the network using an optimization algorithm such as stochastic gradient descent (SGD).
+
+Therefore, one iteration involves both forward and backward propagation, which are required to update the parameters of the neural network.
+
+*****NOTE******: ^ this hat symbol we are using in our course represents "to the power"
+
+************************************************************************************************************************************************************************
+
+
+
+****************************************************************IMP-NOTES**********************************************************************************************
+
+Q) Does we get slow convergence on contour due to more oscillations with means more training in optimisation algorithm in machine learning?
+
+A) In machine learning optimization algorithms, the convergence speed can be affected by various factors such as the learning rate, batch size, initialization, etc. Contours or level sets of the objective function can also play a role in convergence.
+
+In general, the more oscillations or irregularities there are in the contour of the objective function, the slower the convergence can be. This is because the optimization algorithm needs to navigate through these irregularities to reach the optimum, which can require more iterations or steps.
+
+However, it's important to note that the specific impact of contour oscillations on convergence speed can depend on the optimization algorithm and problem at hand. Some algorithms are better suited to handling complex, irregular contours, while others may struggle. Additionally, the relationship between contour oscillations and convergence speed can vary depending on the specific shape and distribution of the oscillations.
+
+In summary, while contour oscillations can potentially slow down convergence in some cases, it's not a universal rule, and the impact can depend on various factors.
+
+Q) Does oscillations and epochs or iterations are same?
+
+A)No, oscillations and epochs/iterations are not the same thing.
+
+Oscillations refer to the pattern of the objective function's contour, where there are fluctuations or irregularities in its shape. This can happen due to various factors, such as noise in the data, high dimensionality of the problem, or the presence of local optima.
+
+On the other hand, epochs or iterations refer to the number of times the optimization algorithm goes through the entire training dataset during the learning process. In other words, each epoch or iteration involves processing all the training samples once.
+
+While oscillations can affect the convergence speed of the optimization algorithm, the number of epochs or iterations determines the total number of times the algorithm updates its parameters based on the training data. Typically, the more epochs/iterations the algorithm runs, the better the model's performance on the training data (up to a certain point, after which overfitting may occur).
+
+Therefore, while both oscillations and epochs/iterations can impact the learning process in machine learning, they refer to different aspects of the problem.
+
+Q)How oscillation impact iteration ?
+
+A)Oscillations in the objective function can impact the optimization algorithm's convergence speed, which can in turn affect the number of iterations required to reach a certain level of performance.
+
+When the objective function exhibits oscillations or irregularities, the optimization algorithm may get stuck in local optima or struggle to navigate through the complex contour. This can cause the algorithm to converge more slowly, as it may require more iterations to find the global optimum.
+
+In some cases, the algorithm may even oscillate back and forth between different areas of the objective function's contour, which can lead to slower convergence or prevent convergence altogether. This behavior is commonly referred to as "oscillatory convergence."
+
+Moreover, the presence of oscillations can also make it harder for the optimization algorithm to determine the appropriate step size or direction for parameter updates, which can further slow down the convergence.
+
+Therefore, the impact of oscillations on iteration can vary depending on the specific optimization algorithm and problem at hand. In general, the more irregular the objective function's contour is, the more iterations the optimization algorithm may require to find the global optimum.
+
+Q)Less oscillation makes less iterations?
+
+A)In general, if the objective function has fewer oscillations, the optimization algorithm is more likely to converge faster, which may require fewer iterations to reach a certain level of performance. However, this is not always the case and depends on various factors, such as the specific optimization algorithm used, the problem at hand, and the presence of noise in the data.
+
+When the objective function has fewer oscillations, the optimization algorithm can more easily navigate towards the global optimum, as there are fewer local optima to get stuck in. This can allow the algorithm to converge faster, as it requires fewer updates to reach the optimal solution.
+
+On the other hand, when the objective function has more oscillations, the optimization algorithm may get stuck in local optima or struggle to navigate through the complex contour, which can cause slower convergence and require more iterations to reach the global optimum.
+
+However, it's important to note that the relationship between oscillations and iterations is not always straightforward. Some optimization algorithms may be better suited to handle complex, oscillating objective functions, while others may struggle even with smoother ones. Moreover, the specific impact of oscillations on convergence speed can depend on the shape and distribution of the oscillations, as well as the learning rate, initialization, and other hyperparameters used in the optimization algorithm.
+
+***********************************************************************************************************************************************************************
+
+
+
+*****************************************************************IMP-NOTES**********************************************************************************************
+
+Q)Do we use gradient descent in momentum ?
+
+A)Yes, gradient descent with momentum is a popular optimization algorithm used in deep learning. It is an extension of the basic gradient descent algorithm that adds momentum to the update rule.
+
+In gradient descent with momentum, the update to the parameters is influenced not only by the current gradient but also by a moving average of past gradients. This helps the algorithm to navigate through regions of high curvature and accelerate convergence. The momentum term effectively adds a "velocity" to the update, allowing the optimization algorithm to move more quickly in the direction of the minimum.
+
+The momentum term is typically a value between 0 and 1, which determines the weighting given to the current gradient versus the accumulated past gradients. A higher momentum value leads to faster convergence but can also lead to overshooting the minimum. A common value for momentum is 0.9.
+
+Q)Does momentum rms prop these comes under gradient descent?
+
+A)Yes, both Momentum and RMSprop are optimization algorithms that belong to the family of gradient descent algorithms commonly used in deep learning.
+
+Momentum and RMSprop are both extensions to the basic gradient descent algorithm that aim to improve its convergence speed and stability.
+
+Momentum takes into account a moving average of past gradients to add momentum to the update rule, while RMSprop uses a moving average of the squared gradients to adjust the learning rate for each parameter separately.
+
+The combination of momentum and RMSprop is commonly used in deep learning and is known as the Adam optimizer. The Adam optimizer adapts the learning rate for each parameter based on the past gradients and their squared values, and also incorporates a momentum term. This makes it a popular choice for optimizing deep neural networks.
+
+Q)But if we increase convergence speed then it will lead to improper learning right?
+
+A)While it is true that increasing the convergence speed of an optimization algorithm can sometimes lead to improper learning or poor convergence, this is not necessarily the case for all scenarios.
+
+In some cases, increasing the convergence speed can help to train a model more quickly and effectively. For example, in deep learning, where training large neural networks can be computationally expensive, using a faster optimization algorithm can help to reduce the training time and the overall computational cost.
+
+However, it is important to note that there is a tradeoff between convergence speed and stability in optimization algorithms. In some cases, a faster optimization algorithm may converge to a suboptimal solution or even diverge entirely, especially if the learning rate or momentum is set too high. It is therefore important to tune the hyperparameters of the optimization algorithm carefully to ensure that the model is trained effectively.
+
+In general, the choice of optimization algorithm and its hyperparameters will depend on the specific problem being solved and the characteristics of the data and the model. It is often necessary to experiment with different optimization algorithms and hyperparameters to find the best approach for a particular problem.
+
+Q)What is hyperparameters?
+
+A)In machine learning, hyperparameters are parameters that are not learned by the model during training, but are instead set by the user before training begins. These parameters are usually set based on prior knowledge or assumptions about the problem being solved, and can have a significant impact on the performance of the model.
+
+Examples of hyperparameters include the learning rate and momentum in gradient descent-based optimization algorithms, the number of hidden layers and neurons in a neural network, and the regularization strength in regularization techniques such as L1 or L2 regularization.
+
+The process of setting the hyperparameters is often called hyperparameter tuning or hyperparameter optimization, and involves searching over a range of values for each hyperparameter to find the combination that results in the best performance on a validation set. This process can be time-consuming and computationally expensive, and various techniques such as random search, grid search, and Bayesian optimization can be used to automate the process and make it more efficient.
+
+It is important to note that the choice of hyperparameters can have a significant impact on the performance of the model, and tuning them carefully is often necessary to achieve the best results.
+
+Q)Does hyperparameters are experimenting?
+
+A)Yes, hyperparameters are typically set through a process of experimentation, often referred to as hyperparameter tuning or hyperparameter optimization.
+
+The process of hyperparameter tuning involves selecting a set of hyperparameters and training a model using those hyperparameters, evaluating the performance of the model on a validation set, and then repeating this process with different sets of hyperparameters until the best combination of hyperparameters is found.
+
+This process can be time-consuming and computationally expensive, as it often involves training multiple models with different hyperparameters. Various techniques such as random search, grid search, and Bayesian optimization can be used to automate the process and make it more efficient.
+
+It is important to note that the choice of hyperparameters can have a significant impact on the performance of the model, and tuning them carefully is often necessary to achieve the best results. Therefore, hyperparameter tuning is an important part of the machine learning workflow and requires careful attention and experimentation to find the optimal set of hyperparameters for a particular problem.
+
+***********************************************************************************************************************************************************************

@@ -47,7 +47,147 @@ Supervised Machine Learning: ----> input and output ---> As we are discussed til
                                                   ML Model Bcs, it involves More Cost and also whenever they Handover such Projects we should be Very Responsible
                                                   in Build High Accuracy and High Performance ML Model.
 
-        --> 3. Architect a Machine Learning Model
+        ***NOTE***: There are Lot Many Parameters(not W,b) we need to consider Before Architecting the ML Model itself.Based on the situations and lot of discussion
+        with the Humans(like Technical Team,Clients,Domain Experts) when we are going with the Talk then we will come to know that what are the purposes of Doing it
+        all these comes to know for us then all of those Parameters keeping in Mind. We have to Architect it."Architect" is nothing but just we need to prepare it like
+        with  a particular structured Model for a particular problem.For this particular problem Decision Tree and Random Forest are very good thing we will come to know based on the Things.
+
+        --> 3. Architect a Machine Learning Model ---> Once the Labelling is completed we performs "Architect a ML Model" Based on the Things.Below are some Examples
+            ---> what kind of data it is?
+                Let's Assume:
+                ---> Lot of features -> Number of features/columns are Huge
+                ---> Data is Limited -> Our data is Limited
+                ****The Obvious choice becomes Decision Trees and Random Forest we need to choose.The Obvious choice is that one only that comes out of the Experience. We will come to Understand by that time we can't tell that these 2 things Decision Tree we can't even say Randomly But that experience how we will come to know is Based on how many Problems we are solving and what type of Problems we are solving and what type of Parameters we are considering it will dependsa and also we keep Reading more and explore more then only we will become an expert in ML Strategies.
+            ---> what is the purpose?
+            ---> Is inference time matters? --> Inference is the process of drawing conclusions or making predictions based on evidence or reasoning. In simpler terms,
+                                                it's the act of reaching a conclusion based on what you already know.For example, if you see dark clouds in the sky, you might infer that it's going to rain soon. Or if you hear someone sneezing and coughing, you might infer that they have a cold.Inference can be used in many different contexts, from interpreting literature to analyzing data in scientific research. It's an essential skill for critical thinking and problem solving.
+            
+            ---> Is model size matters? --> "Model Size" it means our model should be in what size and how many parameters it should have(either less or more parameter)
+            Etc..............
+            .................
+            .................
+            ---> Architect --> After Considering Parameters then we are Architecting a particular Architecture.
+                           --> For initial step we can adapt any architecture
+
+        PROCEDURE/STRATEGIES/ANALYSIS BEFORE TRAINING ACTUAL ML MODEL:
+        -------------------------------------------------------------- 
+        ---> 4. Train the ML Model --> After Architecting then we will start to Train the Model.
+        Then we will be Using:
+            ---> When we have Labelled data with you
+                ***NOTE***: These 2 are the Major just two statements But we have Lot more Insights in them and also Below are 2 kinds of Data 1st one is 
+                            "Training Data" and 2nd one is "RealTime Data"
+                1) How the whole Data distributed? -- It is Distribution of Training Data.
+                2) How the whole Data distributed with respect to the realtime data? -- What kind of RealTime Data we are Using Here.
+
+            ---> Example: US --> Military -- Inorder to Build Automated ML Mode System to capture opposite country person or things.The US government captured the Photos of Summer Season Bcs, Wars are done in Winter Season and they Trained Summer Data for their ML Model to Train.When they Bought Images with "Winter"
+            Season it won't able to detect things or persons of Opposite one Bcs, In Winter the Wether condition is Snow and white Background it will captured.We 
+            already Know in an Image every "Pixel" is a feature.So, In Training it captured Summer Data it consists of Reddish and some other features that are different from Winter.Then how the System will become more Robust to that so, here we need to consider our parameter as "Distribution of Training Data is different and "Distribution of RealTime Data is different" then ML Model Won't Work even we have "very good Accuracy at Training Time" and we have more Data too.That Works with our Distribution of Data Only What we have made it to learn at that manner only it will Learn.If we make it to learn in one way
+            and If we ask another New Question then how it will come to know.Not only in this Image Example we have lot many examples something likewise.Therefore,when we are Training our Data OR when we are Training our Model We have to keep in Mind that ok my RealTime Data is this one.So, What we have to do that we  
+            include that RealTime Data Distribution also in our "Training Data".Let's Assume In Real-Time throughout the Year these Wars are happening then we have to have the Pictures While in Rain we have to have Pictures in Summer we have to have Pictures in Winter with Different Temperatures with different all kind the Possibilities then if we Build our Model then that Model is a More Robust Model.More Robust in the sense Most Powerful Model.It knows Everything then Whatever we will be given from these then it Works.
+
+            
+            In this Case of Example(Let's take same Military example only that we need to Build System for it) then what is our Startegy Our Strategy will be as Follow:
+            -------> Every Season photos labelled -- 10000 --->Data we have --->by combining all these seasons.
+                       ----> 3 seasons --> 3 types --- In Each Season we again have low,medium,High 
+                       ----> 9 different types --- Total we have 9 different Data types we have
+                       ----> 10000/9 ==> The Examples It may or may not be as it is while we divide it by 9.But Our Data Distribution will be in the 
+                                         Uniform-Distribution.
+                       ----> 2000, 100 , 5000, 2000, 900 --- Here, The Data distribution is not Proper.Contribution of the different Phases are not Proper.The Data 
+                                                             is Non-Uniform Distribution.Here we are making our model to learn evrything and every season then we have to give good Data for each season.The Data should be Unbiased not Biased on one side it should be Biased on each and every side with more Data.As it is it should not be Distributed Exactly by dividing by 9 for each season.But it should maintain some Uniformity.
+                       ----> Inorder to make that Uniformity,
+                       Uniformity --> We actually have some "Statistical Formulaes" --> To check Data Uniformity we use a Statistical Formulaes like ---> Chi Score
+                       then based on that we need to make the changes and make the Data will be Uniformity by using Statistical Methods Or Approaches.Chi Score gives some score based on that we can find whether that Data is Uniform or Not.
+
+            ***NOTE***: Here 80-90% of work is ours Inorder to Split data and Applying Strategies and Data Uniformity and Architecting etc.. But Domain Experts/SME are also need when we are not Domain specific and also when we are not getting to solve or make decisions we need them definitely in everywhere as a Guidence.
+
+            Here Problem arise with the,
+            ----> Different kind of Data in a same Data this kind of Data's are:
+                   ---> Train Data --- Training Data is like Practicing ---> Refining/Improving/ Training Data if results by making it proper and adding 
+                                                                             missing Values Etc.. we can Perform and Train the Data and again we perform Testing.
+                                                                             It means we are trying to Decrease Validation Error Rate to get Better Validation Results. 
+                   ---> Validation Data/Holding Data ----> Validation contains distribution of the Realtime data -- The Test which we Perform Before moving to RealTest.
+                                                     ----> If the Result which is not Good in validation again we need to Refine our "Train Data" and we Repeat it.
+                                                           After Improving Good Validation Accuracy we then go to Testing Data with Realtime Data.
+                   ---> Test Data --- It is the Actual Main Testing where we expects Good performance.It is like Final Test/Annual Exam.It is Highly point of interest.
+
+
+                   PROCEDURE BEFORE MOVING/GIVING TO THE PRODUCTION:
+                   -------------------------------------------------
+                   Assume:
+                   ----> 10000 ---> Labelled Data & Properly distributed or uniformed data
+                          -----> split your data ---> (80,20) --- Most of the People will follow this and this also not good for everything
+
+                          8000 ---> Train Data
+                          2000 ---> Validation Data ---> Predictions --- Compare this generated predictions with already it is from our labelled Data(Actual values)
+
+
+                          --- Loss ---> How many examples my ML Model is not doing Well then we will call that as a "Loss/Error"
+                                  Lets take/Assume: Whether there is a Human is there or Not in a particcular Photo
+                                  Actually there is no human 
+                                  If your model predicts there is a human ----> Then it will shot at that Place even there is no Human
+
+                                  How many are true predictions -->
+
+                                  8000 examples ---> Accuracy --- How many of Examples of the Total Train Examples.For how many examples my ML Model is giving True  
+                                                                  Predictions is called "Accuracy"
+
+                                  100 examples wrong predict --- Let's ML Model is predicted 100 examples as Wrong like even there is Human predicting no human and 
+                                                                 even there is no human it's predicting there is a Human.
+
+                                  Evaluation Metric (We will have Lot many Metrics like "Precision, Recall, F1 Score, Confusion Matrix,loss(MSE,Binary cross Entropy, etc..), Accuracy, etc......) In this Evaluation Metric "Accuracy & Error Rate" is just 2 terms:- We will discuss in further Lastly
+                                  Training Accuracy -----> 100% - 1.25% == 98.75%
+                                  Training Error rate ---> 100/8000 = 1.25%
+
+                                  Validation Accuracy -----> 100% - 5% == 95%
+                                  Validation Error rate ---> 100/2000 = 5%
+
+                          Here we have 2 types of Terms:
+                          ---- Train Accuracy  ---> Train Accuracy is the Data OR Accuracy of the Trained Data
+                          ---- Validation Accuracy ---> Validation Accuracy is the Data how our model is performing with the unseen Data from our Dataset
+
+                          ----> motive ---> We have to concentrate on Validation Accuracy --- It will be more focused Data Bcs, it will perform Unseen data predictions.
+                                                                                              Validation Accuracy is more focused Data than Train Accuracy.
+
+
+
+                    ***NOTE****: This Problem of Splitting Data Now a days is also Replaced by AI this is only we called as "Generative Models"
+                    -----> Generative ---> will generate validation and test datasets --- This also one of the AI Technique similar to ChatGpt.
+                                      ---> It will takes Train Data and gives Validation Data and Test Data.It will generate the Data for us.
+                                           It is very very Advance.
+
+        
+        ---> Start ML Training Model --> with Train and Validation data
+
+        -------> 5. Testing/RealTime Testing:
+                              
+                                Monitoring --> In a Monitoring how our Realtime data is performing on a Model.
+
+                                Test Data ----> Realtime Data -- Unlabelled data --- Which is not from our Original Dataset with labelled Data for Testing/Validation.
+                                          ----> This New RealTime Data Which we got Here we again Use it For our Future Training Purpose Like similar to ChatGpt.These
+                                                Testings like "Beta OR Alpha" Testing etc.. Here, Public privacy data is at Risk 
+                                prediction ----> Test Error rate and Test Accuracy 
+                                          ----> As there is no Labelled Data.We need to make this prediction is Right or Wrong and how my model is performing in 
+                                                Realtime.It is not even in my Training Data and Validation Data But it is coming from Real Photo OR Real situation from RealWorld/Outside then how it works all those will be discussed with Experts/Subject Matter Experts/Data Scientist.
+
+       --------> 6. Repeat the cycle --- It will be Again Repeated from STEP 2 Like "Labelling Data,Architect ML Model,Train the ML Model,Testing/RealTime Testing,
+                                         and Repeat the cycle".
+                                     --- Initially, the Test Accuracy will be not that much Good.In Production Release 1 the first go we don't say it will be Excellent
+                                         there may be Flops.In Next, Iteration we again take this New Data which we got in Production and again We perform the Actions
+                                         Likewise we again make New Labelling with Experts and again we need to Architect if there is any new kind of Architectures are came into the Market OR If anyone are prepared any New Research Papers we can use it Any how we architect some Model OR keeping
+                                         our New Data aside and try to change intermediately ML Architecture OR Changing Strategies again and again by improving it We can Try in that way too.Everything is a Repetative of the Cycle.ML is a continuous process and Future scope is very High Many things we need a Manual Intervention.
+                                
+                                
+                                           
+                                            
+
+
+           
+           
+
+
+
+
+                           
          
             
 

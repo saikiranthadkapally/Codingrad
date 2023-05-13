@@ -1,0 +1,43 @@
+ML Automation
+
+----> Input is Raw Dataset
+
+   ---> Data Analysis ---> we built this module already
+   ---> Output of Data Analysis ---> Good Dataset
+   ---> ML Automation ----> We need to build this
+
+       ----> Here inorder to build ML Automation we have one major tool called:
+       ***NOTE***: In our course we will not cover this "Keras Tuner" bcs, its very big it consumes a lot time.So, we can learn oursel either in google or youtube.
+       ----> Keras Tuner(Type and search in google) --- Hyper-parameter Tuning.Using this "Hyper-parameter" Tuning we will tune our ML Model with the keras tuner 
+                                                        and we will find out the Best Model here.
+
+       ----> Best model(Neural Network) out of this Neural Network
+
+       ----> We can also Apply parallel after applying "Neural Network" which we got above by 
+       ----> Linear or Logistic Regression models
+
+       ----> Again,we can also apply,
+       ----> RandomForestClassifier or Regressor
+
+       ----> GridSearch is a tuner similar to Keras Tuner for "RandomForest"
+
+
+       ----> After applying all these now we have to come with the,
+       ----> Model Evaluation Metrics:
+          ----> This will do all "Required model evaluation for each model we had built above" Like finding "scores,accuracy,loss,f1 score,precision,recall score,
+                false positives,true positives, false negatives, true negatives, confusion matrix, etc...." we need to print all these "To the datascientist/User"
+
+          To the datascientist
+
+          ----> based on the results will decide one ML model out of it which is best
+
+       ***NOTE***: If we do all above things as a mojor project of ML Automation then we have a lot of time to Analyse remaining models why it is not performing well. 
+                   What is the problem and what statistical problem is exposed etc.. in this we have Human intervention.
+       ----> Implication of Statistical Analysis of each model 
+
+          ---> This can also be automated ---> 
+
+
+
+
+----> Output is ML Model Which has been trained on Input Dataset --> Model Artifacts

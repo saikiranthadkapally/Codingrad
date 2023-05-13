@@ -1,0 +1,214 @@
+MODEL Evaluation:
+
+*****In detail notes and understanding Visually about "confusionMatrix" w.r.t MultiClass classification Refer Images/Pictures "ConfusionMatrix,ConfusionMatrix2,confusionMatrix3,VisualizingNdimensional_Graphs_to_2D _Graphs" from DS_Docs Folder.
+
+
+*****Very Important Topic*****
+***confusionMatrix***: We have some more metrics and scores to evaluate the Model under "confusion Matrix" like Recall,F1 Score,Precision,TPR,FPR,FNR,FPR,Accuracy etc.
+It is divided into 2 Types. One is "Binary-class" classification and another one is "Multi-class" classification.Mostly we don't discuss Multi-classification in depth
+But it is important that "Binary class" classification can be asked in Service based companies and Start-up companies Whereas "Multi-class" classification can be asked
+in MNC companies and Product Based companies.
+
+***NOTE*** "confusion Matrix" metric is very powerful matrix to evaluate the "classification" problems is most best suitable metric inorder to understand and 
+            analysis more clearly than "Bias and Variance" concept and also from other concepts like Dropout, Normalization etc.. 'Bias and Variance" is most 
+            suitable or appropriate for the "continuous values". Bias and Variance can also used for classification problems but it doesn't provide much 
+            information compare to "confusion Matrix" Metric.Bias and Variance just tells the problem in Dataset and Distribution but it won't tell in which 
+            cell the problem is occured and also it cannot suitable for analysis "TP,TF,FP,FN" and to find situation based analysis like Heart Attacks etc.. 
+            We can also use "confusion Matrix" for "continuous values" by converting into classification class like using "Thresholds" etc.. We can derive
+            conclusions and Strategies to follow by Analysing the Model Evaluation by "confusion Matrix" only when we have proper interpretation of our
+            "confusion Matrix".This Metric is more Intuitive and gives more Intusion of the Problem in Model.
+
+***NOTE***: If we apply any ML Strategy and any Hyper-parameter Tuning to ML Model.Finally, we need to perform "confusion Matrix" to evaluate the Model Before
+            Moving our Model to real-time Production.Based on Model Evaluation we can again do Re-Training by changing parameters and modifying using ML Strategies
+            and again we need to Evaluate our Model with several Experiments everytime inorder to best and best Results.If we done all these atlast we need to 
+            move to Production. Even though we get 98 or 99% Accuracy we need to check/Evaluate our ML Model inorder to avoid some Real-time case sensitive situations
+            like Heart-Attacks, Kidney-Failures, Lungs, covid, Recommended systems etc.... We must need Human Intervention even though we automate our "Model
+            Evaluation" for Analysis is compulsary inorder to make our ML Model more better for next time or in further Experiments. 
+
+
+
+Lets say,
+Problem Statement: Heart-attack disease.We have to find whether a person having heartattack or not in Real-Time scenario before moving production.
+
+***NOTE***: It will work only for Binary Classification only.Not only here, in real-world too most of the things are "Binary Classifiers" only.Mostly, the Binary
+            Classification will be going on.Multi-class classification is very Rare even if it has "Multi-classification" problem then it will segrgated and 
+            converted into "Binary classification" only to get the more Accuracy.Actually,We have to follow some "Statistical Rules" inorder to predict "Multi-class".
+            So,there is no proper "Statistical formulae" till now for multi-class variables/features.So, most of the people try to convert that multi class
+            classification to "Binary class classification".So, Most of the problems in real-world and in industrial level also mostly those are "Binary class
+            classifications" even we have "Multi class classifications".And even most of the people won't go into that "Multi class classification"
+
+Explanation Terms/Terminology only for the Binary Classifiers:
+------------------
+TP = The number of examples which were truly predicted as positives even if it has positives
+FN = The number of examples which were wrongly predicted as negative even they are positive
+FP = The number of examples which were predicted as positive but they are negative in real 
+TN = The number of examples which were truly predicted as negatives even if it has negatives
+
+
+Ofcourse, our point of interest in out of how many it has predicting correctly therefore, the formulae for Accuracy as follows:
+Accuracy = TP + TN / TP+FP+FN+TN ---> Formulae of Accuracy w.r.t the "Confusion Matrix"  ---> Total Accuracy -- In Total Accuracy we again have "Precision,Recall"
+                            
+   Precision, Recall, F1 Score are Majorly Important for Interviews:
+
+   **** Precision: How many are predicitng positive out of total predicted positives
+
+                    Precision = TP/TP+FP ---> Here our point of concentration in Precision is "FP" OR Precision will focus on "False Positives"
+                                         ---> When we are talking problems like "Recommendation(either movie,twitter etc..)" our more concentration on "Precision"
+                                         ---> w.r.t truely predicted positives
+
+                    Example: Recommendation Systems
+
+                
+   **** Recall(Score of Sensitivity-->It is a measure of sensitivity problem) (We also called as "TPR"): How many are predicting positive out of total actual positives
+
+                   Recall = 45/60 = TP/TP+FN ---> Here our point of concentration in Recall is "FN" OR Recall will consider "False Negatives"
+                                             ---> When we are talking problems like Heart-Attack,etc.. our more concentration on "Recall"
+                                             ---> w.r.t actual positives
+
+                   Example: Heart attack prediction ---> FN == Very less but achieving FPs also a good thing 
+
+
+    **** If we are considering both "FN's and FP's" then there is a metric called "F1 Score"
+    **** F1 Score : F1 = 2 * (Precision * Recall)/(Precision + Recall) --> F1 Score formulae.There might be proof but we are not discussing here and also not much imp.
+
+
+
+    
+***NOTE***: Here the point is not about the Accuracy.But the point is "what we are predicting as False" and "what is the "Situation" here" 
+
+Lets say, In such type of Heart-Attack prediction
+Situation: If the situation is heart-attack prediction then our focus should be on "FN's".Our optimal "FN" should be "Zero" in case of heart attack disease.FN is more 
+           concerned in "Heart-Attack" prediction than "FP".
+
+***** FNR(False Negative Rate) ==> FN / TP+FN ---> it means How much it(our model) is doing the Wrong.
+                                              ---> w.r.t Actual Positives
+
+Lets say, In such type of Recommendation systems prediction
+Situation: If the situation is "Recommended systems" prediction then our focus should be on "FP's".Our optimal "FP" should be either "Zero" or very very optimal
+           (equal to 1% or less than 1%) in case of such type of "Recommended systems".FP is more concerned in "Recommended systems" prediction than "FN's".
+
+***** FPR(False Positive Rate) ==> FP / Total number of actual Negatives
+                               ===> FP / TN+FP ---> w.r.t Actual Negtives
+
+
+
+
+Problem: I have 100 examples. Out of 100 examples 60 are positives (C1) and 40 are negatives (C2). My ML Model is predicting 45 as positives out of 60 and 32 as 
+negatives out of 40 negatives.
+
+ROC_AUC Curve:
+----------------
+
+*****In detail notes and understanding Visually about "confusionMatrix" w.r.t MultiClass classification Refer Images/Pictures "RoCAUC" from DS_Docs Folder.
+
+
+Basically, When we are modelling a ML.So,our ML Model at the will give,
+Probability Score of a prediction in between (0,1) --> This "()" bracket is used to exclude the 0 and 1 without including 0 and 1 and our values inbetween 0 and 1.
+
+***********************************************************************************************************************************************************************
+**NOTE**: If our Score is between 0 and 1.We have to fix some Threshold here by default threshold will be "0.5".But we can make sure that different different Thresholds.Lets say, Threshold1 if we keep the "Threshold1" which is "0.5" as a default one by putting these we will categorize the predictions and findout the 
+"FPR and TPR".We will findout and put somewhere something on "ROC_AUC" Graph some point we will Put then Again we will change the "Threshold" as "Threshold2"
+which is nothing but Let's say "0.75" it is just an Assumption Randomly threshold number and w.r.t that our predictions will be classified as 0 or 1 if it is 
+less than 0.5 treated as 0 and if it is greater than 0.5 treated as 1 similar to that we can do for all Threshold like 0.75 too.If it is more than 0.75 then 
+make our example as "Positive" one if it is less than "0.75" make the example as "Negative".This is Threshold2 with the "Threshold2" we again caluclate all the
+positives and negatives and then we will find out the "TP,TN,FP,FN and everything we will find out" and again we w=find out the "FPR and TPR".Similarly,we can 
+also do it for couple of "Thresholds" its our wish.
+***********************************************************************************************************************************************************************
+
+Threshold1 === 0.5
+
+FPR and TPR
+
+Threshold2 = 0.75
+FPR and TPR
+
+Threshold3 = 0.9
+FPR and TPR
+
+
+
+TP = 45
+TN = 32
+FP = 8  (Total Negatives - TN)
+FN = 15 (Total Positives - TP)
+
+
+Total truly predicted = TP+FN
+
+Total actual Positives = TP+FN
+
+Total actual Negatives = TN+FP
+
+
+***MULTI-CLASS***:
+------------------
+
+*****In detail notes and understanding Visually about "confusionMatrix" w.r.t MultiClass classification Refer Images/Pictures "ConfusionMatrixMultiClass,ConfusionMatrixMultiClass" from DS_Docs Folder.
+
+TN = There are few C1,C2,C3 examples
+
+    not C1 = (C2,C3)
+
+    TN of C1 ===> Model should predict (C2,C3) 
+
+
+
+
+
+
+***Missed Concept in ML Strategies(HyperParameter Tuning)***:
+--------------------------------------
+
+***NOTE***: This also a Major Role and very Irritative Task and also Repetative Task Before Training Begins for our ML Model.We need to Automate this there is no 
+Analysis of Human intervention is Required in this Strategy/Technique/Concept.
+
+Hyper-Parameters Tuning: Parameter which has no stability
+
+***NOTE***: The parameters which we are changing/modifying then those "parameters" are itself are called "HyperParameters".Its very Irritating and Time consuming Task
+This is Monitoring kind of Job changing parameters for each Experiment Repetatively.No one is doing this "Hyperparameters" Tuning manually.So,we will Tune this "Hyperparameters" using through some "frameworks".Our ML Model totally depends on Analysis only there is also coding Job but it is 20-30% Majorly it involves Analysis
+Part.
+
+The process of finding a particular value for your parameter to fit your problem very well.
+
+
+
+List of hyper parameters:
+    1. Learning Rate
+    2. Number of layers
+    ***NOTE***: Softmax is for "Multi-Class" classification and Sigmoid is for "Binary-class" classification But Remaining all are for using the activating Intermediate Layers.
+    3. What Activation function
+    4. Regularizer parameter lambda --> In regularization concept this "lambda" can be a parameter we can put "0.1,0.2 etc.." for what value we getting good result we 
+                                        can take it
+    5. Dropot percentage
+    
+
+
+Through some frameworks: We have different Tuner Frameworks Related to different ML Frameworks like "Tensorflow,PyTotrch,MxNet(AWS)"
+
+  ---> Keras Tuner --> By submiting our ML Model it will Tune automatically and submit the Jobs and at Last it will present bulk of all Results.Then we can Analyze it.
+  ---> Grid Search
+  ---> AWS Sagemaker --> for HyperParameter Tuner 
+
+***********************************************************************************************************************************************************************
+***NOTE*** We can set-up "Keras-Tuner" or else we have something called as "AWS Sagemaker" which is one more "Hyperparameter" Tuner something it is like a Service
+In that Service  We can write simply 10-20 Lines in a Notebook and in that we have "Hyperparameter" Tuning Job which is a serverless Job.Its enough to Submit that 
+Job with Just a few clicks its a half-an hour or one hour work.We need to write code and just enter it and then we submit it then that Job is submitted in serverless
+servers(Cloud-based Servers) after completing all that then the result of that Job will be stored in "S3".This method is more efficient than traditional "Grid search" or random search because it takes into account the results of previous iterations to guide the search towards promising regions of the hyperparameter space.So, how many clicks we are doing here Great though it takes one day to learn Hyperparameter Tuning and all.In that one day we are doing "Hyperparameter" Tuning itself it means do we know how many Experiments Jobs in that it nearly 100-200 Experiments with different different values of parameters like different differnt combination of all the parameters
+what we have defined likewise a 100-200 Experiments were run in that then their Results will be get to us.That Results we should do Analysis like I have got such type of result for a particular combination of parameters it means these parameters are influencing this much amount.So, this "Analysis" is much more important than submitting a Training Job.Analyzing how our ML Model is working and how our intermediate layers are working and how our intermediate particular layer is dstributed i mean the "activations,weights etc.." how they are distributing to it and that distribution will have any effect to our Model.So, we should analyze our own Models
+this has a more impact instead writing to submit a Job.So, put more time on Analysis and Statistics and Mathematics.
+
+                                                                          OR
+
+***NOTE***: We can set up either Keras-Tuner or AWS Sagemaker, both of which are Hyperparameter Tuning services. In these services, we can write just 10-20 lines of code in a notebook and submit a Hyperparameter Tuning Job, which is a serverless process. After submission, the job runs on serverless servers, and the results are stored in S3. This method is more efficient than traditional Grid Search or Random Search because it takes into account the results of previous iterations to guide the search towards promising regions of the hyperparameter space.Though it takes a day to learn Hyperparameter Tuning, with this method, we can do the tuning itself in a day. It involves running nearly 100-200 experiments with different values and combinations of parameters, and analyzing the results to determine which parameters are most influential. This analysis is much more important than simply submitting a training job, as it allows us to understand how our machine learning model is working, including how intermediate layers and particular activations or weights are distributed, and how that distribution affects the model. Therefore, we should spend more time on analysis, statistics, and mathematics."
+************************************************************************************************************************************************************************
+
+
+
+
+**************************************************************************NOTE******************************************************************************************
+
+***** Inorder to Understand OR Visualize the "#n+1" dimensional space in 2D Graph Refer Website --> "sckit learn tsne" type in google and go to 1st link on google
+
+************************************************************************************************************************************************************************
+
+

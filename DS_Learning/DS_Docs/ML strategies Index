@@ -1,0 +1,18 @@
+ML Flow
+Splitting Data
+Bias & Variance
+Regularization & Dropout
+Normalizing Inputs
+Batch Normalization(Normalizing Activations of an Intermediate Layers)
+---> Very Good Advantage of Batch Normalization is "Covariate Shift" 
+Optimization Algorithms (Gradient Descent(It is very basic one))
+    ---> Momentum
+    ---> RMS Prop
+    ---> Adam
+
+
+Model Evaluation
+
+    --> All metrics for all kind of models
+
+    

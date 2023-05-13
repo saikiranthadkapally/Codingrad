@@ -178,8 +178,8 @@ Hidden Layer 1 ===> #Nodes == It's a variable ---> we can update/modify/change N
                             in previous layer as an Output
                           --> Here the previous layer of 1st layer is 0th layer.
                 
-    Shape of WL = (#L,#L-1) ---> Where "WL" It means "If I need "Lth" layer of "Weights(W)" then I need to get "Number of nodes in Lth layer" which is "#L" first
-                                 and then I need to get "Number of nodes in previous layer" which is "#L-1".So, that I will get the Shape of whole "WL" 
+    Shape of W(L) = (#L,#L-1) ---> Where "WL" It means "If I need "Lth" layer of "Weights(W)" then I need to get "Number of nodes in Lth layer" which is "#L" first
+                                   and then I need to get "Number of nodes in previous layer" which is "#L-1".So, that I will get the Shape of whole "WL" 
 
 
     Shape of b1 = (#1,m)
@@ -328,7 +328,7 @@ Shapes for Above Network:
 -------------------------
 
 *****NOTE****: Here the # param(Number of parameters) = 0.Bcs, In input layer we don't have "W,b" it means we don't have "Z"
-input layer == (4096,1024)
+input layer == (4096,1024) --> Here "4096" are the number of features and "1024" are the number of examples
 
 
 
@@ -343,7 +343,8 @@ hiddenlayer1 shape of W, b, Z, A ===
         b1 shape = (12,1024) ----> "12" is Number of nodes in a particular Layer 1 and "1024" is the Number of Examples.
         Z1 shape = W1 * input layer + b1 => (12,4096) * (4096,1024) + (12,1024) = (12,1024) --> Multiplication will change our Shapes Except multiplication
                                                                                               no operations will change our Shapes. 
-                                                                                            --> If we do multiplication this "(12,1024)" then we know the # elements in it
+                                                                                            --> If we do multiplication this "(12,1024)" then we know the # elements 
+                                                                                                in it.
         *****NOTE*****: "A & Z" will have the same Shapes Bcs, it's a function of function will have the same shapes.We are not doing any Multiplication 
         Multiplication will change our Shapes Except multiplication no operations will change our Shapes.
         A1 shape = (12,1024)  
@@ -371,7 +372,7 @@ hiddenlayer 2 shape of W,b,Z,A ===
 
 *****NOTE*****: 
 # parameters(W,b) in hidden layer 3 withoud considering Examples:
---> Here the # param(Number of parameters) = 114.Bcs, In hiddenlayer3 we have parameters "W,b" which is calculated as "W1+b1 = (6*18) + 6 = 114".So, we have 
+--> Here the # param(Number of parameters) = 114. Bcs, In hiddenlayer3 we have parameters "W,b" which is calculated as "W1+b1 = (6*18) + 6 = 114".So, we have 
     "114" parameters in hiddenlayer3.
 hiddenlayer 3 shape of W,b,Z,A ===
         W3 shape = (6,18)

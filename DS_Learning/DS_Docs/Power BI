@@ -1,0 +1,81 @@
+TOPICS:
+1. why Power BI?
+2. what is Power BI?
+3. Features of Power BI
+4. Components of Power BI
+5. Architecture of Power BI
+6. Power BI Sevice
+7. Power BI Dashboard
+8. Power Bi Case Study - Meijer
+9. Power BI Demo
+
+Why Power BI?
+
+---> Power Bi Has ability to access "Large Volumes of Data" from multiple sources. It allows us to view , analyze, and visualize huge quantities of data that cannot 
+     be opened in EXcel.Some of the data sources available in the PowerBi are Excel,Csv,Xml,JSON,pdf etc..
+
+---> Power BI provides an Easy to use Drag and Drop tool with features and functionalities that allows us to Copy all Formatting across similar Visualizations.
+     Power BI has Exceptional integration with Excel.
+
+---> It helps us to Gather,analyze,publish and share Excel Business Data in new ways.Power BI Helps to accelerate Big Data Preparation with Azure Using Power BI
+     with Azure allows us to analyze and share Large Volumes of Data.Azure data Lake can Reduce the time it takes to get insights and increase Collabpration between 
+     business analysts,data engineers and data scientists.
+
+---> Power BI allows us to get insights from data and turn insights into actions to take data-driven business decisions.Finally, PoweBI allows us to perform Real-time
+     Stream Analytics it fetches Data from multiple sensors and social media sources to get access to Real-time analytics.So we are always Ready to make Business Decisions.
+
+What is Power BI?
+
+---> Power BI is a business analyytics service provided by Microsoft that lets us to visualize our Data and Share insights.It converts Data from different sources 
+     to Build interactive Dashboards and BI Reports.
+
+---> Lets Assume We have an "Excel data about Sales" Ussing this Data Power BI helps to Build Different Charts and Graphs to Visualize the Data.
+
+Features of Power BI :
+
+---> First, "Power BI Desktop" Power BI Desktop is a free Software that we can download and it allows us to Build Reports by accessing data Easily.For Using Power BI
+     Desktop We do not need advance report designing or query skills to build a Report.
+
+---> Second, As Already discussed "Power BI" supports Stream Analytics From Factory sensors to social media sources Power Bi Access in Real-time analytics to make 
+     Timely Decisions.
+
+---> Support for Multiple Data sources is one of the Major Features of "Power BI".We can access various sources of data such as Exel, CSV, SQL Server, Web files etc.
+     to create interactive visualizations.
+
+---> Finally, Custom Visualization is another vital feature of Power BI while dealing with complex data Power BI Default Standard might not be enough in some-cases
+     in that case we can acccess the "Custom Library of Visualization" that meets our needs.
+
+Power BI Components:
+
+---> There are 6 Major components of Power BI they are:
+     1. Power Query
+     2. Power Pivot
+     3. Power View
+     4. Power Map
+     5. Power BI Desktop
+     6. Power Q&A
+
+---> 1. Power Query: Power Query is the data transformation and mash-up(ability to combine data from multiple sources and create new dataset) engine.It enables us to
+                     discover,connect,combine and refine data sources to meet our analysis need.It can be downloaded as an add-in for Excel or can be used as part of 
+                     Power BI Desktop.
+
+     2. Power Pivot: Power Pivot is a data modelling technology that lets us create "Data Models".It also allows us to establish relationships and create caluclations
+                     It uses Data Analysis Expression language (Or) DAX to model simple and complex data.
+
+     3. Power View: Power View is a Technology that is available in Excel,SharePoint,SQLServer and Power BI.It lets us create interactive Charts,Graphs,Maps another 
+                    visuals that brings our data to live.
+
+     4. Power Map: Microsofts Power Map for Excel and Power BI is a 3D data Visualization tool that lets us Map our Data and plot More than a Million Rows of Data 
+                   Visually on Bing maps in 3D Format from an Excel Table (Or) Data Model in Excel.
+
+     5. Power BI Desktop: Power BI Desktop is a development tool for Power Query, Power Pivot and Power View.With Power BI Desktop, you have everything under a same 
+                          solution, you have everything under a same solution , and it is easier to develop BI and data analysis experience.
+
+     6. Power Q&A: Finally, we have Power Q&A the Q&A Feature in Power BI lets us explore our data in our own Words.It is the Fastest way to get an answer from our Data
+                   Using Natural Language.An example could be "What was the Total Sales Last Year?" Once we have built our data model and Deploy that into Power BI
+                   Website then we can ask questions and get answers easily. 
+
+Power BI Service:
+
+---> Power BI service is the Software as a service (SaaS) part of Power BI.It is also referred as Power BI online.To acccess Power BI service we need to log into 
+     "app.powerbi.com"
